@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 22pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .header .form-number {
+            font-size: 12pt;
+            color: #666666;
+            margin-bottom: 12pt;
+        }
+        
+        .header .instructions {
+            font-size: 10pt;
+            color: #666666;
+            font-style: italic;
+        }
+        
+        /* Form Sections */
+        .form-section {
+            margin-bottom: 24pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 13pt;
+            font-weight: bold;
+            padding: 8pt 12pt;
+            border-radius: 4px;
+            margin-bottom: 16pt;
+        }
+        
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 16pt;
+        }
+        
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #1a4d2e;
+            margin-bottom: 6pt;
+            font-size: 11pt;
+        }
+        
+        .form-label .required {
+            color: #c92a2a;
+            margin-left: 4pt;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 8pt;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 11pt;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #1a4d2e;
+            box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.1);
+        }
+        
+        .form-textarea {
+            min-height: 80pt;
+            resize: vertical;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 8pt;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 11pt;
+            font-family: inherit;
+            background: white;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: #1a4d2e;
+        }
+        
+        .form-checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12pt;
+        }
+        
+        .form-checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1a4d2e;
+            border-radius: 3px;
+            margin-right: 10pt;
+            margin-top: 2pt;
+            flex-shrink: 0;
+        }
+        
+        .form-radio-group {
+            margin-bottom: 12pt;
+        }
+        
+        .form-radio {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8pt;
+        }
+        
+        .radio-input {
+            width: 18px;
+            height: 18px;
+            margin-right: 8pt;
+        }
+        
+        .form-help {
+            font-size: 9pt;
+            color: #666666;
+            margin-top: 4pt;
+            font-style: italic;
+        }
+        
+        /* Grid Layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16pt;
+        }
+        
+        .form-grid-3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        
+        /* Special Fields */
+        .date-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8pt;
+        }
+        
+        .signature-field {
+            border-top: 2px solid #333333;
+            padding-top: 8pt;
+            margin-top: 40pt;
+        }
+        
+        /* Info Boxes */
+        .info-box {
+            background: #f0f9f4;
+            border-left: 4px solid #1a4d2e;
+            padding: 12pt;
+            margin: 16pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .warning-box {
+            background: #fff9e6;
+            border-left: 4px solid #d4af37;
+            padding: 12pt;
+            margin: 16pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>FORM TITLE</h1>
+            <div class="form-number">Form Number: [FORM-XXX]</div>
+            <div class="instructions">
+                Please complete all required fields. Fields marked with <span style="color: #c92a2a;">*</span> are required.
+            </div>
+        </div>
+        
+        <!-- Section 1: Contact Information -->
+        <div class="form-section">
+            <div class="section-header">1. Contact Information</div>
+            
+            <div class="form-group">
+                <label class="form-label">
+                    Company Name
+                    <span class="required">*</span>
+                </label>
+                <input type="text" class="form-input" name="company-name" required>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">
+                        First Name
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-input" name="first-name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        Last Name
+                        <span class="required">*</span>
+                    </label>
+                    <input type="text" class="form-input" name="last-name" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Title</label>
+                <input type="text" class="form-input" name="title">
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">
+                        Email Address
+                        <span class="required">*</span>
+                    </label>
+                    <input type="email" class="form-input" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">
+                        Phone Number
+                        <span class="required">*</span>
+                    </label>
+                    <input type="tel" class="form-input" name="phone" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Mailing Address</label>
+                <input type="text" class="form-input" name="address-line1" placeholder="Street Address">
+                <input type="text" class="form-input" style="margin-top: 8pt;" name="address-line2" placeholder="Suite, Unit, etc. (optional)">
+            </div>
+            
+            <div class="form-grid-3">
+                <div class="form-group">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-input" name="city">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">State</label>
+                    <select class="form-select" name="state">
+                        <option value="">Select State</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <!-- Add all states -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">ZIP Code</label>
+                    <input type="text" class="form-input" name="zip">
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2: Business Information -->
+        <div class="form-section">
+            <div class="section-header">2. Business Information</div>
+            
+            <div class="form-group">
+                <label class="form-label">UEI Number</label>
+                <input type="text" class="form-input" name="uei" placeholder="XXXXXXXXXXXX">
+                <div class="form-help">12-character Unique Entity Identifier</div>
+            </div>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">CAGE Code</label>
+                    <input type="text" class="form-input" name="cage" placeholder="XXXXX">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">DUNS Number</label>
+                    <input type="text" class="form-input" name="duns" placeholder="XXXXXXXXX">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">NAICS Codes</label>
+                <input type="text" class="form-input" name="naics" placeholder="Enter primary NAICS codes">
+                <div class="form-help">Separate multiple codes with commas</div>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Business Size</label>
+                <div class="form-radio-group">
+                    <div class="form-radio">
+                        <input type="radio" class="radio-input" name="business-size" value="small" id="size-small">
+                        <label for="size-small">Small Business</label>
+                    </div>
+                    <div class="form-radio">
+                        <input type="radio" class="radio-input" name="business-size" value="other" id="size-other">
+                        <label for="size-other">Other</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Additional Information -->
+        <div class="form-section">
+            <div class="section-header">3. Additional Information</div>
+            
+            <div class="form-group">
+                <label class="form-label">Description of Services/Products</label>
+                <textarea class="form-input form-textarea" name="description" placeholder="Briefly describe your business capabilities"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">Certifications</label>
+                <div class="form-checkbox-group">
+                    <div class="form-checkbox"></div>
+                    <label>8(a) Certified</label>
+                </div>
+                <div class="form-checkbox-group">
+                    <div class="form-checkbox"></div>
+                    <label>HUBZone Certified</label>
+                </div>
+                <div class="form-checkbox-group">
+                    <div class="form-checkbox"></div>
+                    <label>WOSB/EDWOSB Certified</label>
+                </div>
+                <div class="form-checkbox-group">
+                    <div class="form-checkbox"></div>
+                    <label>VOSB/SDVOSB Certified</label>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Info Box -->
+        <div class="info-box">
+            <strong>Note:</strong> All information provided will be kept confidential and used solely for the purpose stated on this form.
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="form-section">
+            <div class="section-header">4. Signature</div>
+            
+            <div class="warning-box">
+                <strong>Certification:</strong> I certify that the information provided is true and accurate to the best of my knowledge.
+            </div>
+            
+            <div class="form-grid" style="margin-top: 24pt;">
+                <div class="form-group">
+                    <div class="signature-field">
+                        <label class="form-label">Signature</label>
+                    </div>
+                    <div style="margin-top: 40pt;">
+                        <label class="form-label">Print Name</label>
+                        <input type="text" class="form-input" name="printed-name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="date-group">
+                        <div>
+                            <label class="form-label">Month</label>
+                            <input type="text" class="form-input" name="date-month" placeholder="MM">
+                        </div>
+                        <div>
+                            <label class="form-label">Day</label>
+                            <input type="text" class="form-input" name="date-day" placeholder="DD">
+                        </div>
+                        <div>
+                            <label class="form-label">Year</label>
+                            <input type="text" class="form-input" name="date-year" placeholder="YYYY">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>Federal Contracting Roadmap | www.federalcontractingroadmap.com</div>
+            <div style="margin-top: 4pt;">© 2025 | Form Version 2.0</div>
+        </div>
+    </div>
+</body>
+</html>
+

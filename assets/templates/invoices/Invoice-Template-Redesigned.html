@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 20pt;
+            margin-bottom: 24pt;
+        }
+        
+        .company-info {
+            flex: 1;
+        }
+        
+        .company-name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .company-details {
+            font-size: 10pt;
+            color: #666666;
+            line-height: 1.6;
+        }
+        
+        .invoice-info {
+            text-align: right;
+        }
+        
+        .invoice-title {
+            font-size: 32pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+        }
+        
+        .invoice-number {
+            font-size: 14pt;
+            color: #666666;
+            margin-bottom: 4pt;
+        }
+        
+        .invoice-date {
+            font-size: 12pt;
+            color: #333333;
+        }
+        
+        /* Billing Section */
+        .billing-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32pt;
+            margin-bottom: 32pt;
+        }
+        
+        .billing-box {
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            padding: 16pt;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .billing-label {
+            font-size: 10pt;
+            color: #666666;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 8pt;
+        }
+        
+        .billing-info {
+            font-size: 11pt;
+            color: #333333;
+            line-height: 1.6;
+        }
+        
+        .billing-name {
+            font-weight: bold;
+            color: #1a4d2e;
+            font-size: 12pt;
+            margin-bottom: 4pt;
+        }
+        
+        /* Items Table */
+        .items-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24pt;
+        }
+        
+        .items-table th {
+            background: #1a4d2e;
+            color: white;
+            padding: 12pt;
+            text-align: left;
+            font-weight: 600;
+            font-size: 11pt;
+        }
+        
+        .items-table td {
+            padding: 12pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .items-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        .items-table .description {
+            width: 40%;
+        }
+        
+        .items-table .quantity,
+        .items-table .rate {
+            width: 15%;
+            text-align: right;
+        }
+        
+        .items-table .amount {
+            width: 30%;
+            text-align: right;
+            font-weight: 600;
+            color: #1a4d2e;
+        }
+        
+        /* Totals Section */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 32pt;
+        }
+        
+        .totals-box {
+            width: 300px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 16pt;
+        }
+        
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8pt 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .total-row:last-child {
+            border-bottom: none;
+            border-top: 2px solid #1a4d2e;
+            margin-top: 8pt;
+            padding-top: 12pt;
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        .total-label {
+            color: #666666;
+        }
+        
+        .total-value {
+            font-weight: 600;
+            color: #1a4d2e;
+            text-align: right;
+        }
+        
+        .total-row:last-child .total-value {
+            font-size: 16pt;
+            font-weight: bold;
+        }
+        
+        /* Payment Terms */
+        .payment-terms {
+            background: #fff9e6;
+            border-left: 4px solid #d4af37;
+            padding: 16pt;
+            margin-bottom: 24pt;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .payment-terms h3 {
+            color: #1a4d2e;
+            font-size: 12pt;
+            margin-bottom: 8pt;
+        }
+        
+        .payment-terms p {
+            font-size: 10pt;
+            color: #666666;
+            margin: 4pt 0;
+        }
+        
+        /* Notes Section */
+        .notes-section {
+            margin-bottom: 32pt;
+        }
+        
+        .notes-section h3 {
+            color: #1a4d2e;
+            font-size: 12pt;
+            margin-bottom: 8pt;
+        }
+        
+        .notes-box {
+            background: #f5f5f5;
+            padding: 12pt;
+            border-radius: 4px;
+            font-size: 10pt;
+            color: #666666;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 40pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+        
+        .footer p {
+            margin: 4pt 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="invoice-header">
+            <div class="company-info">
+                <div class="company-name">YOUR COMPANY NAME</div>
+                <div class="company-details">
+                    123 Business Street<br>
+                    City, State ZIP<br>
+                    Phone: (555) 123-4567<br>
+                    Email: billing@company.com<br>
+                    Website: www.company.com
+                </div>
+            </div>
+            <div class="invoice-info">
+                <div class="invoice-title">INVOICE</div>
+                <div class="invoice-number">Invoice #: INV-2025-001</div>
+                <div class="invoice-date">Date: January 15, 2025</div>
+            </div>
+        </div>
+        
+        <!-- Billing Section -->
+        <div class="billing-section">
+            <div class="billing-box">
+                <div class="billing-label">Bill To</div>
+                <div class="billing-info">
+                    <div class="billing-name">Client/Government Agency Name</div>
+                    Attention: [Contact Name]<br>
+                    [Department/Office]<br>
+                    [Address Line 1]<br>
+                    [Address Line 2]<br>
+                    [City, State ZIP]
+                </div>
+            </div>
+            
+            <div class="billing-box">
+                <div class="billing-label">Contract Information</div>
+                <div class="billing-info">
+                    <div class="billing-name">Contract #: [CONTRACT-NUMBER]</div>
+                    CLIN: [CLIN Number]<br>
+                    Period: [Start Date] - [End Date]<br>
+                    PO Number: [PO Number]<br>
+                    Contracting Officer: [Name]
+                </div>
+            </div>
+        </div>
+        
+        <!-- Items Table -->
+        <table class="items-table">
+            <thead>
+                <tr>
+                    <th class="description">Description</th>
+                    <th class="quantity">Quantity</th>
+                    <th class="rate">Unit Rate</th>
+                    <th class="amount">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="description">
+                        <strong>Service/Product Description</strong><br>
+                        <span style="font-size: 9pt; color: #666666;">Additional details or specifications</span>
+                    </td>
+                    <td class="quantity">40</td>
+                    <td class="rate">$150.00</td>
+                    <td class="amount">$6,000.00</td>
+                </tr>
+                <tr>
+                    <td class="description">
+                        <strong>Service/Product Description 2</strong><br>
+                        <span style="font-size: 9pt; color: #666666;">Additional details</span>
+                    </td>
+                    <td class="quantity">20</td>
+                    <td class="rate">$200.00</td>
+                    <td class="amount">$4,000.00</td>
+                </tr>
+                <tr>
+                    <td class="description">
+                        <strong>Travel Expenses</strong><br>
+                        <span style="font-size: 9pt; color: #666666;">As per contract terms</span>
+                    </td>
+                    <td class="quantity">1</td>
+                    <td class="rate">$500.00</td>
+                    <td class="amount">$500.00</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Totals -->
+        <div class="totals-section">
+            <div class="totals-box">
+                <div class="total-row">
+                    <span class="total-label">Subtotal:</span>
+                    <span class="total-value">$10,500.00</span>
+                </div>
+                <div class="total-row">
+                    <span class="total-label">Tax (if applicable):</span>
+                    <span class="total-value">$0.00</span>
+                </div>
+                <div class="total-row">
+                    <span class="total-label">Total:</span>
+                    <span class="total-value">$10,500.00</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Payment Terms -->
+        <div class="payment-terms">
+            <h3>Payment Terms</h3>
+            <p><strong>Net 30</strong> - Payment due within 30 days of invoice date</p>
+            <p>Payment Method: [Check, ACH, Wire Transfer]</p>
+            <p>Make checks payable to: [Company Name]</p>
+            <p>Please reference Invoice #: INV-2025-001 on all payments</p>
+        </div>
+        
+        <!-- Notes -->
+        <div class="notes-section">
+            <h3>Notes</h3>
+            <div class="notes-box">
+                Services performed in accordance with Contract [CONTRACT-NUMBER].<br>
+                All deliverables have been submitted and accepted.<br>
+                Please contact [Contact Name] at [Phone/Email] with any questions.
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Thank you for your business!</strong></p>
+            <p>Federal Contracting Roadmap | Invoice Template</p>
+            <p>© 2025 | All Rights Reserved</p>
+        </div>
+    </div>
+</body>
+</html>
+
+

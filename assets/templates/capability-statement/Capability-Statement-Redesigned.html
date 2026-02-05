@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capability Statement Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .logo-area {
+            flex: 0 0 150px;
+        }
+        
+        .logo {
+            max-width: 150px;
+            max-height: 60px;
+            margin-bottom: 12pt;
+        }
+        
+        .company-info {
+            flex: 1;
+            margin-left: 24pt;
+        }
+        
+        .company-name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .contact-info {
+            font-size: 10pt;
+            color: #666666;
+            line-height: 1.8;
+        }
+        
+        .contact-info strong {
+            color: #333333;
+            font-weight: 600;
+        }
+        
+        .uei-cage {
+            font-size: 10pt;
+            color: #1a4d2e;
+            font-weight: bold;
+            margin-top: 8pt;
+            padding-top: 8pt;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 20pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 8pt 12pt;
+            border-radius: 4px 4px 0 0;
+            margin-bottom: 0;
+        }
+        
+        .section-content {
+            background: white;
+            padding: 12pt;
+            border: 1px solid #e0e0e0;
+            border-top: none;
+        }
+        
+        .section-alt .section-content {
+            background: #f5f5f5;
+        }
+        
+        /* Core Competencies */
+        .competencies {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16pt;
+        }
+        
+        .competency-item {
+            margin-bottom: 8pt;
+        }
+        
+        .competency-item strong {
+            color: #1a4d2e;
+            display: block;
+            margin-bottom: 4pt;
+        }
+        
+        /* Past Performance */
+        .performance-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 12pt;
+            margin-bottom: 12pt;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .performance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8pt;
+            padding-bottom: 8pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .performance-title {
+            font-size: 12pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        .performance-meta {
+            font-size: 10pt;
+            color: #666666;
+        }
+        
+        .performance-value {
+            color: #1a4d2e;
+            font-weight: bold;
+        }
+        
+        .performance-description {
+            margin-bottom: 8pt;
+        }
+        
+        .performance-accomplishment {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        /* Differentiators */
+        .differentiators {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12pt;
+        }
+        
+        .differentiator-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10pt;
+        }
+        
+        .differentiator-icon {
+            color: #d4af37;
+            font-size: 16pt;
+            font-weight: bold;
+            margin-right: 8pt;
+            flex-shrink: 0;
+        }
+        
+        .differentiator-text {
+            flex: 1;
+        }
+        
+        .differentiator-text strong {
+            color: #1a4d2e;
+            display: block;
+            margin-bottom: 4pt;
+        }
+        
+        /* Company Info */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12pt;
+        }
+        
+        .info-item {
+            margin-bottom: 8pt;
+        }
+        
+        .info-label {
+            font-weight: bold;
+            color: #1a4d2e;
+            display: inline-block;
+            min-width: 120px;
+        }
+        
+        .info-value {
+            color: #333333;
+        }
+        
+        /* Lists */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding-left: 20pt;
+            position: relative;
+            margin-bottom: 6pt;
+        }
+        
+        ul li:before {
+            content: "•";
+            color: #1a4d2e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 24pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            font-size: 9pt;
+            color: #666666;
+            text-align: center;
+        }
+        
+        @media print {
+            .container {
+                max-width: 100%;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+            
+            .performance-card {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo">[LOGO PLACEHOLDER]</div>
+                </div>
+                <div class="company-info">
+                    <div class="company-name" style="color: #1a4d2e;">YOUR COMPANY NAME</div>
+                    <div class="contact-info">
+                        <div><strong>Address:</strong> 123 Business Street, City, State ZIP</div>
+                        <div><strong>Phone:</strong> (555) 123-4567</div>
+                        <div><strong>Email:</strong> contact@company.com</div>
+                        <div><strong>Website:</strong> www.company.com</div>
+                    </div>
+                    <div class="uei-cage">
+                        UEI: XXXXXXXXXXXX | CAGE: XXXX | DUNS: XXXXXXXXX
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Core Competencies -->
+        <div class="section">
+            <div class="section-header">Core Competencies</div>
+            <div class="section-content">
+                <div class="competencies">
+                    <div>
+                        <div class="competency-item">
+                            <strong>What We Do</strong>
+                            <ul>
+                                <li>Service/Product 1</li>
+                                <li>Service/Product 2</li>
+                                <li>Service/Product 3</li>
+                                <li>Service/Product 4</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="competency-item">
+                            <strong>How We Do It</strong>
+                            <ul>
+                                <li>Key methodology/approach 1</li>
+                                <li>Key methodology/approach 2</li>
+                                <li>Technology/Tool used</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Past Performance -->
+        <div class="section section-alt">
+            <div class="section-header">Past Performance</div>
+            <div class="section-content">
+                <div class="performance-card">
+                    <div class="performance-header">
+                        <div class="performance-title">Project/Contract 1</div>
+                        <div class="performance-meta">
+                            <span class="performance-value">$XXX,XXX</span> | XX months
+                        </div>
+                    </div>
+                    <div class="performance-description">
+                        <strong>Client/Agency:</strong> [Agency or client name]<br>
+                        Brief description of work performed and scope of project.
+                    </div>
+                    <div class="performance-accomplishment">
+                        ✓ Key Accomplishment: Notable achievement or result
+                    </div>
+                </div>
+                
+                <div class="performance-card">
+                    <div class="performance-header">
+                        <div class="performance-title">Project/Contract 2</div>
+                        <div class="performance-meta">
+                            <span class="performance-value">$XXX,XXX</span> | XX months
+                        </div>
+                    </div>
+                    <div class="performance-description">
+                        <strong>Client/Agency:</strong> [Agency or client name]<br>
+                        Brief description of work performed and scope of project.
+                    </div>
+                    <div class="performance-accomplishment">
+                        ✓ Key Accomplishment: Notable achievement or result
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Differentiators -->
+        <div class="section">
+            <div class="section-header">Differentiators</div>
+            <div class="section-content">
+                <div class="differentiators">
+                    <div class="differentiator-item">
+                        <div class="differentiator-icon">✓</div>
+                        <div class="differentiator-text">
+                            <strong>Differentiator 1</strong>
+                            Brief explanation of unique value proposition
+                        </div>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="differentiator-icon">✓</div>
+                        <div class="differentiator-text">
+                            <strong>Differentiator 2</strong>
+                            Brief explanation of unique value proposition
+                        </div>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="differentiator-icon">✓</div>
+                        <div class="differentiator-text">
+                            <strong>Differentiator 3</strong>
+                            Brief explanation of unique value proposition
+                        </div>
+                    </div>
+                    <div class="differentiator-item">
+                        <div class="differentiator-icon">✓</div>
+                        <div class="differentiator-text">
+                            <strong>Differentiator 4</strong>
+                            Brief explanation of unique value proposition
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Company Information -->
+        <div class="section section-alt">
+            <div class="section-header">Company Information</div>
+            <div class="section-content">
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Business Type:</span>
+                        <span class="info-value">Small Business, 8(a), WOSB</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Established:</span>
+                        <span class="info-value">20XX</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Employees:</span>
+                        <span class="info-value">XX</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">NAICS Codes:</span>
+                        <span class="info-value">XXXXX, XXXXX, XXXXX</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Certifications:</span>
+                        <span class="info-value">SAM.gov, 8(a), HUBZone</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Service Areas:</span>
+                        <span class="info-value">Nationwide, Primary: Region X</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>Federal Contracting Roadmap | www.federalcontractingroadmap.com</div>
+            <div style="margin-top: 4pt;">© 2025 | All Rights Reserved</div>
+        </div>
+    </div>
+</body>
+</html>
+

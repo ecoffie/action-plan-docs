@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & POC Tracking</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            font-size: 10pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .header .subtitle {
+            font-size: 11pt;
+            color: #666666;
+        }
+        
+        /* Contact Cards */
+        .contact-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #d4af37;
+            border-radius: 0 4px 4px 0;
+            padding: 16pt;
+            margin-bottom: 20pt;
+            page-break-inside: avoid;
+        }
+        
+        .contact-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12pt;
+            padding-bottom: 12pt;
+            border-bottom: 2px solid #f5f5f5;
+        }
+        
+        .contact-name {
+            font-size: 16pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 4pt;
+        }
+        
+        .contact-title {
+            font-size: 11pt;
+            color: #666666;
+        }
+        
+        .contact-badge {
+            display: inline-block;
+            padding: 4pt 10pt;
+            border-radius: 12px;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-left: 8pt;
+        }
+        
+        .badge-contracting-officer {
+            background: #e8f4f8;
+            color: #1a4d2e;
+            border: 1px solid #1a4d2e;
+        }
+        
+        .badge-program-manager {
+            background: #f0f9f4;
+            color: #2d5016;
+            border: 1px solid #2d5016;
+        }
+        
+        .badge-small-business {
+            background: #fff9e6;
+            color: #b8941f;
+            border: 1px solid #d4af37;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16pt;
+        }
+        
+        .info-group {
+            margin-bottom: 12pt;
+        }
+        
+        .info-label {
+            font-size: 9pt;
+            color: #666666;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 4pt;
+        }
+        
+        .info-value {
+            font-size: 10pt;
+            color: #333333;
+            line-height: 1.5;
+        }
+        
+        .info-value a {
+            color: #1a4d2e;
+            text-decoration: none;
+        }
+        
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Interaction History */
+        .interaction-history {
+            margin-top: 16pt;
+            padding-top: 16pt;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .interaction-history h4 {
+            color: #1a4d2e;
+            font-size: 11pt;
+            margin-bottom: 12pt;
+        }
+        
+        .interaction-item {
+            background: #f5f5f5;
+            padding: 10pt;
+            margin-bottom: 8pt;
+            border-radius: 4px;
+            border-left: 3px solid #1a4d2e;
+        }
+        
+        .interaction-date {
+            font-size: 8pt;
+            color: #666666;
+            font-weight: 600;
+            margin-bottom: 4pt;
+        }
+        
+        .interaction-type {
+            font-size: 9pt;
+            color: #1a4d2e;
+            font-weight: 600;
+            margin-bottom: 4pt;
+        }
+        
+        .interaction-notes {
+            font-size: 9pt;
+            color: #333333;
+        }
+        
+        /* Category Section */
+        .category-section {
+            margin-bottom: 32pt;
+        }
+        
+        .category-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 16pt;
+            font-weight: bold;
+            padding: 12pt 16pt;
+            border-radius: 4px;
+            margin-bottom: 20pt;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Contact & Point of Contact Tracking</h1>
+            <div class="subtitle">Federal Contracting Relationship Management | Updated: [Date]</div>
+        </div>
+        
+        <!-- Contracting Officers -->
+        <div class="category-section">
+            <div class="category-header">Contracting Officers</div>
+            
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div>
+                        <div class="contact-name">
+                            Jane Smith
+                            <span class="contact-badge badge-contracting-officer">Contracting Officer</span>
+                        </div>
+                        <div class="contact-title">Senior Contracting Officer, USACE</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Agency/Office</div>
+                            <div class="info-value">USACE - Engineering Division</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Email</div>
+                            <div class="info-value"><a href="mailto:jane.smith@usace.army.mil">jane.smith@usace.army.mil</a></div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Phone</div>
+                            <div class="info-value">(555) 123-4567</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Address</div>
+                            <div class="info-value">123 Government Street<br>Washington, DC 20314</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Primary NAICS</div>
+                            <div class="info-value">236220, 541330</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Last Contact</div>
+                            <div class="info-value">January 10, 2025</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interaction-history">
+                    <h4>Recent Interactions</h4>
+                    <div class="interaction-item">
+                        <div class="interaction-date">01/10/2025</div>
+                        <div class="interaction-type">Capability Briefing</div>
+                        <div class="interaction-notes">Presented capability statement. Discussed upcoming opportunities. Positive response. Follow-up scheduled for 01/25/2025.</div>
+                    </div>
+                    <div class="interaction-item">
+                        <div class="interaction-date">12/15/2024</div>
+                        <div class="interaction-type">Email Follow-up</div>
+                        <div class="interaction-notes">Sent capability statement and requested meeting. Received positive response.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div>
+                        <div class="contact-name">
+                            Bob Johnson
+                            <span class="contact-badge badge-contracting-officer">Contracting Officer</span>
+                        </div>
+                        <div class="contact-title">Contracting Officer, NAVFAC</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Agency/Office</div>
+                            <div class="info-value">NAVFAC - Mid-Atlantic</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Email</div>
+                            <div class="info-value"><a href="mailto:bob.johnson@navy.mil">bob.johnson@navy.mil</a></div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Phone</div>
+                            <div class="info-value">(555) 234-5678</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Address</div>
+                            <div class="info-value">456 Naval Base Road<br>Norfolk, VA 23511</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Primary NAICS</div>
+                            <div class="info-value">236220, 541330</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Last Contact</div>
+                            <div class="info-value">December 20, 2024</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Small Business Specialists -->
+        <div class="category-section">
+            <div class="category-header">Small Business Specialists</div>
+            
+            <div class="contact-card">
+                <div class="contact-header">
+                    <div>
+                        <div class="contact-name">
+                            Alice Brown
+                            <span class="contact-badge badge-small-business">Small Business Specialist</span>
+                        </div>
+                        <div class="contact-title">Small Business Specialist, USACE</div>
+                    </div>
+                </div>
+                
+                <div class="contact-info">
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Agency/Office</div>
+                            <div class="info-value">USACE - Small Business Office</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Email</div>
+                            <div class="info-value"><a href="mailto:alice.brown@usace.army.mil">alice.brown@usace.army.mil</a></div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Phone</div>
+                            <div class="info-value">(555) 345-6789</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="info-group">
+                            <div class="info-label">Last Contact</div>
+                            <div class="info-value">January 5, 2025</div>
+                        </div>
+                        <div class="info-group">
+                            <div class="info-label">Notes</div>
+                            <div class="info-value">Helpful with 8(a) program questions. Good resource for introductions.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Federal Contracting Roadmap | Contact Tracking Template | Version 2.0
+        </div>
+    </div>
+</body>
+</html>
+
+

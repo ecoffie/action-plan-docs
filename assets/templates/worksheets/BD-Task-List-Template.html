@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Development Task List</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .header .period {
+            font-size: 12pt;
+            color: #666666;
+        }
+        
+        /* Category Sections */
+        .category {
+            margin-bottom: 32pt;
+            page-break-inside: avoid;
+        }
+        
+        .category-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 16pt;
+            font-weight: bold;
+            padding: 12pt 16pt;
+            border-radius: 4px;
+            margin-bottom: 16pt;
+        }
+        
+        /* Task Items */
+        .task-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 12pt;
+            margin-bottom: 8pt;
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .task-checkbox {
+            width: 22px;
+            height: 22px;
+            border: 2px solid #1a4d2e;
+            border-radius: 4px;
+            margin-right: 12pt;
+            margin-top: 2pt;
+            flex-shrink: 0;
+            background: white;
+        }
+        
+        .task-content {
+            flex: 1;
+        }
+        
+        .task-title {
+            font-weight: 600;
+            color: #1a4d2e;
+            font-size: 12pt;
+            margin-bottom: 4pt;
+        }
+        
+        .task-meta {
+            display: flex;
+            gap: 16pt;
+            margin-top: 8pt;
+            font-size: 9pt;
+            color: #666666;
+        }
+        
+        .task-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 4pt;
+        }
+        
+        .task-meta-label {
+            font-weight: 600;
+            color: #333333;
+        }
+        
+        .priority-badge {
+            display: inline-block;
+            padding: 3pt 8pt;
+            border-radius: 12px;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-left: 8pt;
+        }
+        
+        .priority-high {
+            background: #fee;
+            color: #c92a2a;
+            border: 1px solid #c92a2a;
+        }
+        
+        .priority-medium {
+            background: #fff9e6;
+            color: #b8941f;
+            border: 1px solid #d4af37;
+        }
+        
+        .priority-low {
+            background: #f0f9f4;
+            color: #2d5016;
+            border: 1px solid #90c695;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 3pt 8pt;
+            border-radius: 12px;
+            font-size: 8pt;
+            font-weight: 600;
+            margin-left: 8pt;
+        }
+        
+        .status-not-started {
+            background: #f5f5f5;
+            color: #666666;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .status-in-progress {
+            background: #e8f4f8;
+            color: #1a4d2e;
+            border: 1px solid #1a4d2e;
+        }
+        
+        .status-completed {
+            background: #f0f9f4;
+            color: #2d5016;
+            border: 1px solid #2d5016;
+        }
+        
+        /* Progress Summary */
+        .progress-summary {
+            background: #f0f9f4;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 20pt;
+            margin: 24pt 0;
+        }
+        
+        .progress-summary h3 {
+            color: #1a4d2e;
+            margin-bottom: 16pt;
+            font-size: 16pt;
+        }
+        
+        .progress-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16pt;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-label {
+            font-size: 10pt;
+            color: #666666;
+            margin-bottom: 4pt;
+        }
+        
+        .stat-value {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Business Development Task List</h1>
+            <div class="period">Period: Q1 2025 | Updated: [Date]</div>
+        </div>
+        
+        <!-- Progress Summary -->
+        <div class="progress-summary">
+            <h3>Progress Overview</h3>
+            <div class="progress-stats">
+                <div class="stat-item">
+                    <div class="stat-label">Total Tasks</div>
+                    <div class="stat-value">24</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Completed</div>
+                    <div class="stat-value">8</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">In Progress</div>
+                    <div class="stat-value">6</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Remaining</div>
+                    <div class="stat-value">10</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 3: Business Development -->
+        <div class="category">
+            <div class="category-header">Phase 3: Business Development Activities</div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Research Top 25 Buyers for FY 2025
+                        <span class="priority-badge priority-high">High</span>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <div>Identify top spending agencies in our NAICS codes and research their procurement plans</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>01/31/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Schedule Meetings with 5 Key Contracting Officers
+                        <span class="priority-badge priority-high">High</span>
+                        <span class="status-badge status-not-started">Not Started</span>
+                    </div>
+                    <div>Reach out to contracting officers at target agencies to schedule capability briefings</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>02/15/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>Jane Smith</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Attend NAVFAC Industry Day
+                        <span class="priority-badge priority-medium">Medium</span>
+                        <span class="status-badge status-completed">Completed</span>
+                    </div>
+                    <div>Register and attend NAVFAC Industry Day on February 10, 2025</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>02/10/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>Bob Jones</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 2: Bidding -->
+        <div class="category">
+            <div class="category-header">Phase 2: Bidding Activities</div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Complete Proposal for W912XX-25-R-0001
+                        <span class="priority-badge priority-high">High</span>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <div>Finalize technical approach, pricing, and past performance for USACE opportunity</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>02/15/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>Proposal Team</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Assemble Team for N40085-25-R-0010
+                        <span class="priority-badge priority-medium">Medium</span>
+                        <span class="status-badge status-in-progress">In Progress</span>
+                    </div>
+                    <div>Identify and contract with teaming partners for NAVFAC opportunity</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>02/01/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>Alice Brown</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Phase 4: Business Enhancement -->
+        <div class="category">
+            <div class="category-header">Phase 4: Business Enhancement</div>
+            
+            <div class="task-item">
+                <div class="task-checkbox"></div>
+                <div class="task-content">
+                    <div class="task-title">
+                        Submit 8(a) Application
+                        <span class="priority-badge priority-medium">Medium</span>
+                        <span class="status-badge status-not-started">Not Started</span>
+                    </div>
+                    <div>Complete and submit 8(a) Business Development Program application</div>
+                    <div class="task-meta">
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Due:</span>
+                            <span>03/31/2025</span>
+                        </div>
+                        <div class="task-meta-item">
+                            <span class="task-meta-label">Assigned:</span>
+                            <span>John Doe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Federal Contracting Roadmap | Business Development Task List | Version 2.0
+        </div>
+    </div>
+</body>
+</html>
+
+

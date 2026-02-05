@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            text-align: center;
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .header .subtitle {
+            font-size: 12pt;
+            color: #666666;
+        }
+        
+        .header .phase-info {
+            font-size: 10pt;
+            color: #d4af37;
+            margin-top: 8pt;
+            font-weight: 600;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 24pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 14pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 10pt 14pt;
+            border-radius: 4px;
+            margin-bottom: 12pt;
+        }
+        
+        .section-header .section-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4pt 8pt;
+            border-radius: 3px;
+            margin-right: 10pt;
+        }
+        
+        /* Checklist Items */
+        .checklist-group {
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            padding: 12pt;
+            margin-bottom: 12pt;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 8pt 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .checklist-item:last-child {
+            border-bottom: none;
+        }
+        
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1a4d2e;
+            border-radius: 3px;
+            margin-right: 12pt;
+            margin-top: 2pt;
+            flex-shrink: 0;
+            background: white;
+        }
+        
+        .item-label {
+            flex: 1;
+            font-size: 11pt;
+            line-height: 1.5;
+        }
+        
+        .item-label strong {
+            color: #1a4d2e;
+            font-weight: 600;
+        }
+        
+        .sub-item {
+            margin-left: 32pt;
+            margin-top: 6pt;
+            font-size: 10pt;
+            color: #666666;
+        }
+        
+        /* Notes Section */
+        .notes-box {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 12pt;
+            margin: 16pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .notes-box strong {
+            color: #1a4d2e;
+            display: block;
+            margin-bottom: 6pt;
+        }
+        
+        /* Progress Tracker */
+        .progress-section {
+            background: #f0f9f4;
+            border: 2px solid #d4af37;
+            border-radius: 8px;
+            padding: 16pt;
+            margin: 24pt 0;
+            text-align: center;
+        }
+        
+        .progress-section h3 {
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+            font-size: 16pt;
+        }
+        
+        .progress-bar {
+            background: #e0e0e0;
+            border-radius: 20px;
+            height: 30px;
+            margin: 12pt 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .progress-fill {
+            background: linear-gradient(90deg, #2d5016, #90c695);
+            height: 100%;
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 10pt;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+        
+        .signature-section {
+            margin-top: 24pt;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24pt;
+        }
+        
+        .signature-box {
+            border-top: 2px solid #1a4d2e;
+            padding-top: 8pt;
+            margin-top: 40pt;
+        }
+        
+        .signature-box label {
+            font-size: 10pt;
+            color: #666666;
+            display: block;
+            margin-bottom: 4pt;
+        }
+        
+        @media print {
+            .container {
+                max-width: 100%;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>CHECKLIST TITLE</h1>
+            <div class="subtitle">Subtitle or description</div>
+            <div class="phase-info">Phase X: Category Name</div>
+        </div>
+        
+        <!-- Progress Tracker -->
+        <div class="progress-section">
+            <h3>Completion Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill">0% Complete</div>
+            </div>
+            <div style="font-size: 10pt; color: #666;">Checked: 0 of 0 items</div>
+        </div>
+        
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">1</span>
+                Section Title
+            </div>
+            
+            <div class="checklist-group">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-label">
+                        <strong>Main checklist item</strong>
+                        <div class="sub-item">Additional details or sub-items related to this task</div>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-label">
+                        <strong>Another checklist item</strong>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-label">
+                        <strong>Third checklist item with sub-items:</strong>
+                        <div class="sub-item">• Sub-item 1</div>
+                        <div class="sub-item">• Sub-item 2</div>
+                        <div class="sub-item">• Sub-item 3</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-header">
+                <span class="section-number">2</span>
+                Another Section
+            </div>
+            
+            <div class="checklist-group">
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-label">
+                        <strong>Item in second section</strong>
+                    </div>
+                </div>
+                
+                <div class="checklist-item">
+                    <div class="checkbox"></div>
+                    <div class="item-label">
+                        <strong>Another item</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Notes Section -->
+        <div class="notes-box">
+            <strong>Notes:</strong>
+            <div>Use this space for additional notes, reminders, or important information.</div>
+        </div>
+        
+        <!-- Signature Section -->
+        <div class="signature-section">
+            <div class="signature-box">
+                <label>Completed By:</label>
+                <div style="margin-top: 20pt;">_________________________</div>
+            </div>
+            <div class="signature-box">
+                <label>Date:</label>
+                <div style="margin-top: 20pt;">_________________________</div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>Federal Contracting Roadmap | www.federalcontractingroadmap.com</div>
+            <div style="margin-top: 4pt;">© 2025 | Version 2.0</div>
+        </div>
+    </div>
+</body>
+</html>
+

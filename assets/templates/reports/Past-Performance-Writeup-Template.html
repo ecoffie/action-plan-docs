@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Performance Write-up Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+        }
+        
+        .project-header {
+            background: #1a4d2e;
+            color: white;
+            padding: 16pt;
+            border-radius: 4px;
+            margin-bottom: 20pt;
+        }
+        
+        .project-header h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 12pt;
+        }
+        
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12pt;
+            font-size: 10pt;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .meta-label {
+            font-weight: 600;
+            min-width: 120px;
+            opacity: 0.9;
+        }
+        
+        .meta-value {
+            flex: 1;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 24pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            color: #1a4d2e;
+            font-size: 14pt;
+            font-weight: bold;
+            padding: 10pt 14pt;
+            border-radius: 0 4px 4px 0;
+            margin-bottom: 16pt;
+        }
+        
+        .section-content {
+            padding-left: 4pt;
+        }
+        
+        .section-content p {
+            margin-bottom: 12pt;
+        }
+        
+        .section-content ul {
+            margin: 12pt 0 12pt 24pt;
+        }
+        
+        .section-content li {
+            margin-bottom: 8pt;
+        }
+        
+        /* Highlight Boxes */
+        .highlight-box {
+            background: #fff9e6;
+            border-left: 4px solid #d4af37;
+            padding: 16pt;
+            margin: 20pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .highlight-box h4 {
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+            font-size: 12pt;
+        }
+        
+        .success-box {
+            background: #f0f9f4;
+            border-left: 4px solid #2d5016;
+            padding: 16pt;
+            margin: 20pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .success-box h4 {
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+            font-size: 12pt;
+        }
+        
+        /* Metrics Table */
+        .metrics-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16pt 0;
+            font-size: 10pt;
+        }
+        
+        .metrics-table th {
+            background: #1a4d2e;
+            color: white;
+            padding: 10pt;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .metrics-table td {
+            padding: 10pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .metrics-table tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        /* Reference Info */
+        .reference-info {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 16pt;
+            margin-top: 24pt;
+        }
+        
+        .reference-info h4 {
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+            font-size: 12pt;
+        }
+        
+        .reference-details {
+            font-size: 10pt;
+            line-height: 1.8;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Past Performance Write-up</h1>
+            <div style="font-size: 11pt; color: #666666;">Template for Proposal Past Performance Section</div>
+        </div>
+        
+        <!-- Project Header -->
+        <div class="project-header">
+            <h2>Project/Contract Name</h2>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Client/Agency:</span>
+                    <span class="meta-value">[Agency Name or Client Name]</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Contract Number:</span>
+                    <span class="meta-value">[Contract Number]</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Contract Value:</span>
+                    <span class="meta-value">$[Amount]</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Period of Performance:</span>
+                    <span class="meta-value">[Start Date] - [End Date]</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">NAICS Code:</span>
+                    <span class="meta-value">[NAICS Code]</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Your Role:</span>
+                    <span class="meta-value">Prime / Subcontractor / Joint Venture Partner</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Project Description -->
+        <div class="section">
+            <div class="section-header">Project Description</div>
+            <div class="section-content">
+                <p>
+                    [Provide a comprehensive description of the project or contract. Include scope of work, objectives, and key requirements. This should demonstrate understanding of the work performed and its complexity.]
+                </p>
+                <p>
+                    <strong>Scope of Work:</strong> [Describe the scope, size, and complexity of the work performed. Include any unique challenges or requirements.]
+                </p>
+            </div>
+        </div>
+        
+        <!-- Relevant Experience -->
+        <div class="section">
+            <div class="section-header">Relevance to Current Opportunity</div>
+            <div class="section-content">
+                <p>
+                    [Explain why this past performance is relevant to the current opportunity. Match the scope, requirements, NAICS codes, or agency experience.]
+                </p>
+                <ul>
+                    <li><strong>Similar Scope:</strong> [Explain how the scope is similar]</li>
+                    <li><strong>Similar Requirements:</strong> [Explain similar requirements or challenges]</li>
+                    <li><strong>Same Agency/Client:</strong> [If applicable, highlight agency experience]</li>
+                    <li><strong>Same NAICS:</strong> [If applicable, highlight NAICS code match]</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Key Accomplishments -->
+        <div class="section">
+            <div class="section-header">Key Accomplishments & Results</div>
+            <div class="section-content">
+                <div class="success-box">
+                    <h4>Project Success Metrics</h4>
+                    <table class="metrics-table">
+                        <thead>
+                            <tr>
+                                <th>Metric</th>
+                                <th>Target</th>
+                                <th>Actual</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>On-Time Delivery</td>
+                                <td>100%</td>
+                                <td>100%</td>
+                                <td>✓ Met</td>
+                            </tr>
+                            <tr>
+                                <td>Quality Rating</td>
+                                <td>Excellent</td>
+                                <td>Excellent</td>
+                                <td>✓ Exceeded</td>
+                            </tr>
+                            <tr>
+                                <td>Cost Performance</td>
+                                <td>On Budget</td>
+                                <td>5% Under Budget</td>
+                                <td>✓ Exceeded</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <p><strong>Notable Achievements:</strong></p>
+                <ul>
+                    <li>Achievement 1: [Specific, measurable accomplishment]</li>
+                    <li>Achievement 2: [Specific, measurable accomplishment]</li>
+                    <li>Achievement 3: [Specific, measurable accomplishment]</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Performance Highlights -->
+        <div class="section">
+            <div class="section-header">Performance Highlights</div>
+            <div class="section-content">
+                <div class="highlight-box">
+                    <h4>What Made This Project Successful</h4>
+                    <ul>
+                        <li>Highlight 1: [Key factor that contributed to success]</li>
+                        <li>Highlight 2: [Approach, methodology, or capability that was key]</li>
+                        <li>Highlight 3: [Team, process, or technology that made a difference]</li>
+                    </ul>
+                </div>
+                
+                <p>
+                    [Additional narrative about performance, challenges overcome, innovation, or value delivered. This should demonstrate capability and competence.]
+                </p>
+            </div>
+        </div>
+        
+        <!-- Lessons Learned -->
+        <div class="section">
+            <div class="section-header">Lessons Learned & Application</div>
+            <div class="section-content">
+                <p>
+                    [Describe key lessons learned from this project and how they will be applied to the current opportunity. This shows continuous improvement and learning.]
+                </p>
+                <ul>
+                    <li>Lesson 1: [Lesson learned and how it applies]</li>
+                    <li>Lesson 2: [Lesson learned and how it applies]</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Reference Information -->
+        <div class="reference-info">
+            <h4>Reference Contact Information</h4>
+            <div class="reference-details">
+                <p><strong>Contact Name:</strong> [Name]</p>
+                <p><strong>Title:</strong> [Title]</p>
+                <p><strong>Organization:</strong> [Organization/Agency]</p>
+                <p><strong>Email:</strong> [Email Address]</p>
+                <p><strong>Phone:</strong> [Phone Number]</p>
+                <p><strong>Relationship to Project:</strong> [Contracting Officer, Program Manager, End User, etc.]</p>
+                <p><strong>CPARS Rating (if available):</strong> [Rating] - [Brief description]</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Federal Contracting Roadmap | Past Performance Write-up Template | Version 2.0
+        </div>
+    </div>
+</body>
+</html>
+
+

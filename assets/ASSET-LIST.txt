@@ -1,0 +1,102 @@
+./checklists/CAPABILITIES BRIEFING CHECKLIST_ OSDBU CALLS (1).pdf
+./checklists/CAPABILITIES BRIEFING CHECKLIST_ OSDBU CALLS.docx
+./checklists/prime contractor checklist.docx
+./documents/10 Subcontractor Clauses BeAware .pdf
+./documents/1801-66_Transcript Mastering Small Business Webinar (Final v2).pdf
+./documents/TAVARES 8A code-matrix, scanned 04-08-2018.pdf
+./documents/Table of Size Standards_Effective July 14 2022_Final-508.pdf
+./documents/VA Entrepreneurship_Training.pdf
+./documents/navfac-contacts/8(a) MACC Pennsylvania.docx
+./documents/navfac-contacts/8(a) NSN MACC cover page.docx
+./documents/navfac-contacts/Camp Lejeune _ Cherry Point Opportunities.pdf
+./documents/navfac-contacts/FPDS-NG Handout.pdf
+./documents/navfac-contacts/HR SB MACC Cover Page.docx
+./documents/navfac-contacts/HUBZone MACC Cover Sheet.docx
+./documents/navfac-contacts/Hampton Roads Small Business Professionals.pdf
+./documents/navfac-contacts/MIDLANTSBBrochure 07-10-2018.doc
+./documents/navfac-contacts/MIDLANTSBBrochure 2.7.18.doc
+./documents/navfac-contacts/MIDLANTSBBrochure 2.7.18.pdf
+./documents/navfac-contacts/N4008518MWKLD_Mid-Atlantic_FY18_Workload_Brief.pdf
+./documents/navfac-contacts/NAVFAC OSBP TRIFOLD 180628.pdf
+./documents/navfac-contacts/NAVFAC Small Business Specialists.pdf
+./documents/navfac-contacts/OPPORTUNITIES-1.pdf
+./documents/navfac-contacts/OPPORTUNITIES.pdf
+./documents/navfac-contacts/OSBP DEPUTY POC MAP 06-01-2018.pptx
+./documents/navfac-contacts/Small Business Flyers.pdf
+./documents/tax-certificates/Tax Exemption Certificate 0000047858 Evankoff.pdf
+./documents/tax-certificates/tax certificate.pdf
+./guides/15_Questions_APEX_Counselor.pdf
+./guides/Scripts/cc 2_email 1.pdf
+./guides/Scripts/cc 2_email 2.pdf
+./guides/Scripts/comfort challenge #1.pdf
+./guides/capture management OSDBU activities.docx
+./images/Copy of corporation matrix.jpg
+./resources/sam-bid-sites/3. DIBBS Solicitations.pptx
+./resources/sam-bid-sites/4. DIBBS Quoting.pptx
+./resources/sam-bid-sites/Reading BetaSam.pdf
+./resources/sam-bid-sites/Update_or_Renew_your_SAM.pdf
+./resources/sam-bid-sites/sam.gov drop down menu.pdf
+./slides/NSIN Overview Deck (Entrepreneur) v1_wbw (as of 9OCT2020) (1).pdf
+./templates/BD Progress Task List.xlsx
+./templates/MNE Teaming Agreement 02.14.20.doc
+./templates/Teaming Agreement Sample.pdf
+./templates/bid-forms/2_-_Solicitation_SF30.pdf
+./templates/bid-forms/Administrative Hallway Pricing .xlsx
+./templates/bid-forms/DLA_SF_Form_18.pdf
+./templates/bid-forms/DOI_SF_Form_18.pdf
+./templates/bid-forms/SF30_Amend002.pdf
+./templates/bid-forms/Sample Fort Belovoir (1).xlsx
+./templates/bid-forms/sample amendment_SF30.pdf
+./templates/capability-statement/Miami Wiipica Excell Commercial Building Construction Capabilities Statement.pdf
+./templates/capability-statement/SBA profile checklist.docx
+./templates/capability-statement/Tavares Capability Statement 2020.pdf
+./templates/consultant/CONSULTANT AGREEMENT  (1).docx
+./templates/consultant/CONSULTANT AGREEMENT .docx
+./templates/consultant/Calling_8a_Phone_Script.docx
+./templates/consultant/Confidentiality Non Circumvention Non-Disclosure.docx
+./templates/consultant/Fortress Engineering August 20, 2019.pptx
+./templates/consultant/How_I_found_an_8a_company_to_consult_for.pdf
+./templates/consultant/client questionnaire.docx
+./templates/estimating/(simplified) Administrative Hallway Pricing .xlsx
+./templates/estimating/0929 FINAL Repair 410.xlsx
+./templates/estimating/Alaska_Podcast_Estimate_rev1.xlsx
+./templates/estimating/Evankoff Fort Belovoir.xlsx
+./templates/estimating/Fishbowl_USCG_CEU_Pricing_.xlsx
+./templates/estimating/JDM_.xlsx
+./templates/estimating/Revised_USDA_Price_Proposal.xlsx
+./templates/estimating/Sample Fort Belovoir.xlsx
+./templates/joint-venture/JOINT VENTURE CHECKLIST.docx
+./templates/joint-venture/JV SOP.pdf
+./templates/joint-venture/SMITH+CORP-BCA+JV+AGREEMENT.docx
+./templates/proposal-writing/CMPv2.docx
+./templates/proposal-writing/CMPv3.docx
+./templates/proposal-writing/Kickoff Template_KLB.pptx
+./templates/proposal-writing/Microsoft Word - LOI_Design sample.docx.pdf
+./templates/proposal-writing/NAVFAC_Compliance Matrix Outline_07.09.21.xlsx
+./templates/proposal-writing/NAVFAC_Compliance Matrix Outline_07.09.21[79].xlsx
+./templates/proposal-writing/SAMPLE_QUALITY PLAN_ MACC JB Andrews-Bolling.pdf (no password).pdf
+./templates/proposal-writing/Sample_LOI.pdf
+./templates/proposal-writing/Sources Sought Tempate.pdf
+./templates/proposal-writing/Technical Approach sample.docx
+./templates/proposal-writing/USDA Greenland Technical Proposal (1).docx
+./templates/proposal-writing/USDA Greenland Technical Proposal.docx
+./templates/proposal-writing/Volume I - Technical - MW - MACC JB Andrews-Bolling.pdf
+./templates/proposal-writing/Volume I - Technical - Sanitized Tech Proposal CAGE8B6Y9 - MACC JB Andrews-Bolling.pdf
+./templates/proposal-writing/Volume III - Contract Forms - MW - MACC JB Andrews-Bolling.pdf
+./templates/proposal-writing/W25G1V21R0014_VOL 1_TECHNICAL_11.docx
+./templates/proposal-writing/W25G1V21R0014_VOLUME  I_TECHNICAL_MIAMI WIIPICA LLC.pdf
+./templates/proposal-writing/W25G1V21R0014_VOLUME III_PRICING_MIAMI WIIPICA LLC.pdf
+./templates/proposal-writing/W25G1V21R0014_VOLUME II_PAST PERFORMANCE_MIAMI WIIPICA LLC.pdf
+./templates/proposal-writing/W25G1V21R0014_VOLUME IV_SOLICITATION & AWARD_MIAMI WIIPICA LLC.pdf
+./templates/proposal-writing/_N4008521R001217_NON-PRICE PROPOSAL_09.23.21.pdf
+./templates/proposal-writing/_N4008521R001217_PRICE PROPOSAL_FINAL_09.24.pdf
+./templates/proposal-writing/section 4 req.docx
+./templates/teaming-subcontracting/KOAMANA BUILD-TEAMAGREEMENT draft.docx
+./templates/teaming-subcontracting/Subcontractor Agreement (include Flow Down Clauses)/SECO Eglin AFB SES Subcontractor Agreement rev 0228.pdf
+./templates/teaming-subcontracting/Subcontractor Package/Lien Release Waiver MLGSC.docx
+./templates/teaming-subcontracting/Subcontractor Package/Martinez 12280 Evankoff Subcontractor Agreement.doc
+./templates/teaming-subcontracting/Subcontractor Package/Progress Release Waiver.doc
+./templates/teaming-subcontracting/Subcontractor Package/Sub Cover Letter Private.docx
+./templates/teaming-subcontracting/Subcontractor Package/Sub Cover Letter.docx
+./templates/teaming-subcontracting/Subcontractor Package/Sub Document Checklist.docx
+./templates/teaming-subcontracting/Teaming Agreement-AARCO Air and Heat, Inc..doc

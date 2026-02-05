@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Contract Proposal Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 1in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Cover Page */
+        .cover-page {
+            page-break-after: always;
+            text-align: center;
+            padding: 120pt 40pt;
+            border: 6px solid #1a4d2e;
+        }
+        
+        .cover-page h1 {
+            font-size: 36pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 24pt;
+        }
+        
+        .cover-page .solicitation-number {
+            font-size: 18pt;
+            color: #666666;
+            margin-bottom: 40pt;
+        }
+        
+        .cover-page .company-info {
+            font-size: 14pt;
+            color: #333333;
+            margin-top: 60pt;
+        }
+        
+        .cover-page .company-name {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+        }
+        
+        .cover-page .submission-date {
+            margin-top: 40pt;
+            font-size: 12pt;
+            color: #666666;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            page-break-after: always;
+            margin: 20pt 0;
+        }
+        
+        .toc h2 {
+            font-size: 20pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 8pt;
+            margin-bottom: 24pt;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8pt 0;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+        
+        .toc-item a {
+            color: #333333;
+            text-decoration: none;
+        }
+        
+        .toc-page {
+            color: #666666;
+        }
+        
+        /* Section Headers */
+        .section {
+            page-break-before: always;
+            margin-bottom: 32pt;
+        }
+        
+        .section-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 16pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 12pt 16pt;
+            border-radius: 4px;
+            margin-bottom: 20pt;
+        }
+        
+        .section-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 4pt 10pt;
+            border-radius: 3px;
+            margin-right: 12pt;
+        }
+        
+        /* Content */
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin: 32pt 0 16pt;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin: 24pt 0 12pt;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 6pt;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #333333;
+            margin: 20pt 0 10pt;
+        }
+        
+        p {
+            margin-bottom: 12pt;
+            text-align: justify;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20pt 0;
+            font-size: 10pt;
+        }
+        
+        th {
+            background: #1a4d2e;
+            color: white;
+            padding: 10pt;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        /* Compliance Matrix */
+        .compliance-matrix {
+            border: 2px solid #1a4d2e;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .compliance-matrix th {
+            background: #1a4d2e;
+        }
+        
+        /* Past Performance Cards */
+        .performance-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #d4af37;
+            border-radius: 4px;
+            padding: 16pt;
+            margin-bottom: 16pt;
+        }
+        
+        .performance-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 12pt;
+            padding-bottom: 12pt;
+            border-bottom: 2px solid #f5f5f5;
+        }
+        
+        .performance-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        .performance-value {
+            color: #d4af37;
+            font-weight: bold;
+            font-size: 12pt;
+        }
+        
+        /* Key Personnel */
+        .personnel-card {
+            background: #f5f5f5;
+            border-radius: 4px;
+            padding: 16pt;
+            margin-bottom: 16pt;
+        }
+        
+        .personnel-name {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        /* Callout Boxes */
+        .callout {
+            border-left: 4px solid #d4af37;
+            background: #fff9e6;
+            padding: 16pt;
+            margin: 20pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .callout.info {
+            border-left-color: #1a4d2e;
+            background: #f0f9f4;
+        }
+        
+        .callout h4 {
+            color: #1a4d2e;
+            margin-top: 0;
+            margin-bottom: 8pt;
+        }
+        
+        /* Footer */
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            border-top: 2px solid #d4af37;
+            padding: 8pt;
+            background: white;
+            font-size: 9pt;
+            color: #666666;
+            text-align: center;
+        }
+        
+        /* Page Numbers */
+        .page-number {
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+            margin-top: 20pt;
+        }
+        
+        @media print {
+            .page-number:after {
+                content: "Page " counter(page);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover Page -->
+    <div class="cover-page">
+        <h1>PROPOSAL TITLE</h1>
+        <div class="solicitation-number">
+            Solicitation Number: [NUMBER]
+        </div>
+        <div class="company-info">
+            <div class="company-name">YOUR COMPANY NAME</div>
+            <div>UEI: XXXXXXXXXXXX</div>
+            <div>CAGE Code: XXXX</div>
+        </div>
+        <div class="submission-date">
+            Submission Date: [DATE]
+        </div>
+    </div>
+    
+    <!-- Table of Contents -->
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <div class="toc-item">
+            <a href="#section1">Section 1: Executive Summary</a>
+            <span class="toc-page">3</span>
+        </div>
+        <div class="toc-item">
+            <a href="#section2">Section 2: Technical Approach</a>
+            <span class="toc-page">4</span>
+        </div>
+        <div class="toc-item">
+            <a href="#section3">Section 3: Management Approach</a>
+            <span class="toc-page">6</span>
+        </div>
+        <div class="toc-item">
+            <a href="#section4">Section 4: Past Performance</a>
+            <span class="toc-page">8</span>
+        </div>
+        <div class="toc-item">
+            <a href="#section5">Section 5: Key Personnel</a>
+            <span class="toc-page">10</span>
+        </div>
+        <div class="toc-item">
+            <a href="#section6">Section 6: Compliance Matrix</a>
+            <span class="toc-page">12</span>
+        </div>
+    </div>
+    
+    <!-- Section 1: Executive Summary -->
+    <div class="section" id="section1">
+        <div class="section-header">
+            <span class="section-number">1</span>
+            Executive Summary
+        </div>
+        
+        <h2>Understanding of Requirements</h2>
+        <p>
+            [Provide clear understanding of the solicitation requirements and objectives. Demonstrate that you understand what the agency needs.]
+        </p>
+        
+        <h2>Proposed Solution Overview</h2>
+        <p>
+            [Provide high-level overview of your solution. Highlight key differentiators and value proposition.]
+        </p>
+        
+        <div class="callout info">
+            <h4>Key Differentiators</h4>
+            <ul>
+                <li>Differentiator 1 with brief explanation</li>
+                <li>Differentiator 2 with brief explanation</li>
+                <li>Differentiator 3 with brief explanation</li>
+            </ul>
+        </div>
+        
+        <h2>Summary of Benefits</h2>
+        <p>
+            [Summarize the key benefits your solution provides to the agency.]
+        </p>
+    </div>
+    
+    <!-- Section 2: Technical Approach -->
+    <div class="section" id="section2">
+        <div class="section-header">
+            <span class="section-number">2</span>
+            Technical Approach
+        </div>
+        
+        <h2>Understanding of Requirements</h2>
+        <p>
+            [Detailed understanding of technical requirements.]
+        </p>
+        
+        <h2>Proposed Solution</h2>
+        <p>
+            [Detailed technical approach and methodology.]
+        </p>
+        
+        <h3>Methodology</h3>
+        <p>
+            [Describe your methodology and processes.]
+        </p>
+        
+        <h3>Deliverables</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Deliverable</th>
+                    <th>Description</th>
+                    <th>Due Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Deliverable 1</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                </tr>
+                <tr>
+                    <td>Deliverable 2</td>
+                    <td>Description</td>
+                    <td>Date</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>Quality Assurance</h2>
+        <p>
+            [Describe quality assurance processes and standards.]
+        </p>
+    </div>
+    
+    <!-- Section 3: Management Approach -->
+    <div class="section" id="section3">
+        <div class="section-header">
+            <span class="section-number">3</span>
+            Management Approach
+        </div>
+        
+        <h2>Project Organization</h2>
+        <p>
+            [Describe project organization structure and roles.]
+        </p>
+        
+        <h2>Project Management Plan</h2>
+        <p>
+            [Describe project management approach, processes, and tools.]
+        </p>
+        
+        <h2>Communication Plan</h2>
+        <p>
+            [Describe communication protocols and reporting structure.]
+        </p>
+        
+        <h2>Risk Management</h2>
+        <p>
+            [Describe risk identification and mitigation strategies.]
+        </p>
+    </div>
+    
+    <!-- Section 4: Past Performance -->
+    <div class="section" id="section4">
+        <div class="section-header">
+            <span class="section-number">4</span>
+            Past Performance
+        </div>
+        
+        <div class="performance-card">
+            <div class="performance-header">
+                <div class="performance-title">Project/Contract 1</div>
+                <div class="performance-value">$XXX,XXX</div>
+            </div>
+            <p><strong>Client/Agency:</strong> [Agency Name]</p>
+            <p><strong>Contract Number:</strong> [Number]</p>
+            <p><strong>Period of Performance:</strong> [Dates]</p>
+            <p><strong>Description:</strong> [Detailed description of work performed]</p>
+            <p><strong>Key Accomplishments:</strong></p>
+            <ul>
+                <li>Accomplishment 1</li>
+                <li>Accomplishment 2</li>
+                <li>Accomplishment 3</li>
+            </ul>
+            <p><strong>Relevance:</strong> [Explain relevance to current opportunity]</p>
+        </div>
+        
+        <div class="performance-card">
+            <div class="performance-header">
+                <div class="performance-title">Project/Contract 2</div>
+                <div class="performance-value">$XXX,XXX</div>
+            </div>
+            <p><strong>Client/Agency:</strong> [Agency Name]</p>
+            <p><strong>Contract Number:</strong> [Number]</p>
+            <p><strong>Period of Performance:</strong> [Dates]</p>
+            <p><strong>Description:</strong> [Detailed description]</p>
+        </div>
+    </div>
+    
+    <!-- Section 5: Key Personnel -->
+    <div class="section" id="section5">
+        <div class="section-header">
+            <span class="section-number">5</span>
+            Key Personnel
+        </div>
+        
+        <div class="personnel-card">
+            <div class="personnel-name">Project Manager Name, PMP</div>
+            <p><strong>Role:</strong> Project Manager</p>
+            <p><strong>Experience:</strong> [Years] years of experience in [relevant field]</p>
+            <p><strong>Education:</strong> [Degree, University]</p>
+            <p><strong>Certifications:</strong> [List certifications]</p>
+            <p><strong>Relevant Experience:</strong> [Describe relevant experience]</p>
+        </div>
+        
+        <div class="personnel-card">
+            <div class="personnel-name">Technical Lead Name</div>
+            <p><strong>Role:</strong> Technical Lead</p>
+            <p><strong>Experience:</strong> [Years] years</p>
+            <p><strong>Education:</strong> [Degree]</p>
+            <p><strong>Relevant Experience:</strong> [Description]</p>
+        </div>
+    </div>
+    
+    <!-- Section 6: Compliance Matrix -->
+    <div class="section" id="section6">
+        <div class="section-header">
+            <span class="section-number">6</span>
+            Compliance Matrix
+        </div>
+        
+        <table class="compliance-matrix">
+            <thead>
+                <tr>
+                    <th>Requirement</th>
+                    <th>Section</th>
+                    <th>Page</th>
+                    <th>Compliance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Technical Approach</td>
+                    <td>Section 2</td>
+                    <td>4</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Past Performance</td>
+                    <td>Section 4</td>
+                    <td>8</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Key Personnel</td>
+                    <td>Section 5</td>
+                    <td>10</td>
+                    <td>✓</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-number"></div>
+</body>
+</html>
+

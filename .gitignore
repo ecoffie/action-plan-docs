@@ -1,0 +1,26 @@
+# Large video files
+*.mp4
+*.MP4
+*.mkv
+*.MKV
+*.mov
+*.MOV
+*.avi
+*.AVI
+
+# Large archive files
+*.zip
+*.ZIP
+*.rar
+*.RAR
+*.7z
+
+# Incomplete downloads
+*.crdownload
+
+# macOS system files
+.DS_Store
+._*
+
+# Misc
+-

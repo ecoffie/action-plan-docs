@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Notes Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 0.75in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.6;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Header */
+        .header {
+            border-bottom: 4px solid #1a4d2e;
+            padding-bottom: 16pt;
+            margin-bottom: 24pt;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+        }
+        
+        .meeting-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16pt;
+            font-size: 10pt;
+        }
+        
+        .info-item {
+            margin-bottom: 6pt;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #1a4d2e;
+            display: inline-block;
+            min-width: 100px;
+        }
+        
+        .info-value {
+            color: #333333;
+        }
+        
+        /* Sections */
+        .section {
+            margin-bottom: 24pt;
+            page-break-inside: avoid;
+        }
+        
+        .section-header {
+            background: #1a4d2e;
+            color: white;
+            font-size: 14pt;
+            font-weight: bold;
+            padding: 10pt 14pt;
+            border-radius: 4px;
+            margin-bottom: 16pt;
+        }
+        
+        /* Agenda Items */
+        .agenda-item {
+            margin-bottom: 20pt;
+            padding-bottom: 16pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .agenda-item:last-child {
+            border-bottom: none;
+        }
+        
+        .agenda-title {
+            font-size: 13pt;
+            font-weight: 600;
+            color: #1a4d2e;
+            margin-bottom: 8pt;
+        }
+        
+        .agenda-discussion {
+            margin-bottom: 12pt;
+        }
+        
+        .agenda-discussion p {
+            margin-bottom: 8pt;
+        }
+        
+        .action-items {
+            background: #fff9e6;
+            border-left: 4px solid #d4af37;
+            padding: 12pt;
+            margin-top: 12pt;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .action-item {
+            margin-bottom: 8pt;
+            padding-left: 20pt;
+            position: relative;
+        }
+        
+        .action-item:before {
+            content: "→";
+            color: #1a4d2e;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .action-assignment {
+            font-weight: 600;
+            color: #1a4d2e;
+        }
+        
+        .action-due {
+            font-size: 9pt;
+            color: #666666;
+            margin-left: 8pt;
+        }
+        
+        /* Decisions Box */
+        .decisions-box {
+            background: #f0f9f4;
+            border-left: 4px solid #1a4d2e;
+            padding: 16pt;
+            margin: 16pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .decisions-box h4 {
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+            font-size: 12pt;
+        }
+        
+        .decision-item {
+            margin-bottom: 10pt;
+            padding-left: 20pt;
+            position: relative;
+        }
+        
+        .decision-item:before {
+            content: "✓";
+            color: #2d5016;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Next Steps */
+        .next-steps {
+            background: #f5f5f5;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            padding: 16pt;
+            margin-top: 24pt;
+        }
+        
+        .next-steps h3 {
+            color: #1a4d2e;
+            margin-bottom: 12pt;
+            font-size: 14pt;
+        }
+        
+        /* Attendees */
+        .attendees-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8pt;
+            margin-top: 12pt;
+        }
+        
+        .attendee {
+            padding: 8pt;
+            background: #f5f5f5;
+            border-radius: 4px;
+            font-size: 10pt;
+        }
+        
+        .attendee-name {
+            font-weight: 600;
+            color: #1a4d2e;
+        }
+        
+        .attendee-title {
+            color: #666666;
+            font-size: 9pt;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 32pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Meeting Notes</h1>
+            <div class="meeting-info">
+                <div>
+                    <div class="info-item">
+                        <span class="info-label">Meeting Type:</span>
+                        <span class="info-value">Capability Briefing / Internal / Client</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Date:</span>
+                        <span class="info-value">January 15, 2025</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time:</span>
+                        <span class="info-value">2:00 PM - 3:00 PM EST</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Location:</span>
+                        <span class="info-value">Virtual / On-site / Address</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="info-item">
+                        <span class="info-label">Meeting Title:</span>
+                        <span class="info-value">[Meeting Title]</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Organized By:</span>
+                        <span class="info-value">[Organizer Name]</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Recorder:</span>
+                        <span class="info-value">[Recorder Name]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Attendees -->
+        <div class="section">
+            <div class="section-header">Attendees</div>
+            <div class="attendees-list">
+                <div class="attendee">
+                    <div class="attendee-name">John Doe</div>
+                    <div class="attendee-title">Project Manager, Company Name</div>
+                </div>
+                <div class="attendee">
+                    <div class="attendee-name">Jane Smith</div>
+                    <div class="attendee-title">Contracting Officer, Agency Name</div>
+                </div>
+                <div class="attendee">
+                    <div class="attendee-name">Bob Jones</div>
+                    <div class="attendee-title">Technical Lead, Company Name</div>
+                </div>
+                <div class="attendee">
+                    <div class="attendee-name">Alice Brown</div>
+                    <div class="attendee-title">Program Manager, Agency Name</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Agenda Items -->
+        <div class="section">
+            <div class="section-header">Meeting Discussion</div>
+            
+            <div class="agenda-item">
+                <div class="agenda-title">1. Opening & Introductions</div>
+                <div class="agenda-discussion">
+                    <p>Meeting opened at 2:00 PM. All participants introduced themselves and their roles.</p>
+                    <p><strong>Key Points:</strong></p>
+                    <ul>
+                        <li>Discussion point 1</li>
+                        <li>Discussion point 2</li>
+                    </ul>
+                </div>
+                <div class="action-items">
+                    <div class="action-item">
+                        <span class="action-assignment">John Doe</span> - Send capability statement to all attendees
+                        <span class="action-due">Due: 01/17/2025</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agenda-item">
+                <div class="agenda-title">2. Agency Needs & Requirements</div>
+                <div class="agenda-discussion">
+                    <p>[Detailed discussion notes about agency needs, requirements, timeline, etc.]</p>
+                    <p><strong>Key Takeaways:</strong></p>
+                    <ul>
+                        <li>Agency priority 1</li>
+                        <li>Agency priority 2</li>
+                        <li>Timeline expectations</li>
+                    </ul>
+                </div>
+                <div class="action-items">
+                    <div class="action-item">
+                        <span class="action-assignment">Jane Smith</span> - Provide detailed requirements document
+                        <span class="action-due">Due: 01/20/2025</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="agenda-item">
+                <div class="agenda-title">3. Company Capabilities Presentation</div>
+                <div class="agenda-discussion">
+                    <p>[Notes about capability presentation, questions asked, responses provided]</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Decisions -->
+        <div class="section">
+            <div class="section-header">Decisions Made</div>
+            <div class="decisions-box">
+                <h4>Key Decisions</h4>
+                <div class="decision-item">
+                    Decision 1: [Description of decision made during meeting]
+                </div>
+                <div class="decision-item">
+                    Decision 2: [Description of decision made during meeting]
+                </div>
+                <div class="decision-item">
+                    Decision 3: [Description of decision made during meeting]
+                </div>
+            </div>
+        </div>
+        
+        <!-- Next Steps -->
+        <div class="next-steps">
+            <h3>Next Steps & Action Items</h3>
+            <div class="action-items" style="background: white; border-left: none; padding: 0;">
+                <div class="action-item">
+                    <span class="action-assignment">John Doe</span> - Complete action item 1
+                    <span class="action-due">Due: 01/17/2025</span>
+                </div>
+                <div class="action-item">
+                    <span class="action-assignment">Jane Smith</span> - Complete action item 2
+                    <span class="action-due">Due: 01/20/2025</span>
+                </div>
+                <div class="action-item">
+                    <span class="action-assignment">Bob Jones</span> - Follow up on item 3
+                    <span class="action-due">Due: 01/18/2025</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Federal Contracting Roadmap | Meeting Notes Template | Version 2.0
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide Template</title>
+    <style>
+        @page {
+            size: letter;
+            margin: 1in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            line-height: 1.7;
+            font-size: 11pt;
+            background: white;
+        }
+        
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+        }
+        
+        /* Cover Page */
+        .cover {
+            text-align: center;
+            padding: 60pt 40pt;
+            border: 4px solid #1a4d2e;
+            margin-bottom: 40pt;
+        }
+        
+        .cover h1 {
+            font-size: 32pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin-bottom: 16pt;
+            line-height: 1.2;
+        }
+        
+        .cover .subtitle {
+            font-size: 16pt;
+            color: #666666;
+            margin-bottom: 24pt;
+        }
+        
+        .cover .phase-info {
+            font-size: 12pt;
+            color: #d4af37;
+            font-weight: 600;
+            padding: 8pt 16pt;
+            border: 2px solid #d4af37;
+            border-radius: 4px;
+            display: inline-block;
+        }
+        
+        /* Table of Contents */
+        .toc {
+            margin: 40pt 0;
+            page-break-after: always;
+        }
+        
+        .toc h2 {
+            font-size: 18pt;
+            color: #1a4d2e;
+            border-bottom: 3px solid #1a4d2e;
+            padding-bottom: 8pt;
+            margin-bottom: 20pt;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8pt 0;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+        
+        .toc-item a {
+            color: #333333;
+            text-decoration: none;
+        }
+        
+        .toc-item a:hover {
+            color: #1a4d2e;
+        }
+        
+        .toc-page {
+            color: #666666;
+        }
+        
+        /* Headers */
+        h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin: 32pt 0 16pt;
+            page-break-after: avoid;
+        }
+        
+        h2 {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1a4d2e;
+            margin: 24pt 0 12pt;
+            border-bottom: 2px solid #d4af37;
+            padding-bottom: 6pt;
+            page-break-after: avoid;
+        }
+        
+        h3 {
+            font-size: 14pt;
+            font-weight: 600;
+            color: #333333;
+            margin: 20pt 0 10pt;
+            page-break-after: avoid;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-weight: 600;
+            color: #1a4d2e;
+            margin: 16pt 0 8pt;
+        }
+        
+        /* Content */
+        p {
+            margin-bottom: 12pt;
+            text-align: justify;
+        }
+        
+        ul, ol {
+            margin: 12pt 0 12pt 24pt;
+        }
+        
+        li {
+            margin-bottom: 8pt;
+        }
+        
+        /* Callout Boxes */
+        .callout {
+            border-left: 4px solid #2d5016;
+            background: #f0f9f4;
+            padding: 16pt;
+            margin: 20pt 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .callout.warning {
+            border-left-color: #d4af37;
+            background: #fff9e6;
+        }
+        
+        .callout.info {
+            border-left-color: #1a4d2e;
+            background: #e8f4f8;
+        }
+        
+        .callout h4 {
+            color: #1a4d2e;
+            margin-top: 0;
+        }
+        
+        /* Steps */
+        .steps {
+            counter-reset: step-counter;
+            margin: 20pt 0;
+        }
+        
+        .step {
+            counter-increment: step-counter;
+            display: flex;
+            margin-bottom: 16pt;
+            padding: 16pt;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid #1a4d2e;
+        }
+        
+        .step-number {
+            flex: 0 0 40px;
+            height: 40px;
+            background: #1a4d2e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 14pt;
+            margin-right: 16pt;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h4 {
+            margin-top: 0;
+            margin-bottom: 8pt;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20pt 0;
+            font-size: 10pt;
+        }
+        
+        th {
+            background: #1a4d2e;
+            color: white;
+            padding: 10pt;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 10pt;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        /* Code/Examples */
+        .example-box {
+            background: #f5f5f5;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 12pt;
+            margin: 16pt 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 40pt;
+            padding-top: 16pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 9pt;
+            color: #666666;
+        }
+        
+        /* Page Numbers */
+        @media print {
+            @page {
+                @bottom-center {
+                    content: "Page " counter(page);
+                    font-size: 9pt;
+                    color: #666666;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Cover Page -->
+        <div class="cover">
+            <h1>GUIDE TITLE</h1>
+            <div class="subtitle">A Comprehensive Guide to [Topic]</div>
+            <div class="phase-info">Phase X: Category Name</div>
+        </div>
+        
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <div class="toc-item">
+                <a href="#introduction">Introduction</a>
+                <span class="toc-page">1</span>
+            </div>
+            <div class="toc-item">
+                <a href="#section1">Section 1 Title</a>
+                <span class="toc-page">2</span>
+            </div>
+            <div class="toc-item">
+                <a href="#section2">Section 2 Title</a>
+                <span class="toc-page">3</span>
+            </div>
+            <div class="toc-item">
+                <a href="#section3">Section 3 Title</a>
+                <span class="toc-page">4</span>
+            </div>
+            <div class="toc-item">
+                <a href="#resources">Resources & Next Steps</a>
+                <span class="toc-page">5</span>
+            </div>
+        </div>
+        
+        <!-- Introduction -->
+        <h1 id="introduction">Introduction</h1>
+        <p>
+            This guide provides comprehensive information about [topic]. Whether you're new to federal contracting or looking to expand your knowledge, this guide will walk you through the essential concepts, processes, and best practices.
+        </p>
+        
+        <div class="callout info">
+            <h4>What You'll Learn</h4>
+            <ul>
+                <li>Key concept or skill 1</li>
+                <li>Key concept or skill 2</li>
+                <li>Key concept or skill 3</li>
+            </ul>
+        </div>
+        
+        <!-- Section 1 -->
+        <h2 id="section1">Section 1 Title</h2>
+        <p>
+            Section content begins here. This is where you'll provide detailed information about the topic.
+        </p>
+        
+        <h3>Subsection Heading</h3>
+        <p>
+            Detailed explanation and information goes here.
+        </p>
+        
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>Step Title</h4>
+                    <p>Detailed instructions for this step.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>Step Title</h4>
+                    <p>Detailed instructions for this step.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>Step Title</h4>
+                    <p>Detailed instructions for this step.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 2 -->
+        <h2 id="section2">Section 2 Title</h2>
+        <p>
+            More content and information.
+        </p>
+        
+        <div class="callout warning">
+            <h4>Important Note</h4>
+            <p>This is an important warning or note that requires special attention.</p>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+                <tr>
+                    <td>Data 1</td>
+                    <td>Data 2</td>
+                    <td>Data 3</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Section 3 -->
+        <h2 id="section3">Section 3 Title</h2>
+        <p>
+            Additional content and information.
+        </p>
+        
+        <div class="example-box">
+            Example text or code snippet goes here.
+        </div>
+        
+        <!-- Resources -->
+        <h2 id="resources">Resources & Next Steps</h2>
+        <p>
+            Additional resources and information to help you continue your journey.
+        </p>
+        
+        <div class="callout">
+            <h4>Key Takeaways</h4>
+            <ul>
+                <li>Takeaway 1</li>
+                <li>Takeaway 2</li>
+                <li>Takeaway 3</li>
+            </ul>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>Federal Contracting Roadmap | www.federalcontractingroadmap.com</div>
+            <div style="margin-top: 4pt;">© 2025 | Version 2.0</div>
+        </div>
+    </div>
+</body>
+</html>
+

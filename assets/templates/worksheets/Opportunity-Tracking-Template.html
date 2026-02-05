@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunity Tracking Worksheet</title>
+    <style>
+        @page {
+            size: letter landscape;
+            margin: 0.5in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            color: #333333;
+            font-size: 10pt;
+            background: white;
+        }
+        
+        .container {
+            width: 100%;
+        }
+        
+        /* Header */
+        .header {
+            background: #1a4d2e;
+            color: white;
+            padding: 12pt;
+            margin-bottom: 16pt;
+            border-radius: 4px;
+        }
+        
+        .header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 4pt;
+        }
+        
+        .header .subtitle {
+            font-size: 11pt;
+            opacity: 0.9;
+        }
+        
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 9pt;
+        }
+        
+        th {
+            background: #1a4d2e;
+            color: white;
+            padding: 8pt;
+            text-align: left;
+            font-weight: 600;
+            border: 1px solid #1a4d2e;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        td {
+            padding: 6pt 8pt;
+            border: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+        
+        tr:nth-child(even) {
+            background: #f5f5f5;
+        }
+        
+        tr:hover {
+            background: #f0f9f4;
+        }
+        
+        /* Status Badges */
+        .status {
+            display: inline-block;
+            padding: 4pt 8pt;
+            border-radius: 12px;
+            font-size: 8pt;
+            font-weight: 600;
+            text-align: center;
+            min-width: 60px;
+        }
+        
+        .status.pending {
+            background: #fff9e6;
+            color: #b8941f;
+            border: 1px solid #d4af37;
+        }
+        
+        .status.in-progress {
+            background: #e8f4f8;
+            color: #1a4d2e;
+            border: 1px solid #1a4d2e;
+        }
+        
+        .status.submitted {
+            background: #f0f9f4;
+            color: #2d5016;
+            border: 1px solid #2d5016;
+        }
+        
+        .status.won {
+            background: #f0f9f4;
+            color: #2d5016;
+            border: 2px solid #2d5016;
+            font-weight: bold;
+        }
+        
+        .status.lost {
+            background: #fee;
+            color: #c92a2a;
+            border: 1px solid #c92a2a;
+        }
+        
+        /* Priority Indicators */
+        .priority {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 4pt;
+        }
+        
+        .priority.high {
+            background: #c92a2a;
+        }
+        
+        .priority.medium {
+            background: #d4af37;
+        }
+        
+        .priority.low {
+            background: #90c695;
+        }
+        
+        /* Value Formatting */
+        .value {
+            font-weight: 600;
+            color: #1a4d2e;
+        }
+        
+        .value-large {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        /* Notes Column */
+        .notes {
+            font-size: 8pt;
+            color: #666666;
+            max-width: 200px;
+        }
+        
+        /* Summary Section */
+        .summary {
+            margin-top: 20pt;
+            padding: 16pt;
+            background: #f5f5f5;
+            border-radius: 4px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16pt;
+            margin-top: 12pt;
+        }
+        
+        .summary-item {
+            text-align: center;
+        }
+        
+        .summary-label {
+            font-size: 9pt;
+            color: #666666;
+            margin-bottom: 4pt;
+        }
+        
+        .summary-value {
+            font-size: 18pt;
+            font-weight: bold;
+            color: #1a4d2e;
+        }
+        
+        /* Footer */
+        .footer {
+            margin-top: 16pt;
+            padding-top: 12pt;
+            border-top: 2px solid #d4af37;
+            text-align: center;
+            font-size: 8pt;
+            color: #666666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Opportunity Tracking Worksheet</h1>
+            <div class="subtitle">Federal Contracting Pipeline Management</div>
+        </div>
+        
+        <!-- Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 40px;">#</th>
+                    <th style="width: 120px;">Solicitation #</th>
+                    <th style="width: 150px;">Agency</th>
+                    <th style="width: 200px;">Opportunity Title</th>
+                    <th style="width: 80px;">NAICS</th>
+                    <th style="width: 100px;">Due Date</th>
+                    <th style="width: 100px;">Value</th>
+                    <th style="width: 80px;">Status</th>
+                    <th style="width: 60px;">Priority</th>
+                    <th style="width: 120px;">Assigned To</th>
+                    <th style="width: 150px;">Team Members</th>
+                    <th style="width: 100px;">Last Updated</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>W912XX-25-R-0001</td>
+                    <td>USACE</td>
+                    <td>Construction Services</td>
+                    <td>236220</td>
+                    <td>02/15/2025</td>
+                    <td class="value">$2.5M</td>
+                    <td><span class="status in-progress">In Progress</span></td>
+                    <td><span class="priority high"></span>High</td>
+                    <td>John Doe</td>
+                    <td>Jane Smith, Bob Jones</td>
+                    <td>01/10/2025</td>
+                    <td class="notes">Initial review completed. Team assembled.</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>N40085-25-R-0010</td>
+                    <td>NAVFAC</td>
+                    <td>Facility Maintenance</td>
+                    <td>561210</td>
+                    <td>03/01/2025</td>
+                    <td class="value">$1.8M</td>
+                    <td><span class="status pending">Pending</span></td>
+                    <td><span class="priority medium"></span>Med</td>
+                    <td>Jane Smith</td>
+                    <td>John Doe</td>
+                    <td>01/08/2025</td>
+                    <td class="notes">Awaiting clarification on requirements.</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>70Z02325R00001</td>
+                    <td>DHS</td>
+                    <td>IT Support Services</td>
+                    <td>541511</td>
+                    <td>01/30/2025</td>
+                    <td class="value">$5.2M</td>
+                    <td><span class="status submitted">Submitted</span></td>
+                    <td><span class="priority high"></span>High</td>
+                    <td>Bob Jones</td>
+                    <td>Jane Smith, Alice Brown</td>
+                    <td>01/25/2025</td>
+                    <td class="notes">Proposal submitted. Awaiting award decision.</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>W912ER-25-B-0005</td>
+                    <td>Army</td>
+                    <td>Engineering Services</td>
+                    <td>541330</td>
+                    <td>02/20/2025</td>
+                    <td class="value">$3.1M</td>
+                    <td><span class="status in-progress">In Progress</span></td>
+                    <td><span class="priority medium"></span>Med</td>
+                    <td>Alice Brown</td>
+                    <td>John Doe</td>
+                    <td>01/12/2025</td>
+                    <td class="notes">Technical approach finalized. Pricing in progress.</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>HSHQDC-25-R-00012</td>
+                    <td>DHS</td>
+                    <td>Security Services</td>
+                    <td>561612</td>
+                    <td>01/20/2025</td>
+                    <td class="value">$1.2M</td>
+                    <td><span class="status won">Won</span></td>
+                    <td><span class="priority high"></span>High</td>
+                    <td>John Doe</td>
+                    <td>Team A</td>
+                    <td>01/18/2025</td>
+                    <td class="notes">Awarded! Contract execution pending.</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <!-- Summary -->
+        <div class="summary">
+            <strong style="color: #1a4d2e; font-size: 12pt;">Pipeline Summary</strong>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="summary-label">Total Opportunities</div>
+                    <div class="summary-value">5</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Total Value</div>
+                    <div class="summary-value">$13.8M</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">In Progress</div>
+                    <div class="summary-value">2</div>
+                </div>
+                <div class="summary-item">
+                    <div class="summary-label">Submitted</div>
+                    <div class="summary-value">1</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Federal Contracting Roadmap | Opportunity Tracking Worksheet | Updated: [Date]
+        </div>
+    </div>
+</body>
+</html>
+
+
