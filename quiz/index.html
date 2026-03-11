@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>GovCon Giants Knowledge Quiz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --dark-green: #1B5E20;
+  --lime: #8BC34A;
+  --lime-light: #C5E1A5;
+  --gold: #FFD700;
+  --red: #E53935;
+  --purple: #7B1FA2;
+  --white: #FFFFFF;
+  --bg: #F5F5F5;
+  --text: #212121;
+  --text-light: #757575;
+  --shadow: 0 4px 24px rgba(0,0,0,0.12);
+  --radius: 12px;
+}
+
+html, body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  padding: 16px;
+}
+
+body.presenter { font-size: 1.2em; }
+body.presenter .card { max-width: 960px; }
+body.presenter .option-btn { padding: 20px 24px; font-size: 1.1em; }
+body.presenter .question-text { font-size: 1.4em; }
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 560px;
+  padding: 32px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+body.presenter .card { max-width: 960px; }
+
+/* Progress bar */
+.progress-wrap {
+  width: 100%;
+  max-width: 560px;
+  margin-bottom: 16px;
+  display: none;
+}
+body.presenter .progress-wrap { max-width: 960px; }
+
+.progress-bar { height: 8px; border-radius: 4px; background: #E0E0E0; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 4px; transition: width 0.4s ease, background-color 0.4s ease; width: 0%; }
+.progress-label { display: flex; justify-content: space-between; font-size: 0.8em; color: var(--text-light); margin-top: 6px; font-weight: 500; }
+
+/* Shared */
+.logo-text { font-size: 1.1em; font-weight: 800; color: var(--dark-green); letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px; }
+.start-title { font-size: 1.8em; font-weight: 900; color: var(--dark-green); line-height: 1.15; margin: 12px 0 8px; }
+.start-subtitle { font-size: 1em; color: var(--text-light); margin-bottom: 24px; line-height: 1.5; }
+.start-meta { display: flex; justify-content: center; gap: 24px; margin-bottom: 28px; font-size: 0.9em; color: var(--text-light); }
+.start-meta span { display: flex; align-items: center; gap: 6px; }
+
+.primary-btn, .start-btn {
+  display: inline-block; background: var(--dark-green); color: var(--white); border: none;
+  border-radius: 50px; padding: 16px 48px; font-size: 1.1em; font-weight: 700;
+  font-family: inherit; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s;
+}
+.primary-btn:active, .start-btn:active { transform: scale(0.97); }
+.primary-btn:hover, .start-btn:hover { box-shadow: 0 6px 20px rgba(27,94,32,0.35); }
+
+.difficulty-legend { display: flex; justify-content: center; gap: 14px; margin-top: 20px; font-size: 0.8em; font-weight: 600; flex-wrap: wrap; }
+.legend-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: middle; }
+.legend-dot.easy { background: var(--lime); }
+.legend-dot.medium { background: var(--gold); }
+.legend-dot.hard { background: var(--red); }
+.legend-dot.super-hard { background: var(--purple); }
+
+/* Join screen */
+.join-screen { text-align: center; }
+.join-screen input {
+  display: block; width: 100%; max-width: 300px; margin: 0 auto 12px;
+  padding: 14px 18px; border: 2px solid #E0E0E0; border-radius: 10px;
+  font-size: 1em; font-family: inherit; font-weight: 500; text-align: center;
+  outline: none; transition: border-color 0.2s;
+}
+.join-screen input:focus { border-color: var(--lime); }
+.join-screen input.room-input { font-size: 1.4em; letter-spacing: 4px; text-transform: uppercase; font-weight: 800; }
+.participant-count { font-size: 0.9em; color: var(--text-light); margin-top: 16px; font-weight: 500; }
+
+/* Question screen */
+.question-screen { display: none; }
+.question-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.q-number { font-size: 0.85em; font-weight: 700; color: var(--text-light); }
+.difficulty-badge { font-size: 0.75em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 12px; border-radius: 20px; color: var(--white); }
+.difficulty-badge.easy { background: var(--lime); color: #1B5E20; }
+.difficulty-badge.medium { background: var(--gold); color: #5D4037; }
+.difficulty-badge.hard { background: var(--red); }
+.difficulty-badge.super-hard { background: var(--purple); }
+.question-text { font-size: 1.25em; font-weight: 700; line-height: 1.4; margin-bottom: 24px; color: var(--dark-green); }
+.options-list { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+
+.option-btn {
+  width: 100%; text-align: left; background: var(--bg); border: 2px solid transparent;
+  border-radius: 10px; padding: 14px 18px; font-size: 0.95em; font-weight: 500;
+  font-family: inherit; color: var(--text); cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  line-height: 1.4; position: relative; padding-right: 44px;
+}
+.option-btn:active { transform: scale(0.98); }
+.option-btn:hover { border-color: var(--lime); }
+.option-btn.correct { border-color: var(--lime); background: #E8F5E9; }
+.option-btn.correct::after { content: '\2713'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 1.3em; color: var(--dark-green); font-weight: 700; }
+.option-btn.wrong { border-color: var(--red); background: #FFEBEE; }
+.option-btn.wrong::after { content: '\2717'; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); font-size: 1.3em; color: var(--red); font-weight: 700; }
+.option-btn.disabled { pointer-events: none; opacity: 0.6; }
+.option-btn.correct.disabled, .option-btn.wrong.disabled { opacity: 1; }
+
+.explanation { margin-top: 16px; padding: 14px 16px; border-radius: 10px; background: #E8F5E9; border-left: 4px solid var(--lime); font-size: 0.9em; line-height: 1.5; color: #2E7D32; display: none; }
+.explanation.wrong-explain { background: #FFF3E0; border-left-color: var(--gold); color: #E65100; }
+.next-btn { display: none; width: 100%; margin-top: 20px; background: var(--dark-green); color: var(--white); border: none; border-radius: 50px; padding: 14px; font-size: 1em; font-weight: 700; font-family: inherit; cursor: pointer; transition: transform 0.15s; }
+.next-btn:active { transform: scale(0.97); }
+
+/* Results */
+.results-screen { display: none; text-align: center; }
+.results-score { font-size: 4em; font-weight: 900; color: var(--dark-green); line-height: 1; }
+.results-total { font-size: 1.2em; color: var(--text-light); margin: 4px 0 8px; font-weight: 500; }
+.results-percent { font-size: 1.5em; font-weight: 800; margin-bottom: 16px; }
+.results-message { font-size: 1.1em; line-height: 1.5; margin-bottom: 24px; padding: 16px; border-radius: 10px; }
+.results-message.excellent { background: #E8F5E9; color: #1B5E20; }
+.results-message.good { background: #FFF8E1; color: #F57F17; }
+.results-message.needs-work { background: #FFEBEE; color: #C62828; }
+.breakdown { display: flex; justify-content: center; gap: 12px; margin-bottom: 28px; flex-wrap: wrap; }
+.breakdown-item { text-align: center; padding: 12px 14px; border-radius: 10px; background: var(--bg); min-width: 80px; }
+.breakdown-label { font-size: 0.7em; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.breakdown-label.easy { color: #558B2F; }
+.breakdown-label.medium { color: #F9A825; }
+.breakdown-label.hard { color: var(--red); }
+.breakdown-label.super-hard { color: var(--purple); }
+.breakdown-score { font-size: 1.4em; font-weight: 800; color: var(--text); }
+.retry-btn { display: inline-block; background: var(--dark-green); color: var(--white); border: none; border-radius: 50px; padding: 14px 40px; font-size: 1em; font-weight: 700; font-family: inherit; cursor: pointer; transition: transform 0.15s; }
+.retry-btn:active { transform: scale(0.97); }
+
+/* ---- PRESENTER DASHBOARD ---- */
+.presenter-dashboard { display: none; }
+body.presenter .presenter-dashboard { max-width: 960px; }
+
+.dash-header {
+  text-align: center; margin-bottom: 24px;
+  padding-bottom: 20px; border-bottom: 2px solid #E0E0E0;
+}
+.dash-room-code { font-size: 2.5em; font-weight: 900; color: var(--dark-green); letter-spacing: 6px; }
+.dash-stats { display: flex; justify-content: center; gap: 32px; margin-top: 12px; font-size: 0.95em; color: var(--text-light); font-weight: 600; }
+.dash-stats .stat-num { color: var(--dark-green); font-size: 1.3em; font-weight: 800; }
+
+.dash-nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.dash-nav button {
+  background: var(--dark-green); color: white; border: none; border-radius: 8px;
+  padding: 10px 20px; font-family: inherit; font-weight: 700; font-size: 0.9em; cursor: pointer;
+}
+.dash-nav button:disabled { background: #ccc; cursor: default; }
+.dash-q-label { font-weight: 700; color: var(--text-light); }
+
+.dash-question { font-size: 1.15em; font-weight: 700; color: var(--dark-green); margin-bottom: 20px; line-height: 1.4; }
+
+.dash-option-row {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 12px; position: relative;
+}
+.dash-option-label {
+  flex: 0 0 45%; font-size: 0.85em; font-weight: 500; line-height: 1.3;
+  padding: 8px 0;
+}
+.dash-option-label.is-correct { color: var(--dark-green); font-weight: 700; }
+.dash-bar-wrap { flex: 1; height: 32px; background: #E0E0E0; border-radius: 6px; overflow: hidden; position: relative; }
+.dash-bar {
+  height: 100%; border-radius: 6px; transition: width 0.5s ease;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+  font-size: 0.8em; font-weight: 700; color: white; min-width: 0;
+}
+.dash-bar.correct-bar { background: var(--lime); color: #1B5E20; }
+.dash-bar.wrong-bar { background: #EF9A9A; color: #B71C1C; }
+.dash-bar.empty-bar { background: transparent; color: var(--text-light); }
+.dash-correct-marker { font-size: 0.75em; color: var(--dark-green); font-weight: 800; margin-left: 4px; }
+
+.dash-leaderboard { margin-top: 28px; border-top: 2px solid #E0E0E0; padding-top: 20px; }
+.dash-leaderboard h3 { font-size: 1em; font-weight: 800; color: var(--dark-green); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+.lb-row { display: flex; justify-content: space-between; padding: 8px 12px; border-radius: 8px; margin-bottom: 4px; font-weight: 600; }
+.lb-row:nth-child(odd) { background: var(--bg); }
+.lb-rank { color: var(--text-light); min-width: 30px; }
+.lb-name { flex: 1; }
+.lb-score { color: var(--dark-green); font-weight: 800; }
+
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 999; }
+.fade-in { animation: fadeIn 0.3s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<canvas id="confetti-canvas"></canvas>
+
+<div class="progress-wrap" id="progressWrap">
+  <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="progress-label">
+    <span id="progressText">Question 1 of 25</span>
+    <span id="difficultyText">Easy</span>
+  </div>
+</div>
+
+<div class="card" id="card">
+
+  <!-- JOIN SCREEN (Firebase mode) -->
+  <div class="join-screen hidden" id="joinScreen">
+    <div class="logo-text">GovCon Giants</div>
+    <div class="start-title">Join the Quiz</div>
+    <div class="start-subtitle">Enter the room code shown on the projector and your name.</div>
+    <input type="text" class="room-input" id="joinRoomInput" placeholder="ROOM CODE" maxlength="8" autocomplete="off">
+    <input type="text" id="joinNameInput" placeholder="Your Name" maxlength="30" autocomplete="off">
+    <button class="primary-btn" onclick="joinRoom()" style="margin-top: 12px;">Join</button>
+    <div class="participant-count" id="joinError" style="color: var(--red);"></div>
+  </div>
+
+  <!-- START SCREEN -->
+  <div class="start-screen" id="startScreen">
+    <div class="logo-text">GovCon Giants</div>
+    <div class="start-title">Government Contracting<br>Knowledge Quiz</div>
+    <div class="start-subtitle">
+      Think you've mastered government contracting?<br>
+      25 questions. 4 difficulty levels. Prove it.
+    </div>
+    <div class="start-meta">
+      <span>&#9202; ~10 min</span>
+      <span>&#9881; 25 questions</span>
+      <span>&#127942; 4 levels</span>
+    </div>
+    <button class="start-btn" onclick="startQuiz()">Start Quiz</button>
+    <div class="difficulty-legend">
+      <span><span class="legend-dot easy"></span>Easy</span>
+      <span><span class="legend-dot medium"></span>Medium</span>
+      <span><span class="legend-dot hard"></span>Hard</span>
+      <span><span class="legend-dot super-hard"></span>Super Hard</span>
+    </div>
+    <div class="participant-count" id="roomInfo" style="margin-top: 16px;"></div>
+  </div>
+
+  <!-- QUESTION SCREEN -->
+  <div class="question-screen" id="questionScreen">
+    <div class="question-header">
+      <span class="q-number" id="qNumber">Question 1 / 25</span>
+      <span class="difficulty-badge" id="diffBadge">Easy</span>
+    </div>
+    <div class="question-text" id="qText"></div>
+    <ul class="options-list" id="optionsList"></ul>
+    <div class="explanation" id="explanation"></div>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">Next</button>
+  </div>
+
+  <!-- RESULTS SCREEN -->
+  <div class="results-screen" id="resultsScreen">
+    <div class="logo-text" style="margin-bottom: 12px;">GovCon Giants</div>
+    <div class="results-score" id="resScore">0</div>
+    <div class="results-total">out of 25</div>
+    <div class="results-percent" id="resPercent">0%</div>
+    <div class="results-message" id="resMessage"></div>
+    <div class="breakdown" id="breakdown"></div>
+    <button class="retry-btn" onclick="resetQuiz()">Try Again</button>
+  </div>
+
+  <!-- PRESENTER DASHBOARD -->
+  <div class="presenter-dashboard" id="presenterDash">
+    <div class="dash-header">
+      <div class="logo-text">GovCon Giants — Live Dashboard</div>
+      <div class="dash-room-code" id="dashRoomCode">—</div>
+      <div class="dash-stats">
+        <span><span class="stat-num" id="dashParticipants">0</span> students</span>
+        <span><span class="stat-num" id="dashCompleted">0</span> finished</span>
+      </div>
+    </div>
+    <div class="dash-nav">
+      <button onclick="dashPrev()" id="dashPrevBtn">&#8592; Prev</button>
+      <span class="dash-q-label" id="dashQLabel">Question 1 / 25</span>
+      <button onclick="dashNext()" id="dashNextBtn">Next &#8594;</button>
+    </div>
+    <div id="dashQuestionArea"></div>
+    <div class="dash-leaderboard" id="dashLeaderboard"></div>
+  </div>
+
+</div>
+
+<script>
+// =============================================
+// FIREBASE CONFIG — Fill in from your Firebase console
+// =============================================
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyAw3K6ySsNVpfzPcd5U8eJYsWUgmNLUNO4",
+  authDomain: "govcon-quiz.firebaseapp.com",
+  databaseURL: "https://govcon-quiz-default-rtdb.firebaseio.com",
+  projectId: "govcon-quiz",
+  storageBucket: "govcon-quiz.firebasestorage.app",
+  messagingSenderId: "718690725366",
+  appId: "1:718690725366:web:f5b20c55e0e664d145abd7"
+};
+
+const FIREBASE_ENABLED = FIREBASE_CONFIG.apiKey !== 'YOUR_API_KEY';
+
+// =============================================
+// QUESTIONS
+// =============================================
+const TOTAL = 25;
+
+const QUESTIONS = [
+  // ========== EASY (3) ==========
+  {
+    difficulty: 'easy',
+    question: 'What does SAM stand for?',
+    options: ['System for Award Management','Standard Acquisition Method','Simplified Award Marketplace','Supplier Access Module'],
+    correct: 0,
+    explanation: 'SAM.gov (System for Award Management) is the official government database where businesses register to do business with the federal government.'
+  },
+  {
+    difficulty: 'easy',
+    question: 'What is SBA Small Business Search (formerly DSBS) used for?',
+    options: ['Filing small business tax returns','Finding small businesses for subcontracting or set-aside opportunities','Registering your NAICS codes','Submitting proposals electronically'],
+    correct: 1,
+    explanation: 'SBA Small Business Search (search.certifications.sba.gov) — formerly called DSBS — lets contracting officers and prime contractors find small businesses by NAICS code, location, certifications, and keywords. If your profile isn\'t optimized, you\'re invisible.'
+  },
+  {
+    difficulty: 'easy',
+    question: 'What is a Capability Statement primarily used for?',
+    options: ['Filing your taxes as a contractor','Marketing your business to government buyers','Submitting a proposal response','Registering in SAM.gov'],
+    correct: 1,
+    explanation: 'A Capability Statement is your business\'s resume for government — a one-page marketing document you hand to contracting officers and prime contractors.'
+  },
+
+  // ========== MEDIUM (5) ==========
+  {
+    difficulty: 'medium',
+    question: 'What is FAR and why does every government contractor need to understand it?',
+    options: ['Federal Acquisition Regulation — the rulebook governing how the government buys goods and services','Federal Award Registry — the database of all contract awards','Financial Audit Requirements — accounting rules for contractors','Federal Approval Request — the form to apply for contracts'],
+    correct: 0,
+    explanation: 'The FAR (Federal Acquisition Regulation) is the primary set of rules governing federal procurement. Every solicitation references FAR clauses. If you don\'t understand FAR, you can\'t write a compliant proposal.'
+  },
+  {
+    difficulty: 'medium',
+    question: 'What is a bid/no-bid decision, and when should you make it?',
+    options: ['A decision made after you submit your proposal','A strategic evaluation BEFORE you invest time writing a proposal — assessing fit, competition, and win probability','A government decision about whether to accept your bid','A legal requirement under FAR Part 15'],
+    correct: 1,
+    explanation: 'A bid/no-bid decision is your internal go/no-go analysis before committing resources to a proposal. You evaluate: Do we have the past performance? Can we compete on price? Do we know the customer? Chasing everything wastes time and money.'
+  },
+  {
+    difficulty: 'medium',
+    question: 'What is a GSA Schedule (MAS) and why do contractors want one?',
+    options: ['A mandatory registration for all federal contractors','A pre-negotiated, long-term government contract that lets agencies buy from you without a full competition','A list of banned contractors','A training course required by SBA'],
+    correct: 1,
+    explanation: 'A GSA Multiple Award Schedule (MAS) is a long-term contract with pre-negotiated pricing. Once you\'re on schedule, agencies can order directly from you — skipping the full RFP process. It\'s a powerful sales channel.'
+  },
+  {
+    difficulty: 'medium',
+    question: 'What is "market research" in government contracting, and who does it?',
+    options: ['Only contractors research the market to find opportunities','Both the government AND contractors do it — the government researches industry capabilities before buying, and contractors research agencies before bidding','Market research is a Wall Street term with no relevance to government contracting','Only the SBA conducts market research'],
+    correct: 1,
+    explanation: 'Market research is a two-way street. The government is REQUIRED by FAR Part 10 to research the market before buying — they look at what\'s available commercially and which businesses can deliver. Smart contractors do their own market research on agencies, buying patterns, and incumbents.'
+  },
+  {
+    difficulty: 'medium',
+    question: 'What is a presolicitation notice on SAM.gov?',
+    options: ['A final contract award announcement','An early notice that the government PLANS to issue a solicitation — giving contractors time to prepare before the RFP drops','A notice that a contract has been cancelled','A request for your company\'s financial records'],
+    correct: 1,
+    explanation: 'A presolicitation notice is your early warning signal. The government posts it before the actual RFP/RFQ to alert industry. This is when smart contractors start their capture — researching the requirement, building teams, and positioning. If you wait for the RFP, you\'re already behind.'
+  },
+
+  // ========== HARD (10) ==========
+  {
+    difficulty: 'hard',
+    question: 'In the "contracting cone," what is the correct order from broadest to most targeted competition?',
+    options: ['Full & Open \u2192 Set-Aside \u2192 Sole Source','Sole Source \u2192 Set-Aside \u2192 Full & Open','Set-Aside \u2192 Full & Open \u2192 Sole Source','Full & Open \u2192 Sole Source \u2192 Set-Aside'],
+    correct: 0,
+    explanation: 'The contracting cone narrows from Full & Open Competition (all businesses) \u2192 Set-Aside (restricted to small business categories) \u2192 Sole Source (directed to one company). Understanding where your opportunity falls determines your competitive strategy.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is a PPQ (Past Performance Questionnaire) and who fills it out?',
+    options: ['A self-assessment form the contractor fills out about their own work','A questionnaire sent to your previous clients/references so the government can verify your performance claims','A pricing document submitted with your cost volume','A compliance checklist the contracting officer completes'],
+    correct: 1,
+    explanation: 'A PPQ is sent to your references — previous clients who rate your performance on quality, schedule, cost control, and management. The government uses these to evaluate whether you can actually deliver. Weak references kill proposals.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What are the key sections (volumes) typically required in a government proposal submittal?',
+    options: ['Resume, Cover Letter, References','Technical Volume, Management Volume, Past Performance Volume, Cost/Price Volume','Executive Summary and Budget only','Capability Statement and NAICS codes'],
+    correct: 1,
+    explanation: 'A standard government proposal includes: Technical (your solution), Management (how you\'ll run it), Past Performance (proof you\'ve done it before), and Cost/Price (what it costs). Each volume is evaluated separately — miss one and you\'re non-compliant.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'When a solicitation requires an oral presentation, what is the government typically evaluating?',
+    options: ['How well you read your proposal out loud','Your team\'s technical understanding, key personnel, and ability to communicate your approach — often with Q&A from evaluators','Your company\'s financial statements','Your SAM.gov registration status'],
+    correct: 1,
+    explanation: 'Oral presentations let the government probe beyond the written proposal. They evaluate your key personnel\'s expertise, your understanding of the requirement, and how your team thinks on its feet. Rehearsal is critical — this is where contracts are won or lost.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is the difference between a Contracting Officer (CO/KO) and a Contracting Officer\'s Representative (COR)?',
+    options: ['They are the same role with different titles','The CO has legal authority to bind the government; the COR monitors day-to-day performance but cannot modify the contract','The COR outranks the CO','The CO works for the contractor, the COR works for the government'],
+    correct: 1,
+    explanation: 'Only the Contracting Officer (CO/KO) has the legal authority to award, modify, or terminate contracts. The COR is the CO\'s eyes and ears — they monitor your performance daily but CANNOT authorize changes or additional work. Never take direction from a COR that changes scope without CO approval.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What does LPTA mean, and how does it change your proposal strategy?',
+    options: ['Lowest Price Technically Acceptable — meet the minimum technical requirements, then win on lowest price','Long-term Performance Technical Assessment — highest technical score wins','Limited Proposal Technical Approach — only a 5-page response is allowed','Lowest Price Total Award — the cheapest bid always wins regardless of quality'],
+    correct: 0,
+    explanation: 'LPTA means the government evaluates technical proposals pass/fail. If you meet the minimum, it comes down to price. Your strategy shifts: don\'t over-propose or gold-plate — meet every requirement, keep costs lean, and be the lowest compliant bidder.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is "acquisition planning" and why does it matter to contractors?',
+    options: ['It\'s the contractor\'s plan to acquire new employees','It\'s the government\'s internal process for defining requirements, budgeting, choosing contract type, and planning the procurement timeline — and understanding it tells you when and how to engage','It\'s the same thing as proposal writing','It only applies to acquisitions over $100 million'],
+    correct: 1,
+    explanation: 'Acquisition planning (FAR Part 7) is how the government plans a buy — defining requirements, estimating costs, choosing the contract vehicle, and setting the schedule. Contractors who understand this process can engage EARLY, shape requirements during market research, and position before competitors even know an opportunity exists.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is the role of the Program Office (or requiring activity) vs. the Contracting Office?',
+    options: ['They are the same office with different names','The Program Office defines WHAT they need and funds the requirement; the Contracting Office handles HOW to buy it and executes the procurement','The Program Office writes proposals for contractors','The Contracting Office decides the technical requirements'],
+    correct: 1,
+    explanation: 'The Program Office owns the mission need — they write the requirements, secure the funding, and manage the program. The Contracting Office handles the procurement mechanics — solicitation, evaluation, award, and contract administration. Smart contractors build relationships with BOTH, because the Program Office influences what gets bought and the Contracting Office controls how.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is the difference between an IDIQ contract and a task order?',
+    options: ['They are the same thing','An IDIQ is the master contract vehicle; a task order is an individual work assignment issued UNDER that IDIQ','A task order is bigger than an IDIQ','IDIQ contracts don\'t use task orders'],
+    correct: 1,
+    explanation: 'An IDIQ (Indefinite Delivery/Indefinite Quantity) is the umbrella contract with a ceiling value. Task orders are individual scopes of work issued under the IDIQ — each with its own requirements, period of performance, and funding. You win the IDIQ first, then compete for (or get awarded) task orders under it.'
+  },
+  {
+    difficulty: 'hard',
+    question: 'What is an IDV (Indefinite Delivery Vehicle) and how does it relate to IDIQ, BPA, and BOA?',
+    options: ['IDV is a type of small business certification','IDV is the umbrella term for contract vehicles like IDIQs, BPAs, and BOAs — all of which allow the government to place orders over time without re-competing each purchase','IDV is a delivery tracking system for shipped goods','IDV only applies to construction contracts'],
+    correct: 1,
+    explanation: 'IDV (Indefinite Delivery Vehicle) is the category that includes IDIQs, Blanket Purchase Agreements (BPAs), and Basic Ordering Agreements (BOAs). They all share the same concept: the government establishes a vehicle up front, then issues orders against it. When you see "IDV" on SAM.gov contract data, it tells you the award is part of a larger ordering vehicle.'
+  },
+
+  // ========== SUPER HARD (7) ==========
+  {
+    difficulty: 'super-hard',
+    question: 'A solicitation says "FAR 52.219-6 applies." What does this clause require?',
+    options: ['The contractor must be a veteran-owned business','The contract is a total small business set-aside — only small businesses under the applicable NAICS size standard can compete','The contractor must have a GSA Schedule','The contract requires a performance bond'],
+    correct: 1,
+    explanation: 'FAR 52.219-6 is the "Notice of Total Small Business Set-Aside" clause. When you see it, only small businesses can compete. Knowing key FAR clause numbers lets you quickly assess whether an opportunity is right for you without reading 50 pages.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'On an IDIQ contract, what is the minimum guaranteed amount the government must order?',
+    options: ['There is no minimum — the government can order $0','The minimum guarantee stated in the contract (often a nominal amount like $2,500)','10% of the contract ceiling value','$250,000 or the SAT, whichever is less'],
+    correct: 1,
+    explanation: 'Every IDIQ contract must include a minimum guaranteed amount — often a nominal sum like $2,500. The government is only obligated to order this minimum. The ceiling could be $50 million, but the guarantee is what you can count on. Don\'t staff up based on the ceiling.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'Your proposal requires a compliance matrix. The RFP Section L says "submit resumes for key personnel" and Section M says "key personnel will be evaluated for relevant experience." How do you handle this in the matrix?',
+    options: ['Just submit the resumes and hope for the best','Map Section L\'s instruction to where resumes appear in your proposal, AND map Section M\'s evaluation criteria to where you explicitly demonstrate relevant experience — ensuring traceability for both','Only reference Section M since that\'s what gets scored','Compliance matrices are optional — skip it and focus on the technical volume'],
+    correct: 1,
+    explanation: 'Section L tells you WHAT to submit. Section M tells you HOW it gets scored. Your compliance matrix must trace BOTH — showing the evaluator exactly where you addressed each instruction AND each evaluation criterion. Missing this traceability is the #1 reason proposals lose points.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'During acquisition planning, the government issues an RFI (Request for Information). What is the strategic move for a contractor?',
+    options: ['Ignore it — RFIs don\'t lead to contracts','Respond with a detailed, capability-focused write-up that shapes the government\'s understanding of the market and positions your company as a knowledgeable solution provider','Submit your full proposal immediately','Wait for the RFP instead — responding to an RFI wastes time'],
+    correct: 1,
+    explanation: 'An RFI is the government doing market research. Your response directly influences how they write the requirements. A strong RFI response can shape the solicitation in your favor — highlighting your strengths, suggesting evaluation criteria, and establishing you as the expert. Ignoring RFIs is leaving money on the table.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'What is the difference between a single-award IDIQ and a multiple-award IDIQ, and why does it matter strategically?',
+    options: ['There is no meaningful difference','Single-award = one company wins all task orders; multiple-award = several companies win the vehicle, then compete against each other for individual task orders','Multiple-award IDIQs are only for large businesses','Single-award IDIQs guarantee more revenue'],
+    correct: 1,
+    explanation: 'On a single-award IDIQ, you\'re the only contractor — all task orders go to you. On a multiple-award IDIQ, you won a "seat at the table" but must compete for each task order against the other awardees. Strategy differs: single-award is one big win; multiple-award means you need a strong task order capture process after winning the vehicle.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'You\'re reviewing SAM.gov contract data and see an award labeled "DO" under an IDV. What does "DO" mean?',
+    options: ['Direct Order — a sole-source purchase','Delivery Order — an individual order for supplies or services placed under an indefinite delivery vehicle','Deferred Obligation — funding that hasn\'t been released yet','Department Oversight — a compliance audit'],
+    correct: 1,
+    explanation: 'A "DO" is a Delivery Order — a specific order placed under an IDV (like an IDIQ or BPA). When you see DOs under an IDV in SAM.gov, you\'re looking at the actual work being ordered. Analyzing DOs tells you what the government is ACTUALLY buying, who\'s winning, and at what dollar values — critical intel for your capture strategy.'
+  },
+  {
+    difficulty: 'super-hard',
+    question: 'A task order competition under a multiple-award IDIQ gives you 5 days to respond. What does this compressed timeline tell you about your capture strategy?',
+    options: ['You have plenty of time — 5 days is standard','If you haven\'t been doing pre-positioning and capture BEFORE the task order dropped, you\'ve already lost — the winner was building relationships and shaping the requirement while you were waiting','Just submit your IDIQ proposal again with minor edits','Request a 90-day extension'],
+    correct: 1,
+    explanation: 'Task order competitions under IDIQs are fast — 5-14 day turnarounds are common. You cannot write a winning response from scratch in that time. Winners pre-position: they track upcoming task orders, build relationships with the program office, understand the requirement before it drops, and have teaming partners ready. The competition is won BEFORE the task order is issued.'
+  }
+];
+
+// =============================================
+// STATE
+// =============================================
+const TIER_COUNTS = { easy: 3, medium: 5, hard: 10, 'super-hard': 7 };
+let currentQ = 0;
+let score = 0;
+let answered = false;
+let scores = { easy: 0, medium: 0, hard: 0, 'super-hard': 0 };
+let shuffledQuestions = [];
+
+// Firebase state
+let db = null;
+let roomCode = '';
+let sessionId = '';
+let playerName = '';
+let isPresenter = false;
+let dashQ = 0;
+let unsubscribers = [];
+
+// =============================================
+// INIT
+// =============================================
+const params = new URLSearchParams(window.location.search);
+isPresenter = params.get('presenter') === 'true';
+roomCode = (params.get('room') || '').toUpperCase();
+
+if (isPresenter) document.body.classList.add('presenter');
+
+// Generate session ID
+sessionId = 'p_' + Math.random().toString(36).substr(2, 9);
+
+async function init() {
+  // Standalone mode — no URL params, just show the quiz
+  const wantsFirebase = isPresenter || roomCode;
+
+  if (!wantsFirebase || !FIREBASE_ENABLED) {
+    // Standalone quiz — no Firebase needed
+    if (isPresenter && !FIREBASE_ENABLED) {
+      alert('Firebase not configured. Add your Firebase config to use presenter mode.');
+    }
+    return;
+  }
+
+  // Firebase mode — load SDK
+  await loadScript('https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js');
+  await loadScript('https://www.gstatic.com/firebasejs/10.14.1/firebase-database-compat.js');
+
+  const app = firebase.initializeApp(FIREBASE_CONFIG);
+  db = firebase.database();
+
+  if (isPresenter) {
+    // Presenter mode — show dashboard
+    document.getElementById('startScreen').classList.add('hidden');
+    document.getElementById('presenterDash').style.display = 'block';
+
+    if (!roomCode) {
+      roomCode = generateRoomCode();
+      history.replaceState(null, '', `?presenter=true&room=${roomCode}`);
+    }
+
+    await db.ref(`rooms/${roomCode}`).update({ createdAt: Date.now(), active: true });
+    document.getElementById('dashRoomCode').textContent = roomCode;
+    dashQ = 0;
+    renderDashQuestion();
+    listenToRoom();
+  } else if (roomCode) {
+    // Student joining a room — show join screen
+    document.getElementById('startScreen').classList.add('hidden');
+    document.getElementById('joinScreen').classList.remove('hidden');
+    document.getElementById('joinRoomInput').value = roomCode;
+  }
+}
+
+function loadScript(src) {
+  return new Promise((resolve, reject) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+function generateRoomCode() {
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  for (let i = 0; i < 5; i++) code += chars[Math.floor(Math.random() * chars.length)];
+  return code;
+}
+
+// =============================================
+// STUDENT: JOIN ROOM
+// =============================================
+async function joinRoom() {
+  const code = document.getElementById('joinRoomInput').value.trim().toUpperCase();
+  const name = document.getElementById('joinNameInput').value.trim();
+  const errEl = document.getElementById('joinError');
+
+  if (!code) { errEl.textContent = 'Enter the room code'; return; }
+  if (!name) { errEl.textContent = 'Enter your name'; return; }
+
+  // Check room exists
+  const snap = await db.ref(`rooms/${code}`).once('value');
+  if (!snap.exists()) { errEl.textContent = 'Room not found. Check the code.'; return; }
+
+  roomCode = code;
+  playerName = name;
+
+  // Register participant
+  await db.ref(`rooms/${roomCode}/participants/${sessionId}`).set({
+    name: playerName,
+    joinedAt: Date.now(),
+    score: 0,
+    finished: false
+  });
+
+  // Show start screen
+  document.getElementById('joinScreen').classList.add('hidden');
+  document.getElementById('startScreen').classList.remove('hidden');
+  document.getElementById('roomInfo').textContent = `Room: ${roomCode} \u2022 ${playerName}`;
+}
+
+// =============================================
+// QUIZ FLOW
+// =============================================
+function difficultyLabel(d) {
+  if (d === 'super-hard') return 'Super Hard';
+  return d.charAt(0).toUpperCase() + d.slice(1);
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function startQuiz() {
+  currentQ = 0; score = 0;
+  scores = { easy: 0, medium: 0, hard: 0, 'super-hard': 0 };
+
+  shuffledQuestions = QUESTIONS.map(q => {
+    const indices = q.options.map((_, i) => i);
+    const shuffled = shuffleArray(indices);
+    return { ...q, displayOptions: shuffled.map(i => q.options[i]), correctDisplay: shuffled.indexOf(q.correct) };
+  });
+
+  document.getElementById('startScreen').style.display = 'none';
+  document.getElementById('resultsScreen').style.display = 'none';
+  document.getElementById('questionScreen').style.display = 'block';
+  document.getElementById('progressWrap').style.display = 'block';
+  showQuestion();
+}
+
+function showQuestion() {
+  answered = false;
+  const q = shuffledQuestions[currentQ];
+  document.getElementById('qNumber').textContent = `Question ${currentQ + 1} / ${TOTAL}`;
+  const badge = document.getElementById('diffBadge');
+  badge.textContent = difficultyLabel(q.difficulty);
+  badge.className = 'difficulty-badge ' + q.difficulty;
+  document.getElementById('qText').textContent = q.question;
+
+  const list = document.getElementById('optionsList');
+  list.innerHTML = '';
+  q.displayOptions.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'option-btn';
+    btn.textContent = opt;
+    btn.onclick = () => selectOption(i);
+    list.appendChild(btn);
+  });
+
+  document.getElementById('explanation').style.display = 'none';
+  document.getElementById('explanation').className = 'explanation';
+  document.getElementById('nextBtn').style.display = 'none';
+  updateProgress();
+
+  document.getElementById('questionScreen').classList.remove('fade-in');
+  void document.getElementById('questionScreen').offsetWidth;
+  document.getElementById('questionScreen').classList.add('fade-in');
+}
+
+function selectOption(idx) {
+  if (answered) return;
+  answered = true;
+
+  const q = shuffledQuestions[currentQ];
+  const btns = document.querySelectorAll('.option-btn');
+  const isCorrect = idx === q.correctDisplay;
+
+  if (isCorrect) { score++; scores[q.difficulty]++; }
+
+  btns.forEach((btn, i) => {
+    if (i === q.correctDisplay) btn.classList.add('correct');
+    else if (i === idx && !isCorrect) btn.classList.add('wrong');
+    if (i !== q.correctDisplay && i !== idx) btn.classList.add('disabled');
+  });
+
+  const expl = document.getElementById('explanation');
+  expl.textContent = q.explanation;
+  expl.className = isCorrect ? 'explanation' : 'explanation wrong-explain';
+  expl.style.display = 'block';
+
+  const nextBtn = document.getElementById('nextBtn');
+  nextBtn.textContent = currentQ === TOTAL - 1 ? 'See Results' : 'Next';
+  nextBtn.style.display = 'block';
+
+  // Push answer to Firebase
+  if (db && roomCode) {
+    // Map back to original option index for consistent aggregation
+    const originalIdx = q.options.indexOf(q.displayOptions[idx]);
+    db.ref(`rooms/${roomCode}/answers/${currentQ}/${sessionId}`).set({
+      selected: originalIdx,
+      correct: isCorrect
+    });
+    db.ref(`rooms/${roomCode}/participants/${sessionId}/score`).set(score);
+  }
+}
+
+function nextQuestion() {
+  currentQ++;
+  if (currentQ >= TOTAL) showResults();
+  else showQuestion();
+}
+
+function updateProgress() {
+  const pct = (currentQ / TOTAL) * 100;
+  const fill = document.getElementById('progressFill');
+  fill.style.width = pct + '%';
+  const q = shuffledQuestions[currentQ];
+  const colors = { easy: 'var(--lime)', medium: 'var(--gold)', hard: 'var(--red)', 'super-hard': 'var(--purple)' };
+  fill.style.backgroundColor = colors[q.difficulty];
+  document.getElementById('progressText').textContent = `Question ${currentQ + 1} of ${TOTAL}`;
+  document.getElementById('difficultyText').textContent = difficultyLabel(q.difficulty);
+}
+
+function showResults() {
+  document.getElementById('questionScreen').style.display = 'none';
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('resultsScreen').style.display = 'block';
+
+  const pct = Math.round((score / TOTAL) * 100);
+  document.getElementById('resScore').textContent = score;
+  document.getElementById('resPercent').textContent = pct + '%';
+
+  const msg = document.getElementById('resMessage');
+  if (score >= 22) {
+    msg.className = 'results-message excellent';
+    msg.innerHTML = '<strong>Giant status!</strong> You really know your stuff. You\'re ready to compete and win contracts.';
+    launchConfetti();
+  } else if (score >= 17) {
+    msg.className = 'results-message good';
+    msg.innerHTML = '<strong>Solid foundation!</strong> You\'ve got the core concepts down. Sharpen the Hard and Super Hard topics to level up.';
+  } else if (score >= 10) {
+    msg.className = 'results-message good';
+    msg.innerHTML = '<strong>Getting there!</strong> You know the basics, but the advanced material needs work. Focus on FAR procedures, thresholds, and contract types.';
+  } else {
+    msg.className = 'results-message needs-work';
+    msg.innerHTML = '<strong>Keep studying!</strong> Government contracting rewards the prepared. Review the course material and come back stronger.';
+  }
+
+  const bd = document.getElementById('breakdown');
+  bd.innerHTML = `
+    <div class="breakdown-item"><div class="breakdown-label easy">Easy</div><div class="breakdown-score">${scores.easy}/${TIER_COUNTS.easy}</div></div>
+    <div class="breakdown-item"><div class="breakdown-label medium">Medium</div><div class="breakdown-score">${scores.medium}/${TIER_COUNTS.medium}</div></div>
+    <div class="breakdown-item"><div class="breakdown-label hard">Hard</div><div class="breakdown-score">${scores.hard}/${TIER_COUNTS.hard}</div></div>
+    <div class="breakdown-item"><div class="breakdown-label super-hard">Super Hard</div><div class="breakdown-score">${scores['super-hard']}/${TIER_COUNTS['super-hard']}</div></div>
+  `;
+  document.getElementById('resultsScreen').classList.add('fade-in');
+
+  // Mark finished in Firebase
+  if (db && roomCode) {
+    db.ref(`rooms/${roomCode}/participants/${sessionId}`).update({ finished: true, finalScore: score });
+  }
+}
+
+function resetQuiz() {
+  document.getElementById('resultsScreen').style.display = 'none';
+  document.getElementById('startScreen').style.display = 'block';
+  document.getElementById('progressWrap').style.display = 'none';
+  const canvas = document.getElementById('confetti-canvas');
+  canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);
+}
+
+// =============================================
+// PRESENTER DASHBOARD
+// =============================================
+function listenToRoom() {
+  // Listen for participants
+  db.ref(`rooms/${roomCode}/participants`).on('value', snap => {
+    const data = snap.val() || {};
+    const participants = Object.values(data);
+    document.getElementById('dashParticipants').textContent = participants.length;
+    document.getElementById('dashCompleted').textContent = participants.filter(p => p.finished).length;
+    renderLeaderboard(participants);
+  });
+
+  // Listen for answers on current question
+  listenToAnswers();
+}
+
+function listenToAnswers() {
+  // Remove old listener
+  if (window._answerRef) window._answerRef.off();
+
+  window._answerRef = db.ref(`rooms/${roomCode}/answers/${dashQ}`);
+  window._answerRef.on('value', snap => {
+    const data = snap.val() || {};
+    renderDashBars(data);
+  });
+}
+
+function renderDashQuestion() {
+  const q = QUESTIONS[dashQ];
+  document.getElementById('dashQLabel').textContent = `Question ${dashQ + 1} / ${TOTAL}`;
+  document.getElementById('dashPrevBtn').disabled = dashQ === 0;
+  document.getElementById('dashNextBtn').disabled = dashQ === TOTAL - 1;
+
+  let html = `<span class="difficulty-badge ${q.difficulty}" style="margin-bottom:12px;display:inline-block;">${difficultyLabel(q.difficulty)}</span>`;
+  html += `<div class="dash-question">${q.question}</div>`;
+
+  q.options.forEach((opt, i) => {
+    const isCorrect = i === q.correct;
+    html += `<div class="dash-option-row" id="dashOpt${i}">
+      <div class="dash-option-label ${isCorrect ? 'is-correct' : ''}">${isCorrect ? '\u2713 ' : ''}${opt}</div>
+      <div class="dash-bar-wrap"><div class="dash-bar empty-bar" id="dashBar${i}">0</div></div>
+    </div>`;
+  });
+
+  document.getElementById('dashQuestionArea').innerHTML = html;
+}
+
+function renderDashBars(answersData) {
+  const counts = [0, 0, 0, 0];
+  let total = 0;
+  Object.values(answersData).forEach(a => {
+    if (a.selected >= 0 && a.selected < 4) { counts[a.selected]++; total++; }
+  });
+
+  const q = QUESTIONS[dashQ];
+  for (let i = 0; i < 4; i++) {
+    const bar = document.getElementById(`dashBar${i}`);
+    if (!bar) continue;
+    const pct = total > 0 ? Math.round((counts[i] / total) * 100) : 0;
+    bar.style.width = pct > 0 ? pct + '%' : '32px';
+    bar.textContent = counts[i] > 0 ? `${counts[i]} (${pct}%)` : '0';
+    bar.className = 'dash-bar ' + (i === q.correct ? 'correct-bar' : counts[i] > 0 ? 'wrong-bar' : 'empty-bar');
+  }
+}
+
+function renderLeaderboard(participants) {
+  const sorted = participants.filter(p => p.name).sort((a, b) => (b.finalScore || b.score || 0) - (a.finalScore || a.score || 0));
+  const top10 = sorted.slice(0, 10);
+
+  let html = '<h3>Leaderboard</h3>';
+  top10.forEach((p, i) => {
+    const s = p.finalScore != null ? p.finalScore : (p.score || 0);
+    const medal = i === 0 ? '\uD83E\uDD47' : i === 1 ? '\uD83E\uDD48' : i === 2 ? '\uD83E\uDD49' : '';
+    html += `<div class="lb-row"><span class="lb-rank">${medal || (i+1)}</span><span class="lb-name">${p.name}</span><span class="lb-score">${s}/${TOTAL}</span></div>`;
+  });
+
+  if (top10.length === 0) html += '<div style="color:var(--text-light);padding:12px;">Waiting for students to join...</div>';
+  document.getElementById('dashLeaderboard').innerHTML = html;
+}
+
+function dashPrev() { if (dashQ > 0) { dashQ--; renderDashQuestion(); listenToAnswers(); } }
+function dashNext() { if (dashQ < TOTAL - 1) { dashQ++; renderDashQuestion(); listenToAnswers(); } }
+
+// =============================================
+// CONFETTI
+// =============================================
+function launchConfetti() {
+  const canvas = document.getElementById('confetti-canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+  const colors = ['#1B5E20','#8BC34A','#FFD700','#E53935','#7B1FA2','#4CAF50','#FFC107'];
+  const pieces = [];
+  for (let i = 0; i < 150; i++) {
+    pieces.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height - canvas.height, w: Math.random()*10+5, h: Math.random()*6+3, color: colors[Math.floor(Math.random()*colors.length)], vx: (Math.random()-0.5)*3, vy: Math.random()*3+2, rot: Math.random()*360, rotSpeed: (Math.random()-0.5)*8, opacity: 1 });
+  }
+  let frame = 0;
+  function animate() {
+    ctx.clearRect(0,0,canvas.width,canvas.height); frame++;
+    if (frame > 140) pieces.forEach(p => { p.opacity = Math.max(0, p.opacity - 0.025); });
+    pieces.forEach(p => {
+      p.x += p.vx; p.y += p.vy; p.rot += p.rotSpeed; p.vy += 0.05;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.rot*Math.PI/180);
+      ctx.globalAlpha = p.opacity; ctx.fillStyle = p.color;
+      ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); ctx.restore();
+    });
+    if (frame < 180) requestAnimationFrame(animate);
+    else ctx.clearRect(0,0,canvas.width,canvas.height);
+  }
+  animate();
+}
+
+window.addEventListener('resize', () => { const c = document.getElementById('confetti-canvas'); c.width = window.innerWidth; c.height = window.innerHeight; });
+
+// Keyboard
+document.addEventListener('keydown', (e) => {
+  if (isPresenter) {
+    if (e.key === 'ArrowLeft') dashPrev();
+    if (e.key === 'ArrowRight') dashNext();
+    return;
+  }
+  if (e.key === 'Enter' || e.key === ' ') {
+    const nb = document.getElementById('nextBtn');
+    if (nb.style.display === 'block') { e.preventDefault(); nextQuestion(); }
+  }
+  if (['1','2','3','4'].includes(e.key) && !answered) {
+    const btns = document.querySelectorAll('.option-btn');
+    if (btns[parseInt(e.key)-1]) selectOption(parseInt(e.key)-1);
+  }
+});
+
+// Boot
+init();
+</script>
+</body>
+</html>
