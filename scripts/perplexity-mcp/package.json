@@ -1,0 +1,13 @@
+{
+  "name": "perplexity-mcp",
+  "version": "1.0.0",
+  "description": "Perplexity API MCP server for fact-checking GovCon content",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

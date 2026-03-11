@@ -1,0 +1,1928 @@
+{
+  "description": "28-course structure: Phase → Course → Lesson → Slides → Resources",
+  "version": "2.0",
+  "phases": [
+    {
+      "id": "phase-1",
+      "order": 1,
+      "name": "Setup",
+      "type": "once",
+      "description": "Foundation setup—complete once.",
+      "courses": [
+        {
+          "id": "1-1",
+          "title": "Choose Your Business Structure",
+          "webinarFiles": [
+            "phase-1-01-supplier-service-provider-consultant",
+            "phase-1-02-duns-and-uei",
+            "phase-1-03-creating-pro-email"
+          ],
+          "lessons": [
+            {
+              "id": "1-1-1",
+              "title": "Supplier vs Service Provider vs Consultant",
+              "webinarFile": "phase-1-01-supplier-service-provider-consultant",
+              "slideCount": 15,
+              "slideOutline": [
+                "Title slide",
+                "Phase 1 context",
+                "Why business structure matters",
+                "Supplier model overview",
+                "Service Provider model overview",
+                "Consultant model overview",
+                "Comparison table",
+                "Pricing differences",
+                "Contract type differences",
+                "Assessment questions",
+                "Decision framework",
+                "Hybrid models",
+                "Federal contracting implications",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "consultant-phone-script.docx",
+                "consultant-agreement.docx",
+                "how-i-found-8a-company.pdf",
+                "corporation-matrix.jpg"
+              ]
+            },
+            {
+              "id": "1-1-2",
+              "title": "DUNS and UEI",
+              "webinarFile": "phase-1-02-duns-and-uei",
+              "slideCount": 15,
+              "slideOutline": [
+                "Title slide",
+                "Introduction",
+                "What is DUNS?",
+                "DUNS importance (historical)",
+                "Obtaining DUNS",
+                "What is UEI?",
+                "UEI transition",
+                "How UEI is assigned",
+                "DUNS to UEI transition",
+                "What changed",
+                "Importance in federal contracting",
+                "Where UEI is used",
+                "Practical steps",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "update-renew-sam.pdf",
+                "sam-dropdown-menu.pdf"
+              ]
+            },
+            {
+              "id": "1-1-3",
+              "title": "Creating Professional Email",
+              "webinarFile": "phase-1-03-creating-pro-email",
+              "slideCount": 15,
+              "slideOutline": [
+                "Title slide",
+                "Why professional email matters",
+                "First impressions",
+                "Custom domain benefits",
+                "Email hosting options",
+                "Setting up domain",
+                "Email address formats",
+                "Role-based addresses",
+                "Email signature essentials",
+                "Signature best practices",
+                "Signature examples",
+                "Email organization",
+                "Best practices",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "email-script-1.pdf",
+                "email-script-2.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-2",
+          "title": "Identify Your NAICS",
+          "webinarFiles": [
+            "phase-1-04-how-to-identify-naics"
+          ],
+          "lessons": [
+            {
+              "id": "1-2-1",
+              "title": "Understanding NAICS Codes",
+              "webinarFile": "phase-1-04-how-to-identify-naics",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are NAICS codes?",
+                "NAICS code structure (6-digit hierarchy)",
+                "Why NAICS codes matter in federal contracting",
+                "Size standards and NAICS",
+                "How agencies use NAICS codes",
+                "Primary vs. secondary codes",
+                "Common NAICS mistakes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf",
+                "8a-code-matrix.pdf"
+              ]
+            },
+            {
+              "id": "1-2-2",
+              "title": "Tools for Finding Your NAICS Codes",
+              "webinarFile": "phase-1-04-how-to-identify-naics",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Census Bureau NAICS search tool",
+                "Official NAICS website walkthrough",
+                "SAM.gov NAICS lookup",
+                "SBA size standards table",
+                "Competitor research for NAICS",
+                "Industry association resources",
+                "Cross-referencing multiple tools",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf"
+              ]
+            },
+            {
+              "id": "1-2-3",
+              "title": "NAICS Code Selection Strategy",
+              "webinarFile": "phase-1-04-how-to-identify-naics",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Step-by-step identification process",
+                "Evaluating your services against codes",
+                "How many codes to select (3-10 rule)",
+                "Primary code selection criteria",
+                "Secondary code strategy",
+                "NAICS codes and set-asides",
+                "Updating codes as you grow",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-3",
+          "title": "Create Your SAM.gov Profile",
+          "webinarFiles": [
+            "phase-1-05-how-to-create-sam-gov-profile"
+          ],
+          "lessons": [
+            {
+              "id": "1-3-1",
+              "title": "What is SAM.gov & Pre-Registration Prep",
+              "webinarFile": "phase-1-05-how-to-create-sam-gov-profile",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is SAM.gov?",
+                "Why SAM registration is mandatory",
+                "Information you need before starting",
+                "EIN and legal business name verification",
+                "Banking information requirements",
+                "NAICS codes preparation",
+                "Points of contact needed",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "sam-registration-checklist.pdf",
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "1-3-2",
+              "title": "SAM.gov Registration Walkthrough",
+              "webinarFile": "phase-1-05-how-to-create-sam-gov-profile",
+              "slideCount": 12,
+              "slideOutline": [
+                "Title slide",
+                "Creating your SAM.gov account",
+                "Entity registration overview",
+                "Step 1: Start registration",
+                "Step 2: Core data entry",
+                "Step 3: Financial information",
+                "Step 4: NAICS codes entry",
+                "Step 5: Points of contact",
+                "Step 6: Representations & certifications",
+                "Step 7: Review and submit",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "sam-registration-checklist.pdf",
+                "sam-dropdown-menu.pdf"
+              ]
+            },
+            {
+              "id": "1-3-3",
+              "title": "Post-Submission & Troubleshooting",
+              "webinarFile": "phase-1-05-how-to-create-sam-gov-profile",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Post-submission process (7-10 business days)",
+                "Checking registration status",
+                "Annual renewal requirements",
+                "Common mistake: Name mismatches with IRS",
+                "Common mistake: Address problems",
+                "Common mistake: Incomplete reps & certs",
+                "Troubleshooting failed validations",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-4",
+          "title": "DSBS",
+          "webinarFiles": [
+            "phase-1-06-dsbs"
+          ],
+          "lessons": [
+            {
+              "id": "1-4-1",
+              "title": "What is DSBS?",
+              "webinarFile": "phase-1-06-dsbs",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is DSBS (Dynamic Small Business Search)?",
+                "Purpose and function in the SBA ecosystem",
+                "Who uses DSBS (primes, agencies, buyers)",
+                "How DSBS connects to SAM.gov",
+                "Discoverability benefits",
+                "Marketing benefits",
+                "How agencies search DSBS",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "1-4-2",
+              "title": "DSBS Registration & Profile Optimization",
+              "webinarFile": "phase-1-06-dsbs",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Registration prerequisites (SAM.gov first)",
+                "Step-by-step registration process",
+                "Profile information required",
+                "Optimizing your profile for search",
+                "Keyword strategy and relevance",
+                "Capability description best practices",
+                "Keeping your profile updated",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-5",
+          "title": "Apex Accelerator",
+          "webinarFiles": [
+            "phase-1-07-benefits-what-to-say-apex-accelerator"
+          ],
+          "lessons": [
+            {
+              "id": "1-5-1",
+              "title": "What is an Apex Accelerator & Benefits",
+              "webinarFile": "phase-1-07-benefits-what-to-say-apex-accelerator",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are Apex Accelerators (formerly PTACs)?",
+                "Government-funded counseling centers",
+                "Free and low-cost services overview",
+                "One-on-one expert guidance",
+                "Bid matching services",
+                "Training and education programs",
+                "Proposal review assistance",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "15-questions-apex-counselor.pdf",
+                "apex-accelerator-guide.pdf"
+              ]
+            },
+            {
+              "id": "1-5-2",
+              "title": "Finding Your Apex Accelerator & What to Say",
+              "webinarFile": "phase-1-07-benefits-what-to-say-apex-accelerator",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "APTAC locator tool",
+                "Finding your local Apex Accelerator",
+                "Initial contact script",
+                "What to tell them about your business",
+                "Questions to ask at first meeting",
+                "First meeting preparation checklist",
+                "Maximizing the relationship over time",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "15-questions-apex-counselor.pdf",
+                "apex-accelerator-guide.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1-6",
+          "title": "Capability Statement & Differentiators",
+          "webinarFiles": [
+            "phase-1-08-capability-statement-differentiators"
+          ],
+          "lessons": [
+            {
+              "id": "1-6-1",
+              "title": "Anatomy of a Capability Statement",
+              "webinarFile": "phase-1-08-capability-statement-differentiators",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is a capability statement?",
+                "Why it matters (your business resume)",
+                "Header section essentials",
+                "Core competencies section",
+                "Past performance section",
+                "Company information (UEI, CAGE, certs)",
+                "Certifications and set-asides",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capability-statement-examples.pdf",
+                "capability-statement-checklist.pdf"
+              ]
+            },
+            {
+              "id": "1-6-2",
+              "title": "Identifying Your Differentiators",
+              "webinarFile": "phase-1-08-capability-statement-differentiators",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are differentiators?",
+                "Types: Service/product differentiation",
+                "Types: Performance differentiation",
+                "Types: Company differentiation",
+                "Types: Relationship differentiation",
+                "Differentiators must be real, relevant, verifiable",
+                "Bootcamp clip: Differentiators in action",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capability-statement-examples.pdf"
+              ]
+            },
+            {
+              "id": "1-6-3",
+              "title": "Format, Design & Usage",
+              "webinarFile": "phase-1-08-capability-statement-differentiators",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "One-page vs. multi-page formats",
+                "Professional design best practices",
+                "Benefit-focused writing tips",
+                "Layout and visual hierarchy",
+                "When to use your capability statement",
+                "Capability briefings with government",
+                "Tailoring for different audiences",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capability-statement-checklist.pdf",
+                "sba-profile-checklist.docx"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-2",
+      "order": 2,
+      "name": "Bidding",
+      "type": "repeat",
+      "description": "Ongoing activities—repeat for each opportunity.",
+      "courses": [
+        {
+          "id": "2-1",
+          "title": "How to Find Bid Opportunities",
+          "webinarFiles": [
+            "phase-2-01-how-to-find-bid-opportunities"
+          ],
+          "lessons": [
+            {
+              "id": "2-1-1",
+              "title": "SAM.gov & Opportunity Sources",
+              "webinarFile": "phase-2-01-how-to-find-bid-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "SAM.gov Contract Opportunities overview",
+                "Navigating the search interface",
+                "GSA eBuy platform",
+                "SubNet for subcontracting",
+                "Agency-specific portals",
+                "Saved searches and email alerts",
+                "Opportunity tracking spreadsheets",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "dibbs-solicitations.pptx",
+                "dibbs-quoting.pptx",
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "2-1-2",
+              "title": "Understanding Opportunity Types",
+              "webinarFile": "phase-2-01-how-to-find-bid-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Request for Proposals (RFP)",
+                "Request for Quotations (RFQ)",
+                "Request for Information (RFI)",
+                "Sources Sought notices",
+                "Task orders under IDIQs",
+                "Set-aside opportunities",
+                "Small business set-aside types",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "2-1-3",
+              "title": "Search Strategies & Bid/No-Bid Decisions",
+              "webinarFile": "phase-2-01-how-to-find-bid-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Keyword search strategies",
+                "NAICS code filtering",
+                "Agency-specific searches",
+                "Set-aside type filtering",
+                "Bid/no-bid decision framework",
+                "Capability match assessment",
+                "Resource availability check",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2-2",
+          "title": "Assemble Team Based on Opportunities",
+          "webinarFiles": [
+            "phase-2-02-assemble-team-based-on-opportunities"
+          ],
+          "lessons": [
+            {
+              "id": "2-2-1",
+              "title": "Analyzing Opportunity Requirements",
+              "webinarFile": "phase-2-02-assemble-team-based-on-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Reading the Statement of Work (SOW)",
+                "Identifying evaluation criteria",
+                "Spotting past performance requirements",
+                "Identifying capability gaps",
+                "Personnel and staffing requirements",
+                "Clearance and certification needs",
+                "Geographic and facility requirements",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "teaming-agreement-sample.pdf"
+              ]
+            },
+            {
+              "id": "2-2-2",
+              "title": "Team Formation & Finding Partners",
+              "webinarFile": "phase-2-02-assemble-team-based-on-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "When you need a team",
+                "Prime vs. subcontractor positioning",
+                "Team formation structures",
+                "Finding partners in DSBS",
+                "SubNet for partner search",
+                "Industry association networking",
+                "Evaluating potential partners",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "teaming-agreement-sample.pdf",
+                "joint-venture-docs.pdf"
+              ]
+            },
+            {
+              "id": "2-2-3",
+              "title": "Teaming Agreements",
+              "webinarFile": "phase-2-02-assemble-team-based-on-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is a teaming agreement?",
+                "Key components of teaming agreements",
+                "Work share allocation",
+                "Flow-down clauses",
+                "Risk allocation between partners",
+                "Intellectual property considerations",
+                "Non-disclosure and non-compete terms",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "teaming-agreement-sample.pdf",
+                "joint-venture-docs.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2-3",
+          "title": "Apply for Vendor/Supplier Credit",
+          "webinarFiles": [
+            "phase-2-03-apply-for-vendor-supplier-credit"
+          ],
+          "lessons": [
+            {
+              "id": "2-3-1",
+              "title": "Building Business Credit",
+              "webinarFile": "phase-2-03-apply-for-vendor-supplier-credit",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Why credit matters in government contracting",
+                "Business credit vs. personal credit",
+                "Credit reporting agencies (D&B, Experian)",
+                "Building business credit history",
+                "Financial statements overview (P&L, balance sheet)",
+                "Banking relationships for federal contractors",
+                "Lines of credit and cash flow management",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "bd-progress-task-list.xlsx",
+                "supplier-credit-guide.pdf"
+              ]
+            },
+            {
+              "id": "2-3-2",
+              "title": "Bonding Requirements",
+              "webinarFile": "phase-2-03-apply-for-vendor-supplier-credit",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is bonding and why it matters",
+                "Bid bonds explained",
+                "Performance bonds explained",
+                "Payment bonds explained",
+                "Working with surety companies",
+                "Bonding capacity and limits",
+                "SBA Surety Bond Guarantee Program",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "supplier-credit-guide.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2-4",
+          "title": "Understand Solicitations (RFP, RFQ, RFI, Task Orders)",
+          "webinarFiles": [
+            "phase-2-04-respond-to-opportunity"
+          ],
+          "lessons": [
+            {
+              "id": "2-4-1",
+              "title": "Solicitation Types",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "RFP structure overview",
+                "RFQ structure and when used",
+                "RFI purpose and response strategy",
+                "Task orders under existing contracts",
+                "Simplified acquisitions (micro-purchase)",
+                "GSA Schedule orders",
+                "Blanket Purchase Agreements (BPAs)",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "compliance-matrix-template.xlsx",
+                "proposal-samples.pdf"
+              ]
+            },
+            {
+              "id": "2-4-2",
+              "title": "Reading and Analyzing an RFP",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 12,
+              "slideOutline": [
+                "Title slide",
+                "RFP structure: Sections A through M",
+                "Section C: Statement of Work",
+                "Section L: Instructions to offerors",
+                "Section M: Evaluation criteria",
+                "Understanding evaluation factors",
+                "Price vs. technical weighting",
+                "Past performance requirements",
+                "Page limits and format requirements",
+                "Questions and amendments process",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "compliance-matrix-template.xlsx",
+                "proposal-samples.pdf",
+                "bid-forms.pdf"
+              ]
+            },
+            {
+              "id": "2-4-3",
+              "title": "Building a Compliance Matrix",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is a compliance matrix?",
+                "Why compliance matrices prevent disqualification",
+                "Creating your matrix template",
+                "Mapping requirements to responses",
+                "Cross-referencing sections L and M",
+                "Tracking mandatory vs. desired requirements",
+                "Using the matrix during proposal writing",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "compliance-matrix-template.xlsx"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2-5",
+          "title": "Submit Your Proposal",
+          "webinarFiles": [
+            "phase-2-04-respond-to-opportunity"
+          ],
+          "lessons": [
+            {
+              "id": "2-5-1",
+              "title": "Technical Approach & Past Performance",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Technical approach structure",
+                "Writing to evaluation criteria",
+                "Management approach",
+                "Project management plan",
+                "Past performance narratives",
+                "Relevant experience documentation",
+                "Reference selection strategy",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "proposal-samples.pdf",
+                "estimating-templates.xlsx"
+              ]
+            },
+            {
+              "id": "2-5-2",
+              "title": "Pricing Your Proposal",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Cost proposal structure",
+                "Labor rate development",
+                "Direct vs. indirect costs",
+                "Overhead and G&A rates",
+                "Cost realism and reasonableness",
+                "Price-to-win analysis",
+                "Common pricing mistakes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "estimating-templates.xlsx"
+              ]
+            },
+            {
+              "id": "2-5-3",
+              "title": "Submission Process & Quality Control",
+              "webinarFile": "phase-2-04-respond-to-opportunity",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Pre-submission quality checklist",
+                "Compliance review process",
+                "Red team / pink team reviews",
+                "Electronic submission requirements",
+                "Email submission protocols",
+                "Hard copy delivery requirements",
+                "Common submission mistakes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "proposal-samples.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "2-6",
+          "title": "Evaluate Bid Results",
+          "webinarFiles": [
+            "phase-2-05-evaluate-bid-results"
+          ],
+          "lessons": [
+            {
+              "id": "2-6-1",
+              "title": "Award Results & Debriefings",
+              "webinarFile": "phase-2-05-evaluate-bid-results",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Finding award results on SAM.gov",
+                "USAspending.gov for award data",
+                "SAM.gov contract data (formerly FPDS)",
+                "Understanding award decisions",
+                "Win analysis process",
+                "Loss analysis process",
+                "Requesting a debrief",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "proposal-samples.pdf"
+              ]
+            },
+            {
+              "id": "2-6-2",
+              "title": "Lessons Learned & Strategy Refinement",
+              "webinarFile": "phase-2-05-evaluate-bid-results",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Documenting debrief feedback",
+                "Identifying improvement areas",
+                "Updating capability statements",
+                "Refining pricing strategy",
+                "Strengthening past performance",
+                "Building competitive intelligence",
+                "Creating a bid improvement plan",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "proposal-samples.pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-3",
+      "order": 3,
+      "name": "Business Development",
+      "type": "repeat",
+      "description": "Relationship building—repeat continuously.",
+      "courses": [
+        {
+          "id": "3-1",
+          "title": "Identify Top 25 Buyers",
+          "webinarFiles": [
+            "phase-3-01-identify-top-25-buyers-future-bids"
+          ],
+          "lessons": [
+            {
+              "id": "3-1-1",
+              "title": "Research via USAspending & SAM.gov Contract Data",
+              "webinarFile": "phase-3-01-identify-top-25-buyers-future-bids",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Why research before bidding",
+                "USAspending.gov overview",
+                "Searching by NAICS code on USAspending",
+                "SAM.gov contract data (formerly FPDS, now integrated)",
+                "Analyzing spending patterns by agency",
+                "Identifying top buyers in your space",
+                "Building your target market list (TML)",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "fpds-find-buyer.docx",
+                "bid-no-bid-framework.pdf",
+                "fpds-ng-handout.pdf"
+              ]
+            },
+            {
+              "id": "3-1-2",
+              "title": "Pre-SAM Opportunities",
+              "webinarFile": "phase-3-01-identify-top-25-buyers-future-bids",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Acquisition forecasts and plans",
+                "Sources sought notices",
+                "Market research requests",
+                "RFI responses as relationship builders",
+                "Budget documents and strategic plans",
+                "Industry days and pre-solicitation events",
+                "Agency forecast lists",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "bid-no-bid-framework.pdf"
+              ]
+            },
+            {
+              "id": "3-1-3",
+              "title": "Agency Procurement Processes",
+              "webinarFile": "phase-3-01-identify-top-25-buyers-future-bids",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "How federal agencies buy",
+                "Contracting officer roles",
+                "Program manager relationships",
+                "Small business specialists",
+                "OSDBU office connections",
+                "Agency-specific procurement portals",
+                "Pre-solicitation engagement strategy",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "fpds-ng-handout.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3-2",
+          "title": "Meetings with Government Buyers",
+          "webinarFiles": [
+            "phase-3-02-meetings-with-government-buyers"
+          ],
+          "lessons": [
+            {
+              "id": "3-2-1",
+              "title": "Finding Government Contacts",
+              "webinarFile": "phase-3-02-meetings-with-government-buyers",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Types of government contacts to find",
+                "Contracting officers (agency websites, SAM.gov)",
+                "Small business specialists",
+                "OSDBU/OSS offices",
+                "Program managers",
+                "Using SAM.gov to find contacts",
+                "Referral-based introductions",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capabilities-briefing-checklist.pdf",
+                "navfac-contacts.pdf"
+              ]
+            },
+            {
+              "id": "3-2-2",
+              "title": "Outreach Emails & Cold Contact",
+              "webinarFile": "phase-3-02-meetings-with-government-buyers",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Email subject line best practices",
+                "Introduction email template",
+                "What to include in your intro",
+                "Professional tone and formatting",
+                "Capability statement attachment strategy",
+                "Follow-up timing and frequency",
+                "Phone outreach scripts",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capture-management-osdbu.docx"
+              ]
+            },
+            {
+              "id": "3-2-3",
+              "title": "Capability Briefings",
+              "webinarFile": "phase-3-02-meetings-with-government-buyers",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is a capability briefing?",
+                "Meeting preparation checklist",
+                "Materials to bring",
+                "Meeting objectives and agenda",
+                "Active listening during meetings",
+                "Questions to ask government buyers",
+                "Follow-up within 48 hours",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "capabilities-briefing-checklist.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3-3",
+          "title": "Industry Events & Site Visits",
+          "webinarFiles": [
+            "phase-3-03-attend-industry-events",
+            "phase-3-04-attend-site-visits"
+          ],
+          "lessons": [
+            {
+              "id": "3-3-1",
+              "title": "Attend Industry Events",
+              "webinarFile": "phase-3-03-attend-industry-events",
+              "slideCount": 12,
+              "slideOutline": [
+                "Title slide",
+                "Types of industry events",
+                "Finding events (SBA, PTAC, agency calendars)",
+                "Event selection strategy",
+                "Pre-event preparation",
+                "Elevator pitch development",
+                "Materials to bring (cap statements, cards)",
+                "Networking at the event",
+                "Quality over quantity approach",
+                "Business card and LinkedIn exchange",
+                "Follow-up within 48 hours",
+                "Key takeaways"
+              ],
+              "resources": [
+                "bd-progress-task-list.xlsx"
+              ]
+            },
+            {
+              "id": "3-3-2",
+              "title": "Attend Site Visits",
+              "webinarFile": "phase-3-04-attend-site-visits",
+              "slideCount": 12,
+              "slideOutline": [
+                "Title slide",
+                "Types of site visits (facility tours, pre-award)",
+                "When site visits are required",
+                "Preparation for site visits",
+                "Facility readiness assessment",
+                "Professional presentation tips",
+                "Demonstrating capabilities on-site",
+                "Active listening and note-taking",
+                "Questions to ask during visits",
+                "Follow-up after site visits",
+                "Building on site visit relationships",
+                "Key takeaways"
+              ],
+              "resources": [
+                "capabilities-briefing-checklist.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3-4",
+          "title": "Get on Supplier Lists",
+          "webinarFiles": [
+            "phase-3-05-get-on-supplier-list-top-25-suppliers"
+          ],
+          "lessons": [
+            {
+              "id": "3-4-1",
+              "title": "Vendor Portals & Registration",
+              "webinarFile": "phase-3-05-get-on-supplier-list-top-25-suppliers",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are prime contractor vendor portals?",
+                "Top 25 federal prime contractors",
+                "How primes search for small business subs",
+                "Registration requirements by portal",
+                "Information needed for registration",
+                "Completing portal profiles effectively",
+                "Maintaining portal registrations",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "prime-contractor-checklist.docx"
+              ]
+            },
+            {
+              "id": "3-4-2",
+              "title": "Supplier Diversity Programs",
+              "webinarFile": "phase-3-05-get-on-supplier-list-top-25-suppliers",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are supplier diversity programs?",
+                "Why primes need small business subs",
+                "Small business subcontracting goals",
+                "How to position for subcontracting",
+                "Building relationships with prime contacts",
+                "Responding to subcontracting opportunities",
+                "Teaming arrangements with primes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "prime-contractor-checklist.docx"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "3-5",
+          "title": "Monitor Awards & Sub Opportunities",
+          "webinarFiles": [
+            "phase-3-06-monitor-contract-awards-sub-opportunities"
+          ],
+          "lessons": [
+            {
+              "id": "3-5-1",
+              "title": "SAM.gov Award Monitoring & Tracking",
+              "webinarFile": "phase-3-06-monitor-contract-awards-sub-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Setting up SAM.gov contract data monitoring",
+                "USAspending.gov award tracking",
+                "SAM.gov award notices",
+                "Tracking awards by agency and NAICS",
+                "Identifying new prime contractors",
+                "Analyzing award patterns and trends",
+                "Building an award tracking system",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "fpds-ng-handout.pdf",
+                "idiq-tracking-guide.pdf"
+              ]
+            },
+            {
+              "id": "3-5-2",
+              "title": "IDIQs & Subcontracting Opportunities",
+              "webinarFile": "phase-3-06-monitor-contract-awards-sub-opportunities",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Understanding IDIQ contracts",
+                "Multiple Award Contracts (MACs)",
+                "Task order opportunities under IDIQs",
+                "When IDIQs come up for recompete",
+                "Planning 12-18 months ahead",
+                "SubNet for finding sub opportunities",
+                "Reaching out to new prime winners",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "idiq-tracking-guide.pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-4",
+      "order": 4,
+      "name": "Business Enhancement",
+      "type": "once",
+      "description": "Strategic improvements—complete when ready.",
+      "courses": [
+        {
+          "id": "4-1",
+          "title": "Apply for Small Business Certification",
+          "webinarFiles": [
+            "phase-4-01-apply-small-business-certification"
+          ],
+          "lessons": [
+            {
+              "id": "4-1-1",
+              "title": "Certification Options Overview",
+              "webinarFile": "phase-4-01-apply-small-business-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Why certifications matter",
+                "WOSB / EDWOSB overview",
+                "SDVOSB / VOSB overview",
+                "HUBZone certification overview",
+                "Set-aside contracts explained",
+                "Sole-source opportunities",
+                "Third-party vs. self-certification",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf",
+                "8a-code-matrix.pdf"
+              ]
+            },
+            {
+              "id": "4-1-2",
+              "title": "Eligibility & Documentation",
+              "webinarFile": "phase-4-01-apply-small-business-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "WOSB eligibility requirements",
+                "SDVOSB eligibility requirements",
+                "HUBZone eligibility requirements",
+                "Common documentation needed",
+                "Ownership and control requirements",
+                "Financial documentation",
+                "Preparing your application package",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf"
+              ]
+            },
+            {
+              "id": "4-1-3",
+              "title": "Application Process",
+              "webinarFile": "phase-4-01-apply-small-business-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Where to apply (certify.sba.gov)",
+                "Application timeline (2-8 weeks)",
+                "Step-by-step application walkthrough",
+                "Common application mistakes",
+                "What happens after submission",
+                "Maintaining your certification",
+                "Annual recertification requirements",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-2",
+          "title": "8(a) Certification",
+          "webinarFiles": [
+            "phase-4-02-8a-certification"
+          ],
+          "lessons": [
+            {
+              "id": "4-2-1",
+              "title": "8(a) Program Structure",
+              "webinarFile": "phase-4-02-8a-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is the 8(a) program?",
+                "SBA Business Development Program overview",
+                "9-year program structure (non-renewable)",
+                "Developmental stage (years 1-4)",
+                "Transitional stage (years 5-9)",
+                "Sole-source thresholds ($4M services, $6.5M manufacturing)",
+                "Competitive 8(a) set-asides",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            },
+            {
+              "id": "4-2-2",
+              "title": "8(a) Eligibility Requirements",
+              "webinarFile": "phase-4-02-8a-certification",
+              "slideCount": 12,
+              "slideOutline": [
+                "Title slide",
+                "Social disadvantage requirement",
+                "Presumed groups for social disadvantage",
+                "Proving social disadvantage (non-presumed)",
+                "Economic disadvantage: net worth limits",
+                "Economic disadvantage: income limits",
+                "Economic disadvantage: asset limits",
+                "Business ownership requirement (51%)",
+                "Personal financial interest test",
+                "Good character requirement",
+                "Potential for success criteria",
+                "Key takeaways"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            },
+            {
+              "id": "4-2-3",
+              "title": "Application & 9-Year Plan",
+              "webinarFile": "phase-4-02-8a-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "SBA Connect portal (certify.sba.gov)",
+                "Application documentation checklist",
+                "Personal financial statement (SBA Form 413)",
+                "Business plan requirements",
+                "Application review timeline (3-6 months)",
+                "Business Opportunity Specialist (BOS) role",
+                "Maximizing 8(a) benefits",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-3",
+          "title": "Mentor Protégé Program",
+          "webinarFiles": [
+            "phase-4-03-mentor-protege-program"
+          ],
+          "lessons": [
+            {
+              "id": "4-3-1",
+              "title": "Benefits & Finding a Mentor",
+              "webinarFile": "phase-4-03-mentor-protege-program",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "SBA All Small Mentor-Protege overview",
+                "8(a) Mentor-Protege Program",
+                "DOD agency-specific programs",
+                "Benefits: knowledge transfer",
+                "Benefits: business development support",
+                "Benefits: teaming opportunities",
+                "Finding mentors (events, associations, SBA)",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "joint-venture-docs.pdf",
+                "teaming-agreement-sample.pdf"
+              ]
+            },
+            {
+              "id": "4-3-2",
+              "title": "Joint Ventures & Program Application",
+              "webinarFile": "phase-4-03-mentor-protege-program",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is a joint venture?",
+                "Joint venture structure and requirements",
+                "Joint venture benefits in contracting",
+                "Mentor evaluation and due diligence",
+                "Reference checks and strategic fit",
+                "Formal mentor-protege agreements",
+                "Development plan creation",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "joint-venture-docs.pdf",
+                "teaming-agreement-sample.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-4",
+          "title": "Self Performance Differentiator",
+          "webinarFiles": [
+            "phase-4-04-self-performance-differentiator"
+          ],
+          "lessons": [
+            {
+              "id": "4-4-1",
+              "title": "Self-Performance as Competitive Advantage",
+              "webinarFile": "phase-4-04-self-performance-differentiator",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is self-performance?",
+                "Direct performance vs. subcontracting",
+                "Federal preference for self-performance",
+                "Control and quality advantages",
+                "Risk reduction for the government",
+                "When self-performance is required",
+                "Building self-performance capability",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "past-performance-samples.pdf",
+                "capability-statement-examples.pdf"
+              ]
+            },
+            {
+              "id": "4-4-2",
+              "title": "Documenting Past Performance",
+              "webinarFile": "phase-4-04-self-performance-differentiator",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Why past performance matters in evaluations",
+                "Government vs. commercial past performance",
+                "Creating past performance narratives",
+                "CPARS ratings and their impact",
+                "Reference letters and documentation",
+                "Tracking metrics and outcomes",
+                "Using past performance in proposals",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "past-performance-samples.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-5",
+          "title": "Find Better Partners",
+          "webinarFiles": [
+            "phase-4-05-find-better-partners"
+          ],
+          "lessons": [
+            {
+              "id": "4-5-1",
+              "title": "Evaluating Current Partners",
+              "webinarFile": "phase-4-05-find-better-partners",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "When to reassess partnerships",
+                "Performance evaluation criteria",
+                "Capability gap analysis",
+                "Strategic fit assessment",
+                "Financial stability check",
+                "CPARS ratings of partners",
+                "Red flags in partnerships",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "teaming-agreement-sample.pdf"
+              ]
+            },
+            {
+              "id": "4-5-2",
+              "title": "Building Strategic Partnerships",
+              "webinarFile": "phase-4-05-find-better-partners",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Ideal partner characteristics",
+                "Complementary capabilities",
+                "Geographic coverage considerations",
+                "Finding new partners (events, DSBS, SubNet)",
+                "Due diligence and reference checks",
+                "Structuring partnership agreements",
+                "Opportunity-specific teaming",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "teaming-agreement-sample.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-6",
+          "title": "Identify Mid Size Mentor",
+          "webinarFiles": [
+            "phase-4-06-identify-mid-size-mentor"
+          ],
+          "lessons": [
+            {
+              "id": "4-6-1",
+              "title": "Why Mid-Size Mentors",
+              "webinarFile": "phase-4-06-identify-mid-size-mentor",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Mid-size vs. large prime mentors",
+                "Accessibility advantages",
+                "Similar growth journey experience",
+                "Personalized attention benefits",
+                "Joint venture opportunities",
+                "Flexibility in teaming",
+                "Mid-size success stories",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "joint-venture-docs.pdf"
+              ]
+            },
+            {
+              "id": "4-6-2",
+              "title": "Finding & Approaching Mid-Size Mentors",
+              "webinarFile": "phase-4-06-identify-mid-size-mentor",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Identifying mid-size contractors in your space",
+                "SAM.gov contract data research for mid-size firms",
+                "Industry event networking",
+                "Crafting your value proposition",
+                "Mutual benefits pitch",
+                "Initial outreach approach",
+                "Structuring the relationship",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "joint-venture-docs.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-7",
+          "title": "Speak at an Event",
+          "webinarFiles": [
+            "phase-4-07-speak-at-event"
+          ],
+          "lessons": [
+            {
+              "id": "4-7-1",
+              "title": "Why Speaking Matters",
+              "webinarFile": "phase-4-07-speak-at-event",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Speaking as thought leadership",
+                "Credibility and industry recognition",
+                "Visibility with buyers and primes",
+                "Business development through speaking",
+                "Networking opportunities from speaking",
+                "Lead generation from presentations",
+                "Building your personal brand",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "nsin-overview-deck.pdf"
+              ]
+            },
+            {
+              "id": "4-7-2",
+              "title": "Topic Selection & Booking",
+              "webinarFile": "phase-4-07-speak-at-event",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Choosing your speaking topic",
+                "Matching expertise to audience needs",
+                "Speaking proposal elements",
+                "Title, abstract, and learning objectives",
+                "Speaker bio preparation",
+                "Finding speaking opportunities",
+                "Conference call for speakers",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "nsin-overview-deck.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4-8",
+          "title": "SBA Certifications",
+          "webinarFiles": [
+            "phase-4-01-apply-small-business-certification",
+            "phase-4-02-8a-certification"
+          ],
+          "lessons": [
+            {
+              "id": "4-8-1",
+              "title": "Types of SBA Certifications",
+              "webinarFile": "phase-4-01-apply-small-business-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Overview of SBA certification programs",
+                "8(a) Business Development Program",
+                "Women-Owned Small Business (WOSB)",
+                "Service-Disabled Veteran-Owned (SDVOSB)",
+                "HUBZone certification",
+                "Economically Disadvantaged WOSB (EDWOSB)",
+                "Comparing certification benefits",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf",
+                "8a-code-matrix.pdf"
+              ]
+            },
+            {
+              "id": "4-8-2",
+              "title": "How to Apply for SBA Certifications",
+              "webinarFile": "phase-4-01-apply-small-business-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "SBA Connect portal (certify.sba.gov)",
+                "General documentation requirements",
+                "Ownership and control documentation",
+                "Financial documentation checklist",
+                "Application process walkthrough",
+                "Common mistakes to avoid",
+                "Application review timeline",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "size-standards-table.pdf"
+              ]
+            },
+            {
+              "id": "4-8-3",
+              "title": "Maintaining Your Certification",
+              "webinarFile": "phase-4-02-8a-certification",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Annual recertification requirements",
+                "Reporting changes in ownership",
+                "Reporting changes in size",
+                "Compliance with program rules",
+                "Leveraging certification for set-asides",
+                "Transitioning out of programs",
+                "Long-term certification strategy",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "8a-code-matrix.pdf"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "phase-5",
+      "order": 5,
+      "name": "Contract Management",
+      "type": "ongoing",
+      "description": "After you win—manage and deliver.",
+      "courses": [
+        {
+          "id": "5-1",
+          "title": "System Registrations (PIEE, WAWF)",
+          "webinarFiles": [
+            "phase-5-01-system-registrations-piee-wawf"
+          ],
+          "lessons": [
+            {
+              "id": "5-1-1",
+              "title": "PIEE Registration",
+              "webinarFile": "phase-5-01-system-registrations-piee-wawf",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is PIEE?",
+                "Why PIEE registration matters",
+                "PIEE account creation",
+                "Single sign-on setup",
+                "Entity registration in PIEE",
+                "CAGE code and UEI matching",
+                "Training requirements",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "5-1-2",
+              "title": "WAWF Registration",
+              "webinarFile": "phase-5-01-system-registrations-piee-wawf",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is WAWF (Wide Area Workflow)?",
+                "WAWF's role in getting paid",
+                "WAWF account setup",
+                "Linking WAWF to your contract",
+                "EFT (Electronic Funds Transfer) setup",
+                "Receiving reports (DD Form 250)",
+                "Common WAWF registration mistakes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            },
+            {
+              "id": "5-1-3",
+              "title": "System Navigation & Invoicing",
+              "webinarFile": "phase-5-01-system-registrations-piee-wawf",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "PIEE dashboard navigation",
+                "WAWF invoice creation process",
+                "Invoice flow: submission to payment",
+                "Payment timeline expectations",
+                "Common invoicing tasks",
+                "Troubleshooting payment issues",
+                "Contracting officer guidance",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "reading-betasam.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5-2",
+          "title": "Subcontractor Compliance",
+          "webinarFiles": [
+            "phase-5-02-subcontractor-compliance"
+          ],
+          "lessons": [
+            {
+              "id": "5-2-1",
+              "title": "Flow-Down Clauses",
+              "webinarFile": "phase-5-02-subcontractor-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What are flow-down clauses?",
+                "Mandatory vs. recommended flow-downs",
+                "FAR clauses that must flow down",
+                "DFARS flow-down requirements",
+                "Identifying applicable clauses",
+                "Including flow-downs in subcontracts",
+                "Common flow-down mistakes",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "10-subcontractor-clauses.pdf",
+                "subcontractor-flowdown-clauses.pdf"
+              ]
+            },
+            {
+              "id": "5-2-2",
+              "title": "Managing Subcontractor Performance",
+              "webinarFile": "phase-5-02-subcontractor-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Prime contractor responsibility",
+                "Subcontractor selection and onboarding",
+                "Due diligence requirements",
+                "Compliance verification process",
+                "Performance monitoring systems",
+                "Quality assurance for subcontractors",
+                "Addressing performance issues",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "subcontractor-flowdown-clauses.pdf"
+              ]
+            },
+            {
+              "id": "5-2-3",
+              "title": "eSRS Reporting",
+              "webinarFile": "phase-5-02-subcontractor-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is eSRS (Electronic Subcontracting Reporting)?",
+                "ISR (Individual Subcontract Reports)",
+                "SSR (Summary Subcontract Reports)",
+                "Small business subcontracting goals",
+                "Reporting deadlines and frequency",
+                "Data collection and accuracy",
+                "Submission process walkthrough",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "10-subcontractor-clauses.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5-3",
+          "title": "Project Compliance",
+          "webinarFiles": [
+            "phase-5-03-project-compliance"
+          ],
+          "lessons": [
+            {
+              "id": "5-3-1",
+              "title": "Contract Terms & SOW",
+              "webinarFile": "phase-5-03-project-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Understanding your contract terms",
+                "Statement of Work (SOW) essentials",
+                "Performance Work Statement (PWS)",
+                "Key clauses to know",
+                "Performance requirements",
+                "Quality standards and metrics",
+                "Deliverable specifications",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "sample-quality-plan.pdf"
+              ]
+            },
+            {
+              "id": "5-3-2",
+              "title": "CPARS & Performance Management",
+              "webinarFile": "phase-5-03-project-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "What is CPARS?",
+                "Performance rating levels",
+                "How CPARS ratings affect future bids",
+                "Managing your CPARS ratings",
+                "Responding to CPARS evaluations",
+                "Building a strong performance record",
+                "Timeline and milestones tracking",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "sample-quality-plan.pdf"
+              ]
+            },
+            {
+              "id": "5-3-3",
+              "title": "Deliverable Tracking & Acceptance",
+              "webinarFile": "phase-5-03-project-compliance",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Creating a deliverable tracker",
+                "Deliverable submission requirements",
+                "Quality assurance before submission",
+                "Acceptance process and timeline",
+                "Handling rejections and corrections",
+                "Corrective action procedures",
+                "Ongoing compliance monitoring",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "sample-quality-plan.pdf"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "5-4",
+          "title": "Communication",
+          "webinarFiles": [
+            "phase-5-04-communication"
+          ],
+          "lessons": [
+            {
+              "id": "5-4-1",
+              "title": "Contracting Officer Relations",
+              "webinarFile": "phase-5-04-communication",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Establishing communication early",
+                "Preferred communication methods",
+                "Communication frequency",
+                "Professional relationship building",
+                "Proactive issue notification",
+                "Documentation (email creates a record)",
+                "Responsiveness (24-48 hour rule)",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "email-script-1.pdf",
+                "crm-call-list.xls"
+              ]
+            },
+            {
+              "id": "5-4-2",
+              "title": "Status Reporting & Escalation",
+              "webinarFile": "phase-5-04-communication",
+              "slideCount": 10,
+              "slideOutline": [
+                "Title slide",
+                "Status reporting requirements",
+                "Progress report structure",
+                "Clear and concise writing",
+                "Accurate and timely reporting",
+                "Issue identification and impact assessment",
+                "Solution development before escalating",
+                "Escalation procedures",
+                "Key takeaways",
+                "Next steps"
+              ],
+              "resources": [
+                "email-script-1.pdf",
+                "crm-call-list.xls"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

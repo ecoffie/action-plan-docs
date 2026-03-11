@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GovCon Course – Slide Review | Eric Coffie</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0f172a;
+      color: #f8fafc;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: #1e293b;
+      padding: 1rem 1.5rem;
+      border-bottom: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    header .logo { color: #22c55e; }
+    .nav-buttons {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .nav-buttons button {
+      padding: 0.5rem 1rem;
+      background: #334155;
+      border: 1px solid #475569;
+      color: #f8fafc;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+    .nav-buttons button:hover {
+      background: #475569;
+    }
+    .nav-buttons button.primary {
+      background: #22c55e;
+      color: #0f172a;
+      border-color: #22c55e;
+    }
+    .nav-buttons button.primary:hover {
+      background: #16a34a;
+    }
+    .lesson-indicator {
+      font-size: 0.875rem;
+      color: #94a3b8;
+    }
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 280px;
+      flex-shrink: 0;
+      background: #1e293b;
+      border-right: 1px solid #334155;
+      overflow-y: auto;
+      padding: 1rem 0;
+    }
+    .sidebar h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #64748b;
+      padding: 0 1rem 0.5rem;
+    }
+    .lesson-link {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.875rem;
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+    }
+    .lesson-link:hover {
+      color: #f8fafc;
+      background: #334155;
+    }
+    .lesson-link.active {
+      color: #22c55e;
+      background: #22c55e15;
+      border-left-color: #22c55e;
+    }
+    .slide-viewer {
+      flex: 1;
+      overflow: auto;
+      padding: 2rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .slide-frame {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      overflow: hidden;
+      width: 100%;
+      max-width: 960px;
+      aspect-ratio: 16/9;
+    }
+    .slide-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    @media (max-width: 768px) {
+      .main { flex-direction: column; }
+      .sidebar { width: 100%; max-height: 200px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Slide Review · <span class="logo">GovCon Giants</span> Action Plan Course</h1>
+    <div class="nav-buttons">
+      <button type="button" id="btn-prev" class="primary">← Previous</button>
+      <span class="lesson-indicator" id="lesson-indicator">1 of 30</span>
+      <button type="button" id="btn-next" class="primary">Next →</button>
+    </div>
+  </header>
+  <div class="main">
+    <nav class="sidebar" id="sidebar"></nav>
+    <div class="slide-viewer">
+      <div class="slide-frame">
+        <iframe id="slide-iframe" title="Lesson slide"></iframe>
+      </div>
+    </div>
+  </div>
+  <script>
+    const SLIDES = [
+      {"id":"1-01-1","phase":"Phase 1: Setup","module":"Supplier v Service Provider v Consultant","title":"Supplier vs Service Provider vs Consultant","narration":"Before you do anything, you need to understand what type of government contractor you are. Are you a supplier selling products? A service provider delivering recurring services? Or a consultant offering expertise? Each path has different registration requirements, different buyers, and different bidding processes. The government buys from all three—the key is knowing which one you are."},
+      {"id":"1-02-1","phase":"Phase 1: Setup","module":"DUNS and UEI","title":"DUNS and UEI","narration":"The UEI—Unique Entity Identifier—is your business's ID number in the federal contracting system. It replaced the old DUNS number in 2022. Every business needs one to register in SAM.gov. You request it during the SAM.gov registration process. It's usually assigned within a few days, sometimes instantly. And it's completely free."},
+      {"id":"1-03-1","phase":"Phase 1: Setup","module":"Creating Professional Email","title":"Creating Professional Email","narration":"Use a professional email address—your business domain, not Gmail or Yahoo. Government buyers and contracting officers take you more seriously when you have an email that matches your company name. It costs very little to set up and makes a real difference in credibility."},
+      {"id":"1-04-1","phase":"Phase 1: Setup","module":"How to Identify NAICS","title":"How to Identify NAICS Codes","narration":"NAICS codes are 6-digit numbers that classify what type of business you are. The Census Bureau has a search tool, or you can search NAICS code plus what you do. Look at what your competitors use. Include every code that honestly represents work you can do. Most businesses have 3 to 10 codes. Each code has its own size standard—the threshold for being considered a small business."},
+      {"id":"1-05-1","phase":"Phase 1: Setup","module":"How to Create a SAM.gov Profile","title":"How to Create a SAM.gov Profile","narration":"SAM.gov is the official government database of businesses eligible to do federal contracts. If you're not in SAM, you can't get paid on a federal contract. Period. You need your legal business name, Tax ID or EIN, banking information, NAICS codes, and company officer details. Registration is free. Expect 2 to 4 weeks if you have all documents ready. Most delays come from name mismatches with IRS records or address problems."},
+      {"id":"1-06-1","phase":"Phase 1: Setup","module":"DSBS","title":"DSBS Profile","narration":"DSBS—the Dynamic Small Business Search—is a separate database that pulls from SAM. When you register in SAM.gov, you can opt in to appear in DSBS. Prime contractors and government buyers search DSBS to find small business partners. Make sure your DSBS profile is complete and highlights your capabilities. It's how opportunities find you."},
+      {"id":"1-07-1","phase":"Phase 1: Setup","module":"Benefits / What to say to Apex Accelerator","title":"Benefits and What to Say to Apex Accelerator","narration":"Apex Accelerators—formerly PTACs—are government-funded counseling centers in every state. They offer free help with registration, certifications, finding opportunities, and understanding the process. When you contact your local Apex Accelerator, tell them you're a small business interested in government contracting. Share what you sell, your NAICS codes if you know them, and whether you're registered in SAM yet. Ask for help with registration, capability statements, and how to find opportunities in your industry. They've seen thousands of businesses—they know exactly what you need."},
+      {"id":"1-08-1","phase":"Phase 1: Setup","module":"What to put on Capability Statement / Differentiators","title":"What to Put on Capability Statement and Differentiators","narration":"Your capability statement is your business resume for government buyers. Include your company overview, core competencies, differentiators, past performance, and contact information. Keep it to one or two pages. Your differentiators are what set you apart—maybe it's your certifications like 8(a), SDVOSB, or WOSB, your past performance in a specific niche, or your team's experience. Don't be generic. Government buyers want to know why they should pick you over 50 other businesses. Be specific about what you do better than anyone else."},
+      {"id":"2-01-1","phase":"Phase 2: Bidding","module":"How to Find Bid Opportunities","title":"How to Find Bid Opportunities","narration":"All federal contracts over 25 thousand dollars must be posted on SAM.gov. Go to Contract Opportunities and search by NAICS code, keyword, set-aside type, or agency. Save your searches to get email alerts when new opportunities match. Check regularly—opportunities have deadlines. Most businesses underestimate how much active searching it takes. The government doesn't come to you; you have to find them."},
+      {"id":"2-02-1","phase":"Phase 2: Bidding","module":"Assemble Team Based on Opportunities","title":"Assemble Team Based on Opportunities","narration":"When you find an opportunity that fits, you need the right team. That might mean hiring a proposal writer, bringing in a technical lead, or partnering with another business to meet requirements. Many small businesses win through teaming—combining strengths with complementary partners. Start building relationships before you need them so you can move fast when the right opportunity appears."},
+      {"id":"2-03-1","phase":"Phase 2: Bidding","module":"Apply for Vendor/Supplier Credit","title":"Apply for Vendor/Supplier Credit","narration":"Government contracts often require you to have vendor credit or supplier credit in place. This helps you handle cash flow—the government pays after work is done, typically within 30 days. Building business credit before you need it makes it easier to fulfill contracts. Talk to your bank, consider a business line of credit, and establish business credit history with your UEI."},
+      {"id":"2-04-1","phase":"Phase 2: Bidding","module":"Respond to Opportunity (RFP, RFQ, RFI, Task Orders)","title":"Respond to RFP, RFQ, RFI, Task Orders","narration":"When you find an opportunity, you submit either a bid or a proposal. An RFP is a Request for Proposals—usually for services where they evaluate qualifications and approach. An RFQ is a Request for Quotation—often price-focused. An RFI is a Request for Information—they're gathering intelligence, not necessarily buying yet. Task orders come from existing IDIQ contracts. Read the solicitation carefully. Miss a requirement and you're disqualified."},
+      {"id":"2-05-1","phase":"Phase 2: Bidding","module":"Evaluate Bid Results","title":"Evaluate Bid Results","narration":"Whether you win or lose, evaluate what happened. If you lost, request a debrief from the agency. They'll often tell you why you weren't selected. Use that feedback to improve your next proposal. Most businesses don't win their first bid. Each attempt builds experience. Track what worked and what didn't. The businesses that succeed treat each bid as a learning opportunity."},
+      {"id":"3-01-1","phase":"Phase 3: Business Development","module":"Identify Top 25 Buyers & Future Bids (NOT ON SAM)","title":"Identify Top 25 Buyers - NOT on SAM","narration":"SAM.gov shows you opportunities. But the best contractors don't wait for postings. They identify the top 25 agencies or buyers that purchase what they sell, then research those buyers directly. Use FPDS—Federal Procurement Data System—to see who's actually awarding contracts in your NAICS codes. Build a target list. Then get in front of those buyers before the opportunity is even posted."},
+      {"id":"3-02-1","phase":"Phase 3: Business Development","module":"Setup and Attend Meetings with Government Buyers","title":"Setup and Attend Meetings with Government Buyers","narration":"Relationships matter. Get meetings with small business liaisons, contracting officers, and program managers at your target agencies. Industry days, one-on-ones, and capability briefings are how you get on their radar. Don't wait for an RFP to make contact. When they know you and trust you, you have an advantage when opportunities drop. This is business development—and it's how the best contractors win."},
+      {"id":"3-03-1","phase":"Phase 3: Business Development","module":"Attend Industry Events","title":"Attend Industry Events","narration":"Industry events—trade shows, conferences, agency outreach days—are where you meet buyers and prime contractors. Events like the SBA's Matchmaking events, agency small business forums, and industry-specific conferences put you in the room with decision makers. Bring capability statements. Follow up within 48 hours. The relationships you build at events often lead to opportunities that never get posted publicly."},
+      {"id":"3-04-1","phase":"Phase 3: Business Development","module":"Attend Site Visits","title":"Attend Site Visits","narration":"When an agency holds a site visit or industry day at their facility, go. You'll meet the actual people who write and award contracts. You'll see the facility, understand their needs better, and make a memorable impression. Site visits are often required or strongly encouraged for larger opportunities. Treat them as crucial steps—not optional extras."},
+      {"id":"3-05-1","phase":"Phase 3: Business Development","module":"Get on Supplier List for Top 25 Federal Suppliers","title":"Get on Supplier Lists for Top Federal Suppliers","narration":"Prime contractors—the big companies holding large government contracts—maintain supplier diversity lists. They need small business subcontractors to meet their small business goals. Register in their vendor portals. Get on their supplier lists. When they need a small business partner for a task order, they search their list first. Getting on the lists of the top 25 federal prime contractors in your space opens a huge pipeline."},
+      {"id":"3-06-1","phase":"Phase 3: Business Development","module":"Monitor Contract Awards and Identify Sub Opportunities","title":"Monitor Contract Awards and Sub Opportunities","narration":"Use FPDS and USASpending to see who's winning contracts in your space. When a prime wins a large contract, they often need subcontractors. Reach out. Introduce yourself. Get on their team. Subcontracting is how many small businesses get their first government work and build past performance. Also track IDIQs—Indefinite Delivery, Indefinite Quantity contracts. When an IDIQ is coming up for recompete, that's a major opportunity. Plan 12 to 18 months ahead. Winning an IDIQ position means a pipeline of task orders for years."},
+      {"id":"4-01-1","phase":"Phase 4: Business Enhancement","module":"Apply for Small Business Certification","title":"Apply for Small Business Certification","narration":"Certifications give you access to set-aside contracts. WOSB and EDWOSB are for women-owned businesses. SDVOSB is for service-disabled veteran-owned businesses. HUBZone is for businesses in designated zones. Each opens doors to contracts where you compete against fewer bidders. Most take 2 to 8 weeks. Start with the certifications you clearly qualify for. Don't chase ones that don't fit."},
+      {"id":"4-02-1","phase":"Phase 4: Business Enhancement","module":"8(a) Certification","title":"8(a) Certification","narration":"The 8(a) program is SBA's premier certification for socially and economically disadvantaged businesses. It's a 9-year program with access to sole-source contracts up to 4.5 million for services. The application takes 3 to 6 months and requires extensive documentation. But for those who qualify, 8(a) opens doors that no other certification can. Sole-source means no competition—the contract can be awarded directly to you."},
+      {"id":"4-03-1","phase":"Phase 4: Business Enhancement","module":"Mentor Protégé Program","title":"Mentor-Protégé Program","narration":"The SBA Mentor-Protégé Program pairs small businesses with larger mentor firms. The mentor provides technical assistance, business development support, and often joint venture opportunities. In return, the mentor can get credit toward their small business subcontracting goals. It's a win-win. If you qualify as a protégé, finding the right mentor can accelerate your growth significantly."},
+      {"id":"4-04-1","phase":"Phase 4: Business Enhancement","module":"Focus on Self Performance Capability as Differentiator","title":"Focus on Self Performance as Differentiator","narration":"Past performance is one of the most important evaluation factors. The government wants to know you can deliver. Document every successful project—government or commercial. Get reference letters. Track metrics. When you bid, your past performance section should tell a clear story: we've done this before, we did it well, and here's proof. Strong past performance often beats lower price."},
+      {"id":"4-05-1","phase":"Phase 4: Business Enhancement","module":"Find Better Partners","title":"Find Better Partners","narration":"As you grow, reassess your partnerships. Are your teaming partners still the right fit? Do they have the past performance and capacity you need? The best contractors constantly upgrade their partner network. Attend events, build new relationships, and be willing to team with different partners for different opportunities. The right partner can make the difference between winning and losing."},
+      {"id":"4-06-1","phase":"Phase 4: Business Enhancement","module":"Identify Mid Size Mentor","title":"Identify Mid-Size Mentor","narration":"A mid-size mentor is different from a large prime. Mid-size companies—those between small and large—often have more flexibility to work with you. They're not so big that you're invisible, but they have the past performance and relationships you need. Look for successful mid-size contractors in your space. A mentorship or teaming arrangement with the right mid-size firm can open doors."},
+      {"id":"4-07-1","phase":"Phase 4: Business Enhancement","module":"Speak at an Event","title":"Speak at an Event","narration":"Speaking at industry events establishes you as an expert. When you present at a conference or webinar, buyers and primes see you as knowledgeable and credible. Start small—local chamber events, Apex Accelerator workshops. Build up to larger conferences. Speaking builds your brand and generates inbound interest. It's one of the most effective ways to stand out in a crowded market."},
+      {"id":"5-01-1","phase":"Phase 5: Contract Management","module":"System Registrations (PIEE, WAWF)","title":"System Registrations - PIEE and WAWF","narration":"Once you win a contract, you need to get paid. PIEE is the Procurement Integrated Enterprise Environment—used by DoD for contract management. WAWF is Wide Area Workflow—the system for submitting invoices and receiving payments for DoD contracts. You'll need to register in these systems. Your contracting officer will guide you, but get started early. No registration means no payments."},
+      {"id":"5-02-1","phase":"Phase 5: Contract Management","module":"Subcontractor Compliance","title":"Subcontractor Compliance","narration":"If you're a prime with subcontractors, you're responsible for their compliance. That means flow-down clauses, small business reporting, and ensuring they meet all contract requirements. If you're a sub, you need to stay compliant with what the prime flows down to you. Documentation matters. Keep records. One compliance failure can affect your entire contract and future opportunities."},
+      {"id":"5-03-1","phase":"Phase 5: Contract Management","module":"Project Compliance","title":"Project Compliance","narration":"Delivering on a government contract means meeting every requirement in the statement of work. Track deliverables. Document everything. Submit reports on time. The government takes compliance seriously. Missing a deliverable or violating a clause can result in cure notices, contract termination, or worse. Build systems from day one to stay on top of every requirement."},
+      {"id":"5-04-1","phase":"Phase 5: Contract Management","module":"Communication","title":"Communication","narration":"Communication with your contracting officer and program manager is critical. Report issues early—don't wait until they become problems. Respond to requests within 24 to 48 hours. Document all communication. If there's a scope change, get it in writing. Good communication builds trust and prevents misunderstandings that can derail a contract. When in doubt, over-communicate."}
+    ];
+
+    function renderSlideHtml(slide) {
+      const subtitle = slide.narration.length > 200 ? slide.narration.substring(0, 200) + '...' : slide.narration;
+      return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=1920, height=1080">
+<title>${slide.title}</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;width:1920px;height:1080px;background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);color:#f8fafc;display:flex;flex-direction:column;padding:80px}
+.phase-badge{display:inline-block;background:#22c55e;color:#0f172a;padding:8px 20px;border-radius:8px;font-weight:700;font-size:14px;margin-bottom:40px;text-transform:uppercase;letter-spacing:1px}
+.slide-title{font-size:56px;font-weight:700;line-height:1.2;margin-bottom:40px;max-width:1400px}
+.slide-subtitle{font-size:32px;color:#94a3b8;line-height:1.5;max-width:1400px}
+.footer{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-size:24px;color:#64748b}
+.lesson-number{font-weight:600;color:#22c55e}
+.logo{font-size:28px;font-weight:700}.logo span{color:#22c55e}
+</style>
+</head>
+<body>
+<div class="phase-badge">${slide.phase} - ${slide.module}</div>
+<h1 class="slide-title">${slide.title}</h1>
+<p class="slide-subtitle">${subtitle}</p>
+<div class="footer">
+<span class="lesson-number">${slide.id}</span>
+<span class="logo">GovCon<span>Giants</span></span>
+</div>
+</body>
+</html>`;
+    }
+
+    let currentIndex = 0;
+    const iframe = document.getElementById('slide-iframe');
+    const sidebar = document.getElementById('sidebar');
+    const indicator = document.getElementById('lesson-indicator');
+
+    function showSlide(index) {
+      currentIndex = Math.max(0, Math.min(index, SLIDES.length - 1));
+      const slide = SLIDES[currentIndex];
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(renderSlideHtml(slide));
+      doc.close();
+      indicator.textContent = `${currentIndex + 1} of ${SLIDES.length}`;
+      document.querySelectorAll('.lesson-link').forEach((el, i) => {
+        el.classList.toggle('active', i === currentIndex);
+      });
+    }
+
+    function buildSidebar() {
+      let phase = '';
+      SLIDES.forEach((slide, i) => {
+        if (slide.phase !== phase) {
+          phase = slide.phase;
+          const h2 = document.createElement('h2');
+          h2.textContent = phase;
+          sidebar.appendChild(h2);
+        }
+        const a = document.createElement('a');
+        a.href = '#';
+        a.className = 'lesson-link' + (i === 0 ? ' active' : '');
+        a.textContent = `${slide.id} · ${slide.title}`;
+        a.onclick = (e) => { e.preventDefault(); showSlide(i); };
+        sidebar.appendChild(a);
+      });
+    }
+
+    document.getElementById('btn-prev').onclick = () => showSlide(currentIndex - 1);
+    document.getElementById('btn-next').onclick = () => showSlide(currentIndex + 1);
+
+    buildSidebar();
+    showSlide(0);
+  </script>
+</body>
+</html>

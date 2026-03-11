@@ -1,4 +1,4 @@
-# Large video files
+# Large video/audio files
 *.mp4
 *.MP4
 *.mkv
@@ -7,6 +7,10 @@
 *.MOV
 *.avi
 *.AVI
+*.m4a
+*.M4A
+*.wav
+*.WAV
 
 # Large archive files
 *.zip
@@ -15,12 +19,29 @@
 *.RAR
 *.7z
 
+# Large presentation files (Keynote bundles can be huge)
+*.key
+*.ppt
+*.pptx
+
 # Incomplete downloads
 *.crdownload
 
 # macOS system files
 .DS_Store
 ._*
+
+# MCP config (contains API keys)
+.mcp.json
+
+# Environment variables
+.env
+
+# Generated B-roll video output
+broll-output/
+
+# Node modules
+node_modules/
 
 # Misc
 -

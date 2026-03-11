@@ -1,0 +1,123 @@
+{
+  "description": "Downloadable resources per lesson. Place files in handouts/ folder. Paths are URL paths for when website serves them. Source: Action Plan assets & Vault.",
+  "resources": {
+    "1-01-1": [
+      { "label": "Consultant Phone Script", "path": "/handouts/consultant-phone-script.docx", "description": "Script for reaching out to 8(a) companies" },
+      { "label": "Consultant Agreement Template", "path": "/handouts/consultant-agreement.docx", "description": "Template for advisory engagements" },
+      { "label": "How I Found an 8(a) Company", "path": "/handouts/how-i-found-8a-company.pdf", "description": "Guide to finding 8(a) consulting opportunities" },
+      { "label": "Corporation Matrix", "path": "/handouts/corporation-matrix.jpg", "description": "Business structure comparison diagram" }
+    ],
+    "1-02-1": [
+      { "label": "Update or Renew Your SAM", "path": "/handouts/update-renew-sam.pdf", "description": "Guide for SAM.gov renewal" },
+      { "label": "SAM.gov Drop-Down Menu Reference", "path": "/handouts/sam-dropdown-menu.pdf", "description": "Field-by-field SAM.gov reference" }
+    ],
+    "1-03-1": [
+      { "label": "Professional Email Script 1", "path": "/handouts/email-script-1.pdf", "description": "Template for professional outreach" },
+      { "label": "Professional Email Script 2", "path": "/handouts/email-script-2.pdf", "description": "Additional email templates" }
+    ],
+    "1-04-1": [
+      { "label": "Table of Size Standards", "path": "/handouts/size-standards-table.pdf", "description": "Official NAICS size thresholds" },
+      { "label": "8(a) Code Matrix", "path": "/handouts/8a-code-matrix.pdf", "description": "NAICS codes aligned with set-asides" }
+    ],
+    "1-05-1": [
+      { "label": "SAM Registration Checklist", "path": "/handouts/sam-registration-checklist.pdf", "description": "Step-by-step registration checklist" },
+      { "label": "Reading BetaSAM Guide", "path": "/handouts/reading-betasam.pdf", "description": "SAM.gov interface guide" },
+      { "label": "SAM.gov Drop-Down Menu Reference", "path": "/handouts/sam-dropdown-menu.pdf", "description": "Field reference for each section" }
+    ],
+    "1-06-1": [
+      { "label": "SAM Registration & DSBS Guide", "path": "/handouts/reading-betasam.pdf", "description": "DSBS is part of SAM—use registration guides" }
+    ],
+    "1-07-1": [
+      { "label": "15 Questions for APEX Counselor", "path": "/handouts/15-questions-apex-counselor.pdf", "description": "Bring to your first Apex meeting" },
+      { "label": "Apex Accelerator Guide", "path": "/handouts/apex-accelerator-guide.pdf", "description": "What Apex offers and how to get the most" }
+    ],
+    "1-08-1": [
+      { "label": "Capability Statement Examples", "path": "/handouts/capability-statement-examples.pdf", "description": "Real capability statement samples" },
+      { "label": "Capability Statement Checklist", "path": "/handouts/capability-statement-checklist.pdf", "description": "Key sections to include" },
+      { "label": "SBA Profile Checklist", "path": "/handouts/sba-profile-checklist.docx", "description": "Align with SAM and DSBS" }
+    ],
+    "2-01-1": [
+      { "label": "DIBBS Solicitations Guide", "path": "/handouts/dibbs-solicitations.pptx", "description": "Finding opportunities in DIBBS" },
+      { "label": "DIBBS Quoting Guide", "path": "/handouts/dibbs-quoting.pptx", "description": "Submitting bids through DIBBS" },
+      { "label": "Reading BetaSAM", "path": "/handouts/reading-betasam.pdf", "description": "Search and filter Contract Opportunities" }
+    ],
+    "2-02-1": [
+      { "label": "Teaming Agreement Sample", "path": "/handouts/teaming-agreement-sample.pdf", "description": "Starting point for partnerships" },
+      { "label": "Joint Venture Documentation", "path": "/handouts/joint-venture-docs.pdf", "description": "Checklists and templates" }
+    ],
+    "2-03-1": [
+      { "label": "BD Progress Task List", "path": "/handouts/bd-progress-task-list.xlsx", "description": "Track vendor credit milestone" },
+      { "label": "Supplier Credit Guide", "path": "/handouts/supplier-credit-guide.pdf", "description": "Materials before talking to your bank" }
+    ],
+    "2-04-1": [
+      { "label": "Compliance Matrix Template", "path": "/handouts/compliance-matrix-template.xlsx", "description": "Don't miss requirements" },
+      { "label": "Sample Proposals & LOI", "path": "/handouts/proposal-samples.pdf", "description": "Technical approach and LOI examples" },
+      { "label": "Bid Forms (SF30, Form 18)", "path": "/handouts/bid-forms.pdf", "description": "Standard bid forms" },
+      { "label": "Estimating Templates", "path": "/handouts/estimating-templates.xlsx", "description": "Price proposal worksheets" }
+    ],
+    "2-05-1": [
+      { "label": "Proposal Evaluation Notes", "path": "/handouts/proposal-samples.pdf", "description": "Review past proposals and samples" }
+    ],
+    "3-01-1": [
+      { "label": "FPDS Guide – Find Your Buyer", "path": "/handouts/fpds-find-buyer.docx", "description": "Who's buying in your NAICS" },
+      { "label": "Bid/No-Bid Framework", "path": "/handouts/bid-no-bid-framework.pdf", "description": "Decide which opportunities to pursue" },
+      { "label": "FPDS-NG Handout", "path": "/handouts/fpds-ng-handout.pdf", "description": "Search and export procurement data" }
+    ],
+    "3-02-1": [
+      { "label": "Capabilities Briefing Checklist", "path": "/handouts/capabilities-briefing-checklist.pdf", "description": "Bring to every OSDBU meeting" },
+      { "label": "Capture Management & OSDBU Guide", "path": "/handouts/capture-management-osdbu.docx", "description": "Before, during, after meetings" },
+      { "label": "NAVFAC Small Business Contacts", "path": "/handouts/navfac-contacts.pdf", "description": "Contact list by region" }
+    ],
+    "3-03-1": [
+      { "label": "BD Progress Task List", "path": "/handouts/bd-progress-task-list.xlsx", "description": "Track events and follow-ups" }
+    ],
+    "3-04-1": [
+      { "label": "Capabilities Briefing Checklist", "path": "/handouts/capabilities-briefing-checklist.pdf", "description": "Use for site visits too" }
+    ],
+    "3-05-1": [
+      { "label": "Prime Contractor Checklist", "path": "/handouts/prime-contractor-checklist.docx", "description": "Track which primes you've registered with" }
+    ],
+    "3-06-1": [
+      { "label": "FPDS-NG Handout", "path": "/handouts/fpds-ng-handout.pdf", "description": "Monitor awards by agency and NAICS" },
+      { "label": "IDIQ Tracking Guide", "path": "/handouts/idiq-tracking-guide.pdf", "description": "Long-term contract monitoring" }
+    ],
+    "4-01-1": [
+      { "label": "Table of Size Standards", "path": "/handouts/size-standards-table.pdf", "description": "Confirm certification eligibility" },
+      { "label": "8(a) Code Matrix", "path": "/handouts/8a-code-matrix.pdf", "description": "Set-aside activity by code" }
+    ],
+    "4-02-1": [
+      { "label": "8(a) Code Matrix", "path": "/handouts/8a-code-matrix.pdf", "description": "8(a) eligibility and opportunities" }
+    ],
+    "4-03-1": [
+      { "label": "Joint Venture Documentation", "path": "/handouts/joint-venture-docs.pdf", "description": "Mentor-Protégé structures" },
+      { "label": "Teaming Agreement Sample", "path": "/handouts/teaming-agreement-sample.pdf", "description": "Reference for MPP relationships" }
+    ],
+    "4-04-1": [
+      { "label": "Past Performance Samples", "path": "/handouts/past-performance-samples.pdf", "description": "Structure your narrative" },
+      { "label": "Capability Statement Examples", "path": "/handouts/capability-statement-examples.pdf", "description": "Highlight self-performance" }
+    ],
+    "4-05-1": [
+      { "label": "Teaming Agreement Sample", "path": "/handouts/teaming-agreement-sample.pdf", "description": "Formalize new partnerships" }
+    ],
+    "4-06-1": [
+      { "label": "Mentor-Protégé Materials", "path": "/handouts/joint-venture-docs.pdf", "description": "Finding a mid-size mentor" }
+    ],
+    "4-07-1": [
+      { "label": "Sample Presentation Deck", "path": "/handouts/nsin-overview-deck.pdf", "description": "Template for entrepreneur talks" }
+    ],
+    "5-01-1": [
+      { "label": "SAM Registration Guide", "path": "/handouts/reading-betasam.pdf", "description": "Foundation for PIEE/WAWF" }
+    ],
+    "5-02-1": [
+      { "label": "10 Subcontractor Clauses to Be Aware Of", "path": "/handouts/10-subcontractor-clauses.pdf", "description": "Know before you sign" },
+      { "label": "Subcontractor Package & Flow-Downs", "path": "/handouts/subcontractor-flowdown-clauses.pdf", "description": "Compliance checklists" }
+    ],
+    "5-03-1": [
+      { "label": "Sample Quality Plan", "path": "/handouts/sample-quality-plan.pdf", "description": "Template for compliance systems" }
+    ],
+    "5-04-1": [
+      { "label": "Email Scripts", "path": "/handouts/email-script-1.pdf", "description": "Professional communication with COs" },
+      { "label": "CRM Call List Template", "path": "/handouts/crm-call-list.xls", "description": "Track communication" }
+    ]
+  }
+}

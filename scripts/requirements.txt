@@ -1,0 +1,2 @@
+# For capture-slide-image.py (screenshot mode)
+playwright>=1.40.0

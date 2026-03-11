@@ -1,0 +1,63 @@
+{
+  "meta": {
+    "project": "GovCon BD Upskilling Certification — CEO Promo Video",
+    "source": "website/video-assets-ceo-promo.html",
+    "total_clips": 7
+  },
+  "versions": {
+    "90s": {
+      "label": "90-Second CEO Promo",
+      "clips": [
+        {
+          "scene": 1,
+          "slug": "the-problem",
+          "title": "The CEO Problem",
+          "timing": "0:00 – 0:12",
+          "prompt": "A professional Black male operations manager in a modern government office, sitting in a meeting with a government customer across a conference table. He's listening and taking notes but looks uncertain. Clean corporate lighting, shallow depth of field. Realistic, cinematic, 4K."
+        },
+        {
+          "scene": 2,
+          "slug": "practical-move",
+          "title": "The Practical Move",
+          "timing": "0:12 – 0:24",
+          "prompt": "A CEO in a modern office standing at a whiteboard, selecting five team member headshots pinned to the board. He circles them with a green marker. Professional corporate setting, warm lighting, realistic style. 4K cinematic."
+        },
+        {
+          "scene": 3,
+          "slug": "skill-application",
+          "title": "Skill Application",
+          "timing": "0:24 – 0:38",
+          "prompt": "A diverse team of professionals in a government customer meeting. One team member confidently asks a question while others take notes. Conference room with American flag in background. Professional, realistic, natural body language. 4K cinematic."
+        },
+        {
+          "scene": 4,
+          "slug": "opportunity-pathways",
+          "title": "Opportunity Pathways",
+          "timing": "0:38 – 0:52",
+          "prompt": "Close-up of a laptop screen showing a abstract data dashboard with green progress bars and a branching flowchart diagram. Dark green and gold accent colors on the UI. No readable text or words on screen. Clean, modern data visualization with shapes and icons only. Hands typing on keyboard. 4K realistic."
+        },
+        {
+          "scene": 5,
+          "slug": "business-result",
+          "title": "Business Result",
+          "timing": "0:52 – 1:05",
+          "prompt": "Split screen style: left side shows an upward trending bar chart with green bars and a gold arrow going up, no text or labels visible. Right side shows a diverse team celebrating a win in a modern office, high-fiving and smiling. Professional, corporate, warm lighting. Dark green and gold color accents. No words or text anywhere in the frame. 4K cinematic."
+        },
+        {
+          "scene": 6,
+          "slug": "organizational-advantage",
+          "title": "Organizational Advantage",
+          "timing": "1:05 – 1:18",
+          "prompt": "An internal team huddle in a glass-walled conference room. Five professionals — operations, program management, and BD — standing around a table reviewing a capture plan together. Collaborative energy, natural gestures. Modern corporate office. 4K cinematic realistic."
+        },
+        {
+          "scene": 7,
+          "slug": "cta",
+          "title": "CTA — Close",
+          "timing": "1:18 – 1:30",
+          "prompt": "Slow cinematic push-in on a dark green textured background with subtle gold particle effects floating gently. A soft golden light blooms in the center. No text, no words, no letters — purely abstract elegant motion graphics. Professional, minimal, elegant. 4K."
+        }
+      ]
+    }
+  }
+}
